@@ -1,0 +1,2405 @@
+[
+  {
+    "position": 7,
+    "title": "Chats Over Chaat",
+    "place_id": "ChIJd2-J5T-FXjkRwoDuT8G3hAw",
+    "data_id": "0x395e853fe5896f77:0xc84b7c14fee80c2",
+    "data_cid": "902047866278543554",
+    "reviews_link": "https://serpapi.com/search.json?data_id=0x395e853fe5896f77%3A0xc84b7c14fee80c2&engine=google_maps_reviews&hl=en",
+    "photos_link": "https://serpapi.com/search.json?data_id=0x395e853fe5896f77%3A0xc84b7c14fee80c2&engine=google_maps_photos&hl=en",
+    "gps_coordinates": {
+      "latitude": 23.040931099999998,
+      "longitude": 72.5261455
+    },
+    "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJd2-J5T-FXjkRwoDuT8G3hAw",
+    "provider_id": "/g/11kb_bwqf_",
+    "rating": 4.8,
+    "reviews": 185,
+    "price": "₹1–200",
+    "extracted_price": 1,
+    "type": "Food court",
+    "types": [
+      "Food court"
+    ],
+    "type_id": "food_court",
+    "type_ids": [
+      "food_court"
+    ],
+    "address": "Advait Complex, 35/A, near Soham Terrace, Vastrapur, Ahmedabad, Gujarat 380054, India",
+    "open_state": "Open · Closes 11 PM",
+    "hours": "Open · Closes 11 PM",
+    "operating_hours": {
+      "saturday": "11:15 AM–11 PM",
+      "sunday": "11:15 AM–11 PM",
+      "monday": "11:15 AM–11 PM",
+      "tuesday": "11:15 AM–11 PM",
+      "wednesday": "11:15 AM–11 PM",
+      "thursday": "11:15 AM–11 PM",
+      "friday": "11:15 AM–11 PM"
+    },
+    "phone": "+91 99047 77323",
+    "extensions": [
+      {
+        "service_options": [
+          "Delivery",
+          "Takeout",
+          "Dine-in"
+        ]
+      },
+      {
+        "popular_for": [
+          "Solo dining"
+        ]
+      },
+      {
+        "amenities": [
+          "Restroom"
+        ]
+      },
+      {
+        "atmosphere": [
+          "Casual",
+          "Trendy"
+        ]
+      },
+      {
+        "crowd": [
+          "Groups"
+        ]
+      },
+      {
+        "payments": [
+          "NFC mobile payments"
+        ]
+      },
+      {
+        "children": [
+          "Good for kids"
+        ]
+      },
+      {
+        "parking": [
+          "Free parking lot",
+          "Usually plenty of parking"
+        ]
+      }
+    ],
+    "service_options": {
+      "dine_in": true,
+      "takeout": true,
+      "delivery": true
+    },
+    "reserve_a_table": "https://www.google.com/maps/reserve/v/dine/c/wm03T_H60gM?source=pa&opi=79508299&hl=en-US&gei=ZKjHaYmOLbSDwbkP--fDgQM&sourceurl=https://www.google.com/search?hl%3Den%26pb%3D!4m8!1m3!1d0!2d0!3d0!3m2!1i1920!2i1080!4f13.1!7i20!8i60!10b1!12m49!1m5!18b1!30b1!31m1!1b1!34e1!2m4!5m1!6e2!20e3!39b1!6m22!49b1!63m0!66b1!74i150000!85b1!91b1!114b1!149b1!178b1!206b1!209b1!212b1!223b1!232b1!234b1!244b1!246b1!250b1!253b1!258b1!260b1!266b1!10b1!12b1!13b1!14b1!16b1!17m1!3e1!20m3!5e2!6b1!14b1!46m1!1b0!96b1!99b1!19m4!2m3!1i360!2i120!4i8!20m57!2m2!1i203!2i100!3m2!2i4!5b1!6m6!1m2!1i86!2i86!1m2!1i408!2i240!7m33!1m3!1e1!2b0!3e3!1m3!1e2!2b1!3e2!1m3!1e2!2b0!3e3!1m3!1e8!2b0!3e3!1m3!1e10!2b0!3e3!1m3!1e10!2b1!3e2!1m3!1e10!2b0!3e4!1m3!1e9!2b1!3e2!2b1!9b0!15m8!1m7!1m2!1m1!1e2!2m2!1i195!2i195!3i20!22m6!1sH2dKYVTa_qsYUJu_MP5e_r5TUpQqZyg:2!2s1i:0,t:11886,p:H2dKYVTa_qsYUJu_MP5e_r5TUpQqZyg:2!7e81!12e5!17sH2dKYVTa_qsYUJu_MP5e_r5TUpQqZyg:83!18e15!24m107!1m28!13m9!2b1!3b1!4b1!6i1!8b1!9b1!14b1!20b1!25b1!18m17!3b1!4b1!5b1!6b1!13b1!14b1!17b1!21b1!22b1!27m1!1b0!28b0!32b1!33m1!1b1!34b1!36e2!10m1!8e3!11m1!3e1!14m1!3b0!17b1!20m2!1e3!1e6!24b1!25b1!26b1!27b1!29b1!30m1!2b1!36b1!37b1!39m3!2m2!2i1!3i1!43b1!52b1!54m1!1b1!55b1!56m1!1b1!61m2!1m1!1e1!65m5!3m4!1m3!1m2!1i224!2i298!72m22!1m8!2b1!5b1!7b1!12m4!1b1!2b1!4m1!1e1!4b1!8m10!1m6!4m1!1e1!4m1!1e3!4m1!1e4!3sother_user_google_review_posts__and__hotel_and_vr_partner_review_posts!6m1!1e1!9b1!89b1!98m3!1b1!2b1!3b1!103b1!113b1!114m3!1b1!2m1!1b1!117b1!122m1!1b1!126b1!127b1!26m4!2m3!1i80!2i92!4i8!30m28!1m6!1m2!1i0!2i0!2m2!1i530!2i1080!1m6!1m2!1i1870!2i0!2m2!1i1920!2i1080!1m6!1m2!1i0!2i0!2m2!1i1920!2i20!1m6!1m2!1i0!2i1060!2m2!1i1920!2i1080!34m19!2b1!3b1!4b1!6b1!8m6!1b1!3b1!4b1!5b1!6b1!7b1!9b1!12b1!14b1!20b1!23b1!25b1!26b1!31b1!37m1!1e81!42b1!49m10!3b1!6m2!1b1!2b1!7m2!1e3!2b1!8b1!9b1!10e2!50m3!2e2!3m1!3b1!61b1!67m5!7b1!10b1!14b1!15m1!1b0!69i767!77b1%26tbm%3Dmap%26q%3Dfast%2Bfood%2Brestaurant%2BAhmedabad",
+    "order_online": "https://www.google.com/viewer/chooseprovider?mid=/g/11kb_bwqf_&g2lbs=AIBNGdWdKfbpqFbK6oiSiOXrCu4QUsjuL7LF_jIcFeHqRXZ4EZuGHvE4CH886ndpb2r4leRRMtsgOhjZzW5oIQZ--6yKYvC0Lw%3D%3D&hl=en-US&gl=us&fo_m=MfohQo559jFvMUOzJVpjPL1YMfZ3bInYwBDuMfaXTPp5KXh-&utm_source=tactile&gei=ZKjHaYmOLbSDwbkP--fDgQM&ei=ZKjHaYmOLbSDwbkP--fDgQM&fo_s=OA,SOE&opi=79508299&orderType=1&ebb=1&cs=0&foub=mcpp",
+    "user_review": "\"Nice food,  quick service,  good hospitality\"",
+    "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/AHVAweqfDLVArGYXQMIZ0lfFYA2RLEW4czI-4vJXKOzWjJ1ExkMOX0RcxencATlb5el-DfYq5_YQrSLXri8LXXhi4cEY52Jm3qs6Jn-g04BJlQRC6u7kw2GbzSxaavK5oPGUKMV4rs9E=w80-h106-k-no",
+    "serpapi_thumbnail": "https://serpapi.com/images/url/Qo3WbnicBcFRboIwAADQE1UqFuZM_OiUMQtEQQetP4s2BRy1lRaFcD8P4W187_Wsu-5mF44j69mk0rqS4m6F4Vp1QnUTrq9OdbOAW2Ad_JPjXrTlOs6xCRlNk80RyvKbYTeLgwLxcQPQg9BoOxb_ZBoMTbKlMOODUBwf5NkTEqxL1np_LDX7mJrLPKa0viAeMM8l11lrfaJABdEXkWm28u8fTe-G53E_nE6PyNO78DdKcmTsZ7Ds5xDUU-iDBij9BoJhQ3g"
+  },
+  {
+    "position": 9,
+    "title": "Lucky Restaurant",
+    "place_id": "ChIJiWwV306EXjkR11SOkNFh1tY",
+    "data_id": "0x395e844edf156c89:0xd6d661d1908e54d7",
+    "data_cid": "15480668321833964759",
+    "reviews_link": "https://serpapi.com/search.json?data_id=0x395e844edf156c89%3A0xd6d661d1908e54d7&engine=google_maps_reviews&hl=en",
+    "photos_link": "https://serpapi.com/search.json?data_id=0x395e844edf156c89%3A0xd6d661d1908e54d7&engine=google_maps_photos&hl=en",
+    "gps_coordinates": {
+      "latitude": 23.0277121,
+      "longitude": 72.58131089999999
+    },
+    "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJiWwV306EXjkR11SOkNFh1tY",
+    "provider_id": "/g/1tczhwj9",
+    "rating": 4.3,
+    "reviews": 7842,
+    "price": "₹1–200",
+    "extracted_price": 1,
+    "type": "Indian restaurant",
+    "types": [
+      "Indian restaurant",
+      "Breakfast restaurant",
+      "Fast food restaurant",
+      "Restaurant",
+      "Tea house",
+      "Vegetarian restaurant"
+    ],
+    "type_id": "indian_restaurant",
+    "type_ids": [
+      "indian_restaurant",
+      "breakfast_restaurant",
+      "fast_food_restaurant",
+      "restaurant",
+      "tea_house",
+      "vegetarian_restaurant"
+    ],
+    "address": "Mirzapur Rd, opposite City College, Old City, Lal Darwaja, Ahmedabad, Gujarat 380001, India",
+    "open_state": "Closed · Opens 7 PM",
+    "hours": "Closed · Opens 7 PM",
+    "operating_hours": {
+      "saturday": "11 AM–3:30 PM, 7–11 PM",
+      "sunday": "11 AM–3:30 PM, 7–11 PM",
+      "monday": "11 AM–3:30 PM, 7–11 PM",
+      "tuesday": "11 AM–3:30 PM, 7–11 PM",
+      "wednesday": "11 AM–3:30 PM, 7–11 PM",
+      "thursday": "11 AM–3:30 PM, 7–11 PM",
+      "friday": "11 AM–3:30 PM, 7–11 PM"
+    },
+    "phone": "+91 79 2550 5033",
+    "extensions": [
+      {
+        "service_options": [
+          "Delivery",
+          "Onsite services",
+          "Takeout",
+          "Dine-in"
+        ]
+      },
+      {
+        "highlights": [
+          "Great coffee",
+          "Great dessert",
+          "Great tea selection",
+          "Rooftop seating",
+          "Sports"
+        ]
+      },
+      {
+        "popular_for": [
+          "Breakfast",
+          "Lunch",
+          "Dinner",
+          "Solo dining"
+        ]
+      },
+      {
+        "offerings": [
+          "All you can eat",
+          "Coffee",
+          "Healthy options",
+          "Late-night food",
+          "Quick bite",
+          "Small plates",
+          "Vegetarian options"
+        ]
+      },
+      {
+        "dining_options": [
+          "Breakfast",
+          "Brunch",
+          "Lunch",
+          "Dinner",
+          "Dessert",
+          "Table service"
+        ]
+      },
+      {
+        "atmosphere": [
+          "Casual",
+          "Cozy",
+          "Historic",
+          "Quiet",
+          "Trendy",
+          "Upscale"
+        ]
+      },
+      {
+        "crowd": [
+          "College students",
+          "Groups",
+          "Tourists"
+        ]
+      },
+      {
+        "payments": [
+          "Debit cards",
+          "NFC mobile payments"
+        ]
+      },
+      {
+        "children": [
+          "Good for kids",
+          "Has changing table(s)"
+        ]
+      },
+      {
+        "parking": [
+          "Free parking lot",
+          "Free street parking",
+          "Paid street parking"
+        ]
+      }
+    ],
+    "unsupported_extensions": [
+      {
+        "accessibility": [
+          "Wheelchair accessible entrance",
+          "Wheelchair accessible parking lot",
+          "Wheelchair accessible seating"
+        ]
+      },
+      {
+        "planning": [
+          "Accepts reservations"
+        ]
+      }
+    ],
+    "service_options": {
+      "dine_in": true,
+      "takeout": true,
+      "delivery": true
+    },
+    "order_online": "https://www.google.com/viewer/chooseprovider?mid=/g/1tczhwj9&g2lbs=AIBNGdUGq-soVKcGIEaH9rkAA3vNfBor8rrWQm8qSgwuYwlchRAzKMjGkZXMqNWWxTTaGb6quGjoyVoeLtGpVzns4OdCONzd4A%3D%3D&hl=en-US&gl=us&fo_m=MfohQo559jFvMUOzJVpjPL1YMfZ3bInYwBDuMfaXTPp5KXh-&utm_source=tactile&gei=ZKjHaYmOLbSDwbkP--fDgQM&ei=ZKjHaYmOLbSDwbkP--fDgQM&fo_s=OA,SOE&opi=79508299&ebb=1&cs=0&foub=mcpp",
+    "user_review": "\"Quick service, tasty food and great customer service.\"",
+    "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/AHVAwepg6h-5TeMZM8lPrIZgk--I38s7OD1oK2UR0vG1sJbt369pwBedous-Buh8m3-UfTh_lF_Uuk8cML7VamsWIHy6DRP_8AN1e8YQzJlCNk-j7maX2h3gCZI82rFFksfBy7-pIliK=w122-h92-k-no",
+    "serpapi_thumbnail": "https://serpapi.com/images/url/Xx-SAXicBcHRboIwFADQL7oy2gzqEh9Aw6wOdUaY8kIcq-3WQhtukbj_8yP8G8953JX3Dt-CwCg6kdZKIwYUfWM7Lzo_aWwbSIfQIGCQLMtkFE5GCl4PIq9yZnY9r6QG4JRhvF2Edk2K_cv1PcTVt6fR1I2p-LEDQjoo1lIoLgdVm6wuBs2a_CMuzy1-8eUtWux3NUs2oWCnz_-VmW80_MXt-UgUlfOKM9JnmcZLeovBcfO7no0hIaCmBDR09glBQ0Ln"
+  },
+  {
+    "position": 12,
+    "title": "SHREE RAMDEV FAST FOOD.",
+    "place_id": "ChIJ035grIqFXjkRdeKWxOXxLRs",
+    "data_id": "0x395e858aac607ed3:0x1b2df1e5c496e275",
+    "data_cid": "1958487382124061301",
+    "reviews_link": "https://serpapi.com/search.json?data_id=0x395e858aac607ed3%3A0x1b2df1e5c496e275&engine=google_maps_reviews&hl=en",
+    "photos_link": "https://serpapi.com/search.json?data_id=0x395e858aac607ed3%3A0x1b2df1e5c496e275&engine=google_maps_photos&hl=en",
+    "gps_coordinates": {
+      "latitude": 23.023480499999998,
+      "longitude": 72.56714
+    },
+    "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJ035grIqFXjkRdeKWxOXxLRs",
+    "provider_id": "/g/11msmgd3t0",
+    "rating": 5,
+    "reviews": 1,
+    "type": "Fast food restaurant",
+    "types": [
+      "Fast food restaurant"
+    ],
+    "type_id": "fast_food_restaurant",
+    "type_ids": [
+      "fast_food_restaurant"
+    ],
+    "address": "nr. Gujrat College, Ellisbridge, Ahmedabad, Gujarat 380006, India",
+    "phone": "+91 85115 11751",
+    "extensions": [
+      {
+        "service_options": [
+          "Dine-in"
+        ]
+      },
+      {
+        "offerings": [
+          "Quick bite"
+        ]
+      },
+      {
+        "crowd": [
+          "Groups"
+        ]
+      },
+      {
+        "children": [
+          "Good for kids"
+        ]
+      }
+    ],
+    "service_options": {
+      "dine_in": true
+    },
+    "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=0LiCCASKY7mEmohWwO-Cnw&cb_client=search.gws-prod.gps&w=80&h=92&yaw=191.79402&pitch=0&thumbfov=100",
+    "serpapi_thumbnail": "https://serpapi.com/images/url/LxCSlHicHc1LCsIwFADA22TXfIpQKwSR4krBhQtxJWn6TB7kRxMbvY3X8jaKF5j5vG0pKW8Yy2UGKAtCTfgEl5ukqInROFAJM9XRs0WwYh9-DArdNqkQcZL8iMOwOx-und_7aC_11AyhEj3etEMIRWZQs7bU1J84x4malEmVa06s7FvyUlWKXtCuX_GWJCzaSk7-yz0uUnD-BWA8OUs"
+  },
+  {
+    "position": 13,
+    "title": "Gajanand Pauva House",
+    "place_id": "ChIJ7bzmk-SEXjkRLWnGmP9aW7g",
+    "data_id": "0x395e84e493e6bced:0xb85b5aff98c6692d",
+    "data_cid": "13284311579685710125",
+    "reviews_link": "https://serpapi.com/search.json?data_id=0x395e84e493e6bced%3A0xb85b5aff98c6692d&engine=google_maps_reviews&hl=en",
+    "photos_link": "https://serpapi.com/search.json?data_id=0x395e84e493e6bced%3A0xb85b5aff98c6692d&engine=google_maps_photos&hl=en",
+    "gps_coordinates": {
+      "latitude": 23.0200028,
+      "longitude": 72.5577091
+    },
+    "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJ7bzmk-SEXjkRLWnGmP9aW7g",
+    "provider_id": "/g/11dz_qmrzn",
+    "rating": 4.1,
+    "reviews": 3072,
+    "price": "₹1–200",
+    "extracted_price": 1,
+    "type": "Restaurant",
+    "types": [
+      "Restaurant",
+      "Breakfast restaurant",
+      "Fast food restaurant"
+    ],
+    "type_id": "restaurant",
+    "type_ids": [
+      "restaurant",
+      "breakfast_restaurant",
+      "fast_food_restaurant"
+    ],
+    "address": "Dev Complex Chowk, 4, Chimanlal Girdharlal Rd, near Parmal Garden, Ambawadi, Ahmedabad, Gujarat 380006, India",
+    "open_state": "Open 24 hours",
+    "hours": "Open 24 hours",
+    "operating_hours": {
+      "saturday": "Open 24 hours",
+      "sunday": "Open 24 hours",
+      "monday": "Open 24 hours",
+      "tuesday": "Open 24 hours",
+      "wednesday": "Open 24 hours",
+      "thursday": "Open 24 hours",
+      "friday": "Open 24 hours"
+    },
+    "phone": "+91 97269 59331",
+    "extensions": [
+      {
+        "service_options": [
+          "Outdoor seating",
+          "Curbside pickup",
+          "No-contact delivery",
+          "Delivery",
+          "Drive-through",
+          "Onsite services",
+          "Takeout",
+          "Dine-in"
+        ]
+      },
+      {
+        "highlights": [
+          "Great coffee",
+          "Great tea selection"
+        ]
+      },
+      {
+        "popular_for": [
+          "Breakfast",
+          "Lunch",
+          "Solo dining"
+        ]
+      },
+      {
+        "accessibility": [
+          "Wheelchair accessible entrance",
+          "Wheelchair accessible seating"
+        ]
+      },
+      {
+        "offerings": [
+          "Coffee",
+          "Healthy options",
+          "Late-night food",
+          "Quick bite",
+          "Small plates",
+          "Vegan options",
+          "Vegetarian options",
+          "Vegetarian options only"
+        ]
+      },
+      {
+        "dining_options": [
+          "Breakfast",
+          "Brunch",
+          "Lunch",
+          "Catering",
+          "Counter service",
+          "Dessert",
+          "Seating"
+        ]
+      },
+      {
+        "atmosphere": [
+          "Casual",
+          "Trendy"
+        ]
+      },
+      {
+        "crowd": [
+          "College students",
+          "Groups",
+          "Tourists"
+        ]
+      },
+      {
+        "payments": [
+          "Credit cards",
+          "Debit cards",
+          "NFC mobile payments"
+        ]
+      },
+      {
+        "children": [
+          "Good for kids",
+          "Kids' menu"
+        ]
+      },
+      {
+        "parking": [
+          "Free parking lot",
+          "Free street parking",
+          "Usually somewhat difficult to find a space"
+        ]
+      }
+    ],
+    "unsupported_extensions": [
+      {
+        "dining_options": [
+          "Table service"
+        ]
+      },
+      {
+        "amenities": [
+          "Restroom"
+        ]
+      },
+      {
+        "planning": [
+          "Accepts reservations"
+        ]
+      }
+    ],
+    "service_options": {
+      "dine_in": true,
+      "drive_through": true,
+      "no_contact_delivery": true
+    },
+    "order_online": "https://www.google.com/viewer/chooseprovider?mid=/g/11dz_qmrzn&g2lbs=AIBNGdUhZz3OZdFz7MZWmLwaRX_-32YExsR-PPMobmTuSqKAcZ3eUGDq4aiNmnX0vDudAdKkJPPm5pJjs2QNaCe9nYCkXXZJSw%3D%3D&hl=en-US&gl=us&fo_m=MfohQo559jFvMUOzJVpjPL1YMfZ3bInYwBDuMfaXTPp5KXh-&utm_source=tactile&gei=ZKjHaYmOLbSDwbkP--fDgQM&ei=ZKjHaYmOLbSDwbkP--fDgQM&fo_s=OA,SOE&opi=79508299&orderType=1&ebb=1&cs=0&foub=mcpp",
+    "user_review": "\"Faster than you eat good taste and best service lower cost\"",
+    "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/AHVAweo8iTeBT3jxOdYvq6Eufm7vfGri2wA9CJ1n1N-Yuzd3YxuprZqMmYqkDCxvKObARb7zdb2V05ConZHmDuOLA-BDHr2ffLuAV0N0d8dVsK4nTot-oNXxayWnI7ePchDnLU_ERsxZNQ=w122-h92-k-no",
+    "serpapi_thumbnail": "https://serpapi.com/images/url/Y8aYnHicBcFbcoIwFADQFUUgtKLO-BHBKSqCOpQWfjqFBPBBLpAEoht0De7Gc17PWspWLAzjVtuTCqC6MSVYXwCXjMtJAY1RtQIVAgmD-AkZGczOMVvF9kVHNB266VqVjTOUX_0Zj2Tubi1uhShVD2qnWrV91u2btLt6rh52UU5OufOgOU7MTxd45jeeigKCVp7f47IMFEnM0KQzmojdB49BIgh_9f_9h28cdihqjwfff-uT0Fl4XI4WxqieY3RFHN62-EYE"
+  },
+  {
+    "position": 16,
+    "title": "Red Rose Restaurant",
+    "place_id": "ChIJUU_yrJKEXjkRq7BaG5AxAs8",
+    "data_id": "0x395e8492acf24f51:0xcf0231901b5ab0ab",
+    "data_cid": "14916539410808484011",
+    "reviews_link": "https://serpapi.com/search.json?data_id=0x395e8492acf24f51%3A0xcf0231901b5ab0ab&engine=google_maps_reviews&hl=en",
+    "photos_link": "https://serpapi.com/search.json?data_id=0x395e8492acf24f51%3A0xcf0231901b5ab0ab&engine=google_maps_photos&hl=en",
+    "gps_coordinates": {
+      "latitude": 23.036116999999997,
+      "longitude": 72.555162
+    },
+    "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJUU_yrJKEXjkRq7BaG5AxAs8",
+    "provider_id": "/g/1v6l5xb7",
+    "rating": 4.4,
+    "reviews": 659,
+    "type": "South Indian restaurant",
+    "types": [
+      "South Indian restaurant",
+      "Fast food restaurant",
+      "Restaurant",
+      "Rice restaurant",
+      "Vegan restaurant"
+    ],
+    "type_id": "south_indian_restaurant",
+    "type_ids": [
+      "south_indian_restaurant",
+      "fast_food_restaurant",
+      "restaurant",
+      "rice_restaurant",
+      "vegan_restaurant"
+    ],
+    "address": "behind H L Commerce College, Shri Sadma Society, Navrangpura, Ahmedabad, Gujarat 380009, India",
+    "open_state": "Open · Closes 11 PM",
+    "hours": "Open · Closes 11 PM",
+    "operating_hours": {
+      "saturday": "9 AM–11 PM",
+      "sunday": "9 AM–11 PM",
+      "monday": "9 AM–11 PM",
+      "tuesday": "9 AM–11 PM",
+      "wednesday": "9 AM–11 PM",
+      "thursday": "9 AM–11 PM",
+      "friday": "9 AM–11 PM"
+    },
+    "extensions": [
+      {
+        "from_the_business": [
+          "Identifies as women-owned"
+        ]
+      },
+      {
+        "service_options": [
+          "Outdoor seating",
+          "No-contact delivery",
+          "Delivery",
+          "Drive-through",
+          "Onsite services",
+          "Takeout",
+          "Dine-in"
+        ]
+      },
+      {
+        "highlights": [
+          "Great coffee",
+          "Great dessert"
+        ]
+      },
+      {
+        "popular_for": [
+          "Breakfast",
+          "Lunch",
+          "Dinner",
+          "Solo dining"
+        ]
+      },
+      {
+        "offerings": [
+          "All you can eat",
+          "Coffee",
+          "Quick bite",
+          "Small plates",
+          "Vegan options",
+          "Vegetarian options",
+          "Vegetarian options only"
+        ]
+      },
+      {
+        "dining_options": [
+          "Breakfast",
+          "Lunch",
+          "Dinner",
+          "Dessert",
+          "Seating",
+          "Table service"
+        ]
+      },
+      {
+        "atmosphere": [
+          "Casual",
+          "Cozy",
+          "Trendy"
+        ]
+      },
+      {
+        "crowd": [
+          "Family-friendly",
+          "Groups"
+        ]
+      },
+      {
+        "payments": [
+          "Credit cards",
+          "Debit cards",
+          "NFC mobile payments"
+        ]
+      },
+      {
+        "children": [
+          "Good for kids",
+          "Good for kids birthday",
+          "Kids' menu"
+        ]
+      },
+      {
+        "parking": [
+          "Free parking lot",
+          "Free street parking",
+          "Usually plenty of parking"
+        ]
+      }
+    ],
+    "unsupported_extensions": [
+      {
+        "accessibility": [
+          "Wheelchair accessible entrance"
+        ]
+      }
+    ],
+    "service_options": {
+      "dine_in": true,
+      "drive_through": true,
+      "no_contact_delivery": true
+    },
+    "user_review": "\"Higinic fast service delicious food\"",
+    "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/AHVAweolDUVtvtUtrfu3kwQozvW_qgP_Zw9LTSbRX9Xm0aB-1IbuobhIc6L3e3n_m3kr6Mz_7-ai0ca9ezXv_cn_ZcNTlfd_Pv4eFuu2W8y-Pbapwu5kAGFTyKrHJEMIIPbGcbLV19L7=w145-h92-k-no",
+    "serpapi_thumbnail": "https://serpapi.com/images/url/-DPrKHicBcHhEoEwAADgJ5pkwtz5kaNEXEi6_uzaTLlqS9va6f08hLfxfb9vqVQrl5ZVl3BUCFHUTEvWUcEV42pERWMVrQRUAmm5u8Q1TNSbW6J6dVPdU8PKnMXQ3_G7iHBmUBhfySVFaTPO18AOiBakDOgshAxy3MCqmx0HPAf5a0xzxIa0x5TjjJ7i-vnAUT9lntaT--IDIpK3RjuV63vx59Dt9ttjEETEpyRMbBTOV8aeOqBEE1ABLv6hOkXV"
+  },
+  {
+    "position": 17,
+    "title": "EVER GREEN FAST FOOD",
+    "place_id": "ChIJb0K6pHKFXjkR1XA-2d7O3bg",
+    "data_id": "0x395e8572a4ba426f:0xb8ddceded93e70d5",
+    "data_cid": "13321030729354604757",
+    "reviews_link": "https://serpapi.com/search.json?data_id=0x395e8572a4ba426f%3A0xb8ddceded93e70d5&engine=google_maps_reviews&hl=en",
+    "photos_link": "https://serpapi.com/search.json?data_id=0x395e8572a4ba426f%3A0xb8ddceded93e70d5&engine=google_maps_photos&hl=en",
+    "gps_coordinates": {
+      "latitude": 23.0141703,
+      "longitude": 72.5656092
+    },
+    "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJb0K6pHKFXjkR1XA-2d7O3bg",
+    "provider_id": "/g/11tdc_f6j0",
+    "rating": 4.7,
+    "reviews": 6,
+    "unclaimed_listing": true,
+    "type": "Fast food restaurant",
+    "types": [
+      "Fast food restaurant"
+    ],
+    "type_id": "fast_food_restaurant",
+    "type_ids": [
+      "fast_food_restaurant"
+    ],
+    "address": "Shop Number 5, Netra palace, Paldi Rd, Paldi, Ahmedabad, Gujarat 380006, India",
+    "open_state": "Open · Closes 11 PM",
+    "hours": "Open · Closes 11 PM",
+    "operating_hours": {
+      "saturday": "8 AM–11 PM",
+      "sunday": "8 AM–11 PM",
+      "monday": "8 AM–11 PM",
+      "tuesday": "8 AM–11 PM",
+      "wednesday": "8 AM–11 PM",
+      "thursday": "8 AM–11 PM",
+      "friday": "8 AM–11 PM"
+    },
+    "phone": "+91 90995 52300",
+    "extensions": [
+      {
+        "service_options": [
+          "Takeout",
+          "Dine-in"
+        ]
+      },
+      {
+        "popular_for": [
+          "Solo dining"
+        ]
+      },
+      {
+        "offerings": [
+          "Quick bite"
+        ]
+      },
+      {
+        "atmosphere": [
+          "Casual"
+        ]
+      },
+      {
+        "crowd": [
+          "Groups"
+        ]
+      },
+      {
+        "children": [
+          "Good for kids"
+        ]
+      }
+    ],
+    "service_options": {
+      "dine_in": true,
+      "takeout": true
+    },
+    "user_review": "\"5. Puri sabji is available below 50 rupees!!!\"",
+    "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/AHVAwer18z4KU5LMdfx8HJOwcaeuuklo864HIheseNqhGLxH2m6Nssu39DPsiom6f0KqYne2L4qlCsudyuy-03P6lwVSAlvMVqYod8YFzf0Yuz_g33m9leO_B6VDUDEtIoKbyWkeAF0PqQ=w122-h92-k-no",
+    "serpapi_thumbnail": "https://serpapi.com/images/url/e10g0HicBcHRToMwFADQL-pgLTZg4gOKkwnbMGYYnpYNLtRQuOtuK4Mf9Bv8G8_5-1XWXunR87QSqw6x0-AIbjWOFka7qnHwuiuxmhh5cVrGE9zW4RJkx4d817T3MH0_TPUZnOs1hjJItwoI9ka95feUD3JP5ESUFPSNg2z9zFQj8Dww-oVcM7uZ-aKQeio_Y_2zK02FTVhtltav3HLqhBgiDYfTsyyTY_Jqt5hd5q8e4o1fmI-nac05UxFnPRvxH7M5RhE"
+  },
+  {
+    "position": 18,
+    "title": "Barbeque Nation - Ahmedabad - Prahladnagar",
+    "place_id": "ChIJfc7qRCibXjkRbLy8ENeGRCA",
+    "data_id": "0x395e9b2844eace7d:0x204486d710bcbc6c",
+    "data_cid": "2325131565886913644",
+    "reviews_link": "https://serpapi.com/search.json?data_id=0x395e9b2844eace7d%3A0x204486d710bcbc6c&engine=google_maps_reviews&hl=en",
+    "photos_link": "https://serpapi.com/search.json?data_id=0x395e9b2844eace7d%3A0x204486d710bcbc6c&engine=google_maps_photos&hl=en",
+    "gps_coordinates": {
+      "latitude": 23.011470499999998,
+      "longitude": 72.51064629999999
+    },
+    "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJfc7qRCibXjkRbLy8ENeGRCA",
+    "provider_id": "/g/1tm679z_",
+    "rating": 4.4,
+    "reviews": 14464,
+    "price": "₹800–1,000",
+    "extracted_price": 800,
+    "type": "Barbecue restaurant",
+    "types": [
+      "Barbecue restaurant",
+      "Buffet restaurant",
+      "Family restaurant",
+      "Indian restaurant",
+      "Restaurant"
+    ],
+    "type_id": "barbecue_restaurant",
+    "type_ids": [
+      "barbecue_restaurant",
+      "buffet_restaurant",
+      "family_restaurant",
+      "indian_restaurant",
+      "restaurant"
+    ],
+    "address": "1st Floor, Holiday Inn Express, Prahlad Nagar Rd, beside Venus Atlantis, Prahlad Nagar, Ahmedabad, Gujarat 380015, India",
+    "open_state": "Closes soon · 3:45 PM · Reopens 6:30 PM",
+    "hours": "Closes soon · 3:45 PM · Reopens 6:30 PM",
+    "operating_hours": {
+      "saturday": "12–3:45 PM, 6:30–10:45 PM",
+      "sunday": "12–3:45 PM, 6:30–10:45 PM",
+      "monday": "12–3:45 PM, 6:30–10:45 PM",
+      "tuesday": "12–3:45 PM, 6:30–10:45 PM",
+      "wednesday": "12–3:45 PM, 6:30–10:45 PM",
+      "thursday": "12–3:45 PM, 6:30–10:45 PM",
+      "friday": "12–3:45 PM, 6:30–10:45 PM"
+    },
+    "phone": "+91 80 6902 8770",
+    "website": "https://www.barbequenation.com/restaurants/ahmedabad/prahlad-nagar",
+    "description": "Chain offering grilled snack dishes. Casual dining chain restaurant offering a range of meat & vegetarian options cooked over flame.",
+    "extensions": [
+      {
+        "service_options": [
+          "No-contact delivery",
+          "Delivery",
+          "Onsite services",
+          "Takeout",
+          "Dine-in"
+        ]
+      },
+      {
+        "highlights": [
+          "Great dessert",
+          "Live music",
+          "Rooftop seating"
+        ]
+      },
+      {
+        "popular_for": [
+          "Lunch",
+          "Dinner",
+          "Solo dining"
+        ]
+      },
+      {
+        "accessibility": [
+          "Wheelchair accessible entrance",
+          "Wheelchair accessible parking lot",
+          "Wheelchair accessible restroom",
+          "Wheelchair accessible seating"
+        ]
+      },
+      {
+        "offerings": [
+          "All you can eat",
+          "Beer",
+          "Cocktails",
+          "Happy hour food",
+          "Hard liquor",
+          "Healthy options",
+          "Organic dishes",
+          "Salad bar",
+          "Vegetarian options",
+          "Wine"
+        ]
+      },
+      {
+        "dining_options": [
+          "Brunch",
+          "Lunch",
+          "Dinner",
+          "Counter service",
+          "Dessert",
+          "Seating",
+          "Table service"
+        ]
+      },
+      {
+        "amenities": [
+          "Restroom"
+        ]
+      },
+      {
+        "atmosphere": [
+          "Casual",
+          "Cozy",
+          "Quiet",
+          "Romantic",
+          "Trendy",
+          "Upscale"
+        ]
+      },
+      {
+        "crowd": [
+          "College students",
+          "Family-friendly",
+          "Groups",
+          "Tourists"
+        ]
+      },
+      {
+        "planning": [
+          "Brunch reservations recommended",
+          "Lunch reservations recommended",
+          "Reservations required",
+          "Dinner reservations recommended",
+          "Accepts reservations",
+          "Usually a wait"
+        ]
+      },
+      {
+        "payments": [
+          "Credit cards",
+          "Debit cards",
+          "NFC mobile payments"
+        ]
+      },
+      {
+        "children": [
+          "Good for kids",
+          "Good for kids birthday",
+          "Kids' menu"
+        ]
+      },
+      {
+        "parking": [
+          "Free parking lot",
+          "Free street parking",
+          "Paid parking lot",
+          "Usually plenty of parking"
+        ]
+      }
+    ],
+    "service_options": {
+      "dine_in": true,
+      "takeout": true,
+      "no_contact_delivery": true
+    },
+    "reserve_a_table": "https://www.google.com/maps/reserve/v/dine/c/SjmCn14QOug?source=pa&opi=79508299&hl=en-US&gei=ZKjHaYmOLbSDwbkP--fDgQM&sourceurl=https://www.google.com/search?hl%3Den%26pb%3D!4m8!1m3!1d0!2d0!3d0!3m2!1i1920!2i1080!4f13.1!7i20!8i60!10b1!12m49!1m5!18b1!30b1!31m1!1b1!34e1!2m4!5m1!6e2!20e3!39b1!6m22!49b1!63m0!66b1!74i150000!85b1!91b1!114b1!149b1!178b1!206b1!209b1!212b1!223b1!232b1!234b1!244b1!246b1!250b1!253b1!258b1!260b1!266b1!10b1!12b1!13b1!14b1!16b1!17m1!3e1!20m3!5e2!6b1!14b1!46m1!1b0!96b1!99b1!19m4!2m3!1i360!2i120!4i8!20m57!2m2!1i203!2i100!3m2!2i4!5b1!6m6!1m2!1i86!2i86!1m2!1i408!2i240!7m33!1m3!1e1!2b0!3e3!1m3!1e2!2b1!3e2!1m3!1e2!2b0!3e3!1m3!1e8!2b0!3e3!1m3!1e10!2b0!3e3!1m3!1e10!2b1!3e2!1m3!1e10!2b0!3e4!1m3!1e9!2b1!3e2!2b1!9b0!15m8!1m7!1m2!1m1!1e2!2m2!1i195!2i195!3i20!22m6!1sH2dKYVTa_qsYUJu_MP5e_r5TUpQqZyg:2!2s1i:0,t:11886,p:H2dKYVTa_qsYUJu_MP5e_r5TUpQqZyg:2!7e81!12e5!17sH2dKYVTa_qsYUJu_MP5e_r5TUpQqZyg:83!18e15!24m107!1m28!13m9!2b1!3b1!4b1!6i1!8b1!9b1!14b1!20b1!25b1!18m17!3b1!4b1!5b1!6b1!13b1!14b1!17b1!21b1!22b1!27m1!1b0!28b0!32b1!33m1!1b1!34b1!36e2!10m1!8e3!11m1!3e1!14m1!3b0!17b1!20m2!1e3!1e6!24b1!25b1!26b1!27b1!29b1!30m1!2b1!36b1!37b1!39m3!2m2!2i1!3i1!43b1!52b1!54m1!1b1!55b1!56m1!1b1!61m2!1m1!1e1!65m5!3m4!1m3!1m2!1i224!2i298!72m22!1m8!2b1!5b1!7b1!12m4!1b1!2b1!4m1!1e1!4b1!8m10!1m6!4m1!1e1!4m1!1e3!4m1!1e4!3sother_user_google_review_posts__and__hotel_and_vr_partner_review_posts!6m1!1e1!9b1!89b1!98m3!1b1!2b1!3b1!103b1!113b1!114m3!1b1!2m1!1b1!117b1!122m1!1b1!126b1!127b1!26m4!2m3!1i80!2i92!4i8!30m28!1m6!1m2!1i0!2i0!2m2!1i530!2i1080!1m6!1m2!1i1870!2i0!2m2!1i1920!2i1080!1m6!1m2!1i0!2i0!2m2!1i1920!2i20!1m6!1m2!1i0!2i1060!2m2!1i1920!2i1080!34m19!2b1!3b1!4b1!6b1!8m6!1b1!3b1!4b1!5b1!6b1!7b1!9b1!12b1!14b1!20b1!23b1!25b1!26b1!31b1!37m1!1e81!42b1!49m10!3b1!6m2!1b1!2b1!7m2!1e3!2b1!8b1!9b1!10e2!50m3!2e2!3m1!3b1!61b1!67m5!7b1!10b1!14b1!15m1!1b0!69i767!77b1%26tbm%3Dmap%26q%3Dfast%2Bfood%2Brestaurant%2BAhmedabad",
+    "order_online": "https://www.google.com/viewer/chooseprovider?mid=/g/1tm679z_&g2lbs=AIBNGdV2boyf9P08M3AsELXt7DgnqoU2kvMlyMCFVnFnMQEo8QtX7-xzQQ-aMZTFTC1cUG_u-vKrKTukBSCb9WKwLwd0h8ZEJA%3D%3D&hl=en-US&gl=us&fo_m=MfohQo559jFvMUOzJVpjPL1YMfZ3bInYwBDuMfaXTPp5KXh-&utm_source=tactile&gei=ZKjHaYmOLbSDwbkP--fDgQM&ei=ZKjHaYmOLbSDwbkP--fDgQM&fo_s=OA,SOE&opi=79508299&ebb=1&cs=0&foub=mcpp",
+    "user_review": "\"They’ve variety of food to choose from and staff is very welcoming.\"",
+    "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/AHVAweqXMBiSW9oM3P_tWlYjCxtgcY06VfkhGv_kFHN7CuSzL9k_AdeFDuSJIeVvTig6sfRPyS7J0VigDOrMKThhiWy4OwRC2igddl5fru1zYDI_CVYf8P8eGbq0uvi3Sh_cZqPHuwQx7g=w122-h92-k-no",
+    "serpapi_thumbnail": "https://serpapi.com/images/url/kTPyvHicBcFRboIwAADQE1UQNhETPxhE0YkiNWXsp8lKaTuQCm1BvKBn8Da-93pyrW9qZVkNd2dMStZQo2hPZKtpq2dEXi12U4AooKwgRsFIu5_kS8Dcl4mbYp03xX9414wU9gJVNd8OuN7ERy808HHwaxyUdBMZuN9RNFwEW6gqSyfo7W0kWHTqk-8L5yKfPk5jFjqClWXzWfVm_iiiHQ5RUS3TJd3-dbYZhAs5Jr9dGpvxfPfYepw7DuC-A2rQyjfV0Uay"
+  },
+  {
+    "position": 20,
+    "title": "Nutan Restaurant",
+    "place_id": "ChIJVVVVpVGEXjkRJvonitdt-Es",
+    "data_id": "0x395e8451a5555555:0x4bf86dd78a27fa26",
+    "data_cid": "5474246119572109862",
+    "reviews_link": "https://serpapi.com/search.json?data_id=0x395e8451a5555555%3A0x4bf86dd78a27fa26&engine=google_maps_reviews&hl=en",
+    "photos_link": "https://serpapi.com/search.json?data_id=0x395e8451a5555555%3A0x4bf86dd78a27fa26&engine=google_maps_photos&hl=en",
+    "gps_coordinates": {
+      "latitude": 23.0279827,
+      "longitude": 72.5814852
+    },
+    "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJVVVVpVGEXjkRJvonitdt-Es",
+    "provider_id": "/g/1tf41btf",
+    "rating": 4.4,
+    "reviews": 1046,
+    "price": "₹200–400",
+    "extracted_price": 200,
+    "type": "Restaurant",
+    "types": [
+      "Restaurant",
+      "Biryani restaurant",
+      "Chinese restaurant",
+      "Continental restaurant",
+      "Dessert restaurant",
+      "Family restaurant",
+      "Fast food restaurant",
+      "Punjabi restaurant",
+      "Soup shop",
+      "Vegetarian restaurant"
+    ],
+    "type_id": "restaurant",
+    "type_ids": [
+      "restaurant",
+      "biryani_restaurant",
+      "chinese_restaurant",
+      "continental_restaurant",
+      "dessert_restaurant",
+      "family_restaurant",
+      "fast_food_restaurant",
+      "punjabi_restaurant",
+      "soup_shop",
+      "vegetarian_restaurant"
+    ],
+    "address": "Shankar Chambers, Mirzapur Rd, Old City, Gheekanta, Lal Darwaja, Ahmedabad, Gujarat 380001, India",
+    "open_state": "Closed · Opens 6 PM",
+    "hours": "Closed · Opens 6 PM",
+    "operating_hours": {
+      "saturday": "11 AM–3:30 PM, 6–10:30 PM",
+      "sunday": "11 AM–3:30 PM, 6–10:30 PM",
+      "monday": "11 AM–3:30 PM, 6–10:30 PM",
+      "tuesday": "11 AM–3:30 PM, 6–10:30 PM",
+      "wednesday": "11 AM–3:30 PM, 6–10:30 PM",
+      "thursday": "11 AM–3:30 PM, 6–10:30 PM",
+      "friday": "11 AM–3:30 PM, 6–10:30 PM"
+    },
+    "phone": "+91 94085 47530",
+    "website": "https://www.nutanrestaurant.com/",
+    "extensions": [
+      {
+        "service_options": [
+          "Curbside pickup",
+          "No-contact delivery",
+          "Delivery",
+          "Drive-through",
+          "Onsite services",
+          "Takeout",
+          "Dine-in"
+        ]
+      },
+      {
+        "highlights": [
+          "Great dessert",
+          "Live music",
+          "Rooftop seating"
+        ]
+      },
+      {
+        "popular_for": [
+          "Lunch",
+          "Dinner",
+          "Solo dining"
+        ]
+      },
+      {
+        "accessibility": [
+          "Assistive hearing loop",
+          "Wheelchair accessible restroom"
+        ]
+      },
+      {
+        "offerings": [
+          "All you can eat",
+          "Happy hour drinks",
+          "Happy hour food",
+          "Hard liquor",
+          "Organic dishes",
+          "Quick bite",
+          "Small plates",
+          "Vegan options",
+          "Vegetarian options",
+          "Vegetarian options only"
+        ]
+      },
+      {
+        "dining_options": [
+          "Brunch",
+          "Lunch",
+          "Dinner",
+          "Counter service",
+          "Dessert",
+          "Seating",
+          "Table service"
+        ]
+      },
+      {
+        "amenities": [
+          "Gender-neutral restroom",
+          "Restroom",
+          "Wi-Fi",
+          "Free Wi-Fi"
+        ]
+      },
+      {
+        "atmosphere": [
+          "Casual",
+          "Cozy",
+          "Trendy"
+        ]
+      },
+      {
+        "crowd": [
+          "College students",
+          "Family-friendly",
+          "Groups",
+          "LGBTQ+ friendly"
+        ]
+      },
+      {
+        "planning": [
+          "Lunch reservations recommended",
+          "Accepts reservations"
+        ]
+      },
+      {
+        "payments": [
+          "Credit cards",
+          "Debit cards",
+          "Google Pay",
+          "NFC mobile payments"
+        ]
+      },
+      {
+        "children": [
+          "Good for kids",
+          "Good for kids birthday",
+          "Has changing table(s)"
+        ]
+      },
+      {
+        "parking": [
+          "Free parking lot",
+          "Free street parking",
+          "On-site parking",
+          "Paid parking lot",
+          "Usually plenty of parking",
+          "Valet parking"
+        ]
+      },
+      {
+        "pets": [
+          "Dogs allowed outside"
+        ]
+      }
+    ],
+    "service_options": {
+      "dine_in": true,
+      "drive_through": true,
+      "no_contact_delivery": true
+    },
+    "order_online": "https://www.google.com/viewer/chooseprovider?mid=/g/1tf41btf&g2lbs=AIBNGdVux5fKb3Y2gg91j99tyygOWnfcofGz9mAsAxfKITDj0Xndp4Xb2-UocxMjYZSDlhcyOoysCzshRDsCpAX4j7IRSDWwQQ%3D%3D&hl=en-US&gl=us&fo_m=MfohQo559jFvMUOzJVpjPL1YMfZ3bInYwBDuMfaXTPp5KXh-&utm_source=tactile&gei=ZKjHaYmOLbSDwbkP--fDgQM&ei=ZKjHaYmOLbSDwbkP--fDgQM&fo_s=OA,SOE&opi=79508299&orderType=1&ebb=1&cs=0&foub=mcpp",
+    "user_review": "\"Quick service, variety of food, reasonable price.\"",
+    "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/AHVAweoMzBposQoKVfsV9c5yPgC9y5gtIxGzR5jME3b4nW4w9y36fDzSt2bZpK6-QOPDw6kd45SJHUmBqFCMLb3xDrSbpOJsaGsEdyj0tPJdWU6Rgaz0qQqbpetdATmHTAPQyU7ew_4j=w163-h92-k-no",
+    "serpapi_thumbnail": "https://serpapi.com/images/url/aGlxmHicBcHxEoEwHADgJ5qwmsudP0pIdErKnX-c1ayL2vKbm_V-HsLb-L7ft1ZKwtyynjUecSH4k72BvUrRKdapUSlai0tAJSCwvLDwNBPx4EsBqdgVdyjc0jEJX7rG4Wr72QxHp4lXmNrd2dauweQeDJma0ovcEZQekkCTR2U7WRTmrd-vl_Ge4k_wyqg8RHDbwKoyzVglUXXOyZHfhnGf9lQyVXmnNjx5SWryGdNXu1noCcGodqfogTrxBw8eRUI"
+  },
+  {
+    "position": 1,
+    "title": "Delhi Chicken Biryani Corner",
+    "place_id": "ChIJGfpf-k6EXjkRPDBD--hcreY",
+    "data_id": "0x395e844efa5ffa19:0xe6ad5ce8fb43303c",
+    "data_cid": "16622043955412021308",
+    "reviews_link": "https://serpapi.com/search.json?data_id=0x395e844efa5ffa19%3A0xe6ad5ce8fb43303c&engine=google_maps_reviews&hl=en",
+    "photos_link": "https://serpapi.com/search.json?data_id=0x395e844efa5ffa19%3A0xe6ad5ce8fb43303c&engine=google_maps_photos&hl=en",
+    "gps_coordinates": {
+      "latitude": 23.026800599999998,
+      "longitude": 72.5830974
+    },
+    "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJGfpf-k6EXjkRPDBD--hcreY",
+    "provider_id": "/g/11gbkw8r_y",
+    "rating": 4.1,
+    "reviews": 739,
+    "price": "₹1–200",
+    "extracted_price": 1,
+    "type": "Biryani restaurant",
+    "types": [
+      "Biryani restaurant"
+    ],
+    "type_id": "biryani_restaurant",
+    "type_ids": [
+      "biryani_restaurant"
+    ],
+    "address": "Old City, Gheekanta, Bhadra, Rakhiyal, Ahmedabad, Gujarat 382315, India",
+    "open_state": "Open · Closes 10 PM",
+    "hours": "Open · Closes 10 PM",
+    "operating_hours": {
+      "saturday": "10 AM–10 PM",
+      "sunday": "10 AM–10 PM",
+      "monday": "10 AM–10 PM",
+      "tuesday": "10 AM–10 PM",
+      "wednesday": "10 AM–10 PM",
+      "thursday": "10 AM–10 PM",
+      "friday": "10 AM–10 PM"
+    },
+    "phone": "+91 92650 32650",
+    "extensions": [
+      {
+        "service_options": [
+          "Delivery",
+          "Onsite services",
+          "Takeout",
+          "Dine-in"
+        ]
+      },
+      {
+        "popular_for": [
+          "Lunch",
+          "Dinner",
+          "Solo dining"
+        ]
+      },
+      {
+        "offerings": [
+          "All you can eat",
+          "Late-night food",
+          "Quick bite",
+          "Small plates"
+        ]
+      },
+      {
+        "dining_options": [
+          "Lunch",
+          "Dinner",
+          "Catering",
+          "Table service"
+        ]
+      },
+      {
+        "atmosphere": [
+          "Casual",
+          "Trendy"
+        ]
+      },
+      {
+        "crowd": [
+          "Groups"
+        ]
+      },
+      {
+        "children": [
+          "Good for kids"
+        ]
+      },
+      {
+        "parking": [
+          "Free street parking",
+          "Usually somewhat difficult to find a space"
+        ]
+      }
+    ],
+    "unsupported_extensions": [
+      {
+        "accessibility": [
+          "Wheelchair accessible entrance",
+          "Wheelchair accessible seating"
+        ]
+      },
+      {
+        "amenities": [
+          "Restroom"
+        ]
+      },
+      {
+        "planning": [
+          "Accepts reservations"
+        ]
+      }
+    ],
+    "service_options": {
+      "dine_in": true,
+      "takeout": true,
+      "delivery": true
+    },
+    "user_review": "\"Excellent food at comparatively reasonable price\"",
+    "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/AHVAweo0NiNwHYv7xvKqJbI5MVeHPBoj-q6cFmvr9aOo7DbV2kbgfNVNNhnS1PL7NyuuSNJ2y486ZqpOz3Rd7p1XzTohcPQ7yU8VgW60fTuZa8LFkGoRRoh7jfS5RwPpKSP6sru537Lp0Q=w80-h106-k-no",
+    "serpapi_thumbnail": "https://serpapi.com/images/url/rI4GX3icBcHRVoIwGADgJ5oMiY06pws7HSOlOcGmeSdrbInyD8YgfEGfobfp-_7upu-tewqCi4lmGkBflHeqk9D0qulnEq6Btg5Jh1ywSMViVIDZDxvTr4H-Dut2Vb7HH0Kl_AXOqCVyeR26x9MG6Gsp5nWpKyYYM00R8oyyyfuCrebTQ0KOrd3covyb2vBw24GRfEunz0ToPcHVzh9PSbas3yDPwdBzVcT5yO264MR1Po5oZvH2eUwwMiEmqEYN_AOBwkUs"
+  },
+  {
+    "position": 3,
+    "title": "Pleasure Trove",
+    "place_id": "ChIJbUm0ZFeEXjkRZ5qsMdpoDM4",
+    "data_id": "0x395e845764b4496d:0xce0c68da31ac9a67",
+    "data_cid": "14847357357879237223",
+    "reviews_link": "https://serpapi.com/search.json?data_id=0x395e845764b4496d%3A0xce0c68da31ac9a67&engine=google_maps_reviews&hl=en",
+    "photos_link": "https://serpapi.com/search.json?data_id=0x395e845764b4496d%3A0xce0c68da31ac9a67&engine=google_maps_photos&hl=en",
+    "gps_coordinates": {
+      "latitude": 23.027415299999998,
+      "longitude": 72.5715898
+    },
+    "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJbUm0ZFeEXjkRZ5qsMdpoDM4",
+    "provider_id": "/g/1pt_xndhn",
+    "rating": 4.2,
+    "reviews": 3232,
+    "price": "₹400–600",
+    "extracted_price": 400,
+    "type": "North Indian restaurant",
+    "types": [
+      "North Indian restaurant",
+      "Barbecue restaurant",
+      "Buffet restaurant",
+      "Chinese restaurant",
+      "Continental restaurant",
+      "Punjabi restaurant"
+    ],
+    "type_id": "north_indian_restaurant",
+    "type_ids": [
+      "north_indian_restaurant",
+      "barbecue_restaurant",
+      "buffet_restaurant",
+      "chinese_restaurant",
+      "continental_restaurant",
+      "punjabi_restaurant"
+    ],
+    "address": "B-101-104 sakar 7, near patang hotel, Nehru bridge, corner, Ashram Rd, Ahmedabad, Gujarat 380009, India",
+    "open_state": "Closed · Opens 7 PM",
+    "hours": "Closed · Opens 7 PM",
+    "operating_hours": {
+      "saturday": "12–2:30 PM, 7–10:30 PM",
+      "sunday": "12–2:30 PM, 7–10:30 PM",
+      "monday": "12–2:30 PM, 7–10:30 PM",
+      "tuesday": "12–2:30 PM, 7–10:30 PM",
+      "wednesday": "12–2:30 PM, 7–10:30 PM",
+      "thursday": "12–2:30 PM, 7–10:30 PM",
+      "friday": "12–2:30 PM, 7–10:30 PM"
+    },
+    "phone": "+91 79 2657 4892",
+    "description": "Indian dining in contemporary surrounds. This contemporary restaurant with a monochrome design offers a variety of Indian dishes.",
+    "extensions": [
+      {
+        "service_options": [
+          "No-contact delivery",
+          "Delivery",
+          "Drive-through",
+          "Onsite services",
+          "Takeout",
+          "Dine-in"
+        ]
+      },
+      {
+        "highlights": [
+          "Great dessert"
+        ]
+      },
+      {
+        "popular_for": [
+          "Lunch",
+          "Dinner",
+          "Solo dining"
+        ]
+      },
+      {
+        "accessibility": [
+          "Wheelchair accessible entrance",
+          "Wheelchair accessible parking lot",
+          "Wheelchair accessible restroom",
+          "Wheelchair accessible seating"
+        ]
+      },
+      {
+        "offerings": [
+          "All you can eat",
+          "Quick bite",
+          "Small plates",
+          "Vegetarian options"
+        ]
+      },
+      {
+        "dining_options": [
+          "Brunch",
+          "Lunch",
+          "Dinner",
+          "Counter service",
+          "Dessert",
+          "Table service"
+        ]
+      },
+      {
+        "amenities": [
+          "Restroom"
+        ]
+      },
+      {
+        "atmosphere": [
+          "Casual",
+          "Cozy",
+          "Quiet",
+          "Trendy",
+          "Upscale"
+        ]
+      },
+      {
+        "crowd": [
+          "College students",
+          "Groups",
+          "Tourists"
+        ]
+      },
+      {
+        "planning": [
+          "Brunch reservations recommended",
+          "Lunch reservations recommended",
+          "Dinner reservations recommended",
+          "Accepts reservations",
+          "Usually a wait"
+        ]
+      },
+      {
+        "payments": [
+          "Credit cards",
+          "Debit cards",
+          "NFC mobile payments"
+        ]
+      },
+      {
+        "children": [
+          "Good for kids",
+          "Good for kids birthday"
+        ]
+      },
+      {
+        "parking": [
+          "Free parking lot",
+          "Free street parking",
+          "Paid parking lot",
+          "Usually plenty of parking"
+        ]
+      }
+    ],
+    "service_options": {
+      "dine_in": true,
+      "drive_through": true,
+      "no_contact_delivery": true
+    },
+    "user_review": "\"Tasty food, good service and reasonable price.\"",
+    "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/AHVAweou1HymUaUGSbCxd-geTpSNUokPgwwRDQZuZrtCmjUIegsBNHLm9Ze_vnciLZwF9iKLRQS-wUOUaE019GpkULOGnHRjxGJ_ZBAGlblyfRlbx5r1fU9VoVrvSKwO5Y6zrb5NNT2F=w122-h92-k-no",
+    "serpapi_thumbnail": "https://serpapi.com/images/url/inJwdHicBcHbDoIgAADQLyLTZhttPdgNK6el4RYvLY3wguAAw_q_PqK_6ZzftzKm1wvH4dVswqRknA6aqlIKQ4WZlLJzWK9BqYF2gjAPLJWDG747fMcoK9bjAzB66bMYy_bErE03ZzIQZdZdg_eU6VUcRh0k9PYSZR0Ru4P1MUrPGbA4wfft1IWob3GUIBGmzYgON7IKEC_4-5nyYvSV-8Qwl7l6ZUeb-Nf5RxV-HF-83dK6ngcq6IEWCPkHhRpF7g"
+  },
+  {
+    "position": 4,
+    "title": "Kaka Corner Puri Shak",
+    "place_id": "ChIJ29nQbHWFXjkRAaF4_W8BLBs",
+    "data_id": "0x395e85756cd0d9db:0x1b2c016ffd78a101",
+    "data_cid": "1957941518504861953",
+    "reviews_link": "https://serpapi.com/search.json?data_id=0x395e85756cd0d9db%3A0x1b2c016ffd78a101&engine=google_maps_reviews&hl=en",
+    "photos_link": "https://serpapi.com/search.json?data_id=0x395e85756cd0d9db%3A0x1b2c016ffd78a101&engine=google_maps_photos&hl=en",
+    "gps_coordinates": {
+      "latitude": 23.024763699999998,
+      "longitude": 72.5791912
+    },
+    "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJ29nQbHWFXjkRAaF4_W8BLBs",
+    "provider_id": "/g/11yjlmrjgg",
+    "rating": 4.8,
+    "reviews": 13,
+    "type": "Fast food restaurant",
+    "types": [
+      "Fast food restaurant"
+    ],
+    "type_id": "fast_food_restaurant",
+    "type_ids": [
+      "fast_food_restaurant"
+    ],
+    "address": "Bus Terminus, nr. Saibaba Temple, opp. Lal Darwaja, Old City, Lal Darwaja, Ahmedabad, Gujarat 380001, India",
+    "phone": "+91 99252 52499",
+    "extensions": [
+      {
+        "service_options": [
+          "Dine-in"
+        ]
+      },
+      {
+        "offerings": [
+          "Quick bite"
+        ]
+      }
+    ],
+    "service_options": {
+      "dine_in": true
+    },
+    "user_review": "\"Absolutely delicious food—some of the best Puri and Saag I have ever tasted!\"",
+    "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/AHVAweoOVt-jkUk9DDGtUOOf_of4FeJEYDoNjy1Ppgd3ZoDhT5A-CNTCXIfAdQbmU4LiKOff9Ns-SCJl_yOdsYa-U9RmHTN24e24Y9Np7LhiehC_JsSEfUjDHtl4kqWpyUxRE9Z3SNBMgrYPi9D_=w80-h106-k-no",
+    "serpapi_thumbnail": "https://serpapi.com/images/url/kQ6eiXicBcFbUoMwFADQFaW0JT7ijB9IUMSatIW0pT-MQh48b2ziVBbpAtyN5_z9Gu-tewiCwYQLDaAH-e3kpYbJy8kvahgDbR2qHXJBlB6iqwR-8KjrRU8offGCc1WBws8yS0oKrJtXW6ub8AzUFDcRilkRn15V1Ow-R4E37RtXijCH8jgbqpk3rvxAguzHtGBrLNe4JMzebUwrTVxlLk-U6GjqB9x_He0sfvYJOYc5e3rXl3LbElo9Xu-XyKyWt6hHE_wD4LpGlw"
+  },
+  {
+    "position": 6,
+    "title": "La Milano Pizzeria",
+    "place_id": "ChIJhwyL1TKFXjkRUtz9Brxt3u4",
+    "data_id": "0x395e8532d58b0c87:0xeede6dbc06fddc52",
+    "data_cid": "17212315480195193938",
+    "reviews_link": "https://serpapi.com/search.json?data_id=0x395e8532d58b0c87%3A0xeede6dbc06fddc52&engine=google_maps_reviews&hl=en",
+    "photos_link": "https://serpapi.com/search.json?data_id=0x395e8532d58b0c87%3A0xeede6dbc06fddc52&engine=google_maps_photos&hl=en",
+    "gps_coordinates": {
+      "latitude": 23.0165816,
+      "longitude": 72.5728041
+    },
+    "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJhwyL1TKFXjkRUtz9Brxt3u4",
+    "provider_id": "/g/11wpllskgh",
+    "rating": 4.7,
+    "reviews": 707,
+    "price": "₹200–400",
+    "extracted_price": 200,
+    "type": "Pizza restaurant",
+    "types": [
+      "Pizza restaurant"
+    ],
+    "type_id": "pizza_restaurant",
+    "type_ids": [
+      "pizza_restaurant"
+    ],
+    "address": "Shop No-6, Ground Floor, Multi Level Corporation Parking (MLCP), Sabarmati Riverfront, West Side, opp. Atal Bridge, Paldi, Ahmedabad, Gujarat 380006, India",
+    "open_state": "Open · Closes 1:30 AM",
+    "hours": "Open · Closes 1:30 AM",
+    "operating_hours": {
+      "saturday": "10 AM–1:30 AM",
+      "sunday": "10 AM–1:30 AM",
+      "monday": "10 AM–1:30 AM",
+      "tuesday": "10 AM–1:30 AM",
+      "wednesday": "10 AM–1:30 AM",
+      "thursday": "10 AM–1:30 AM",
+      "friday": "10 AM–1:30 AM"
+    },
+    "phone": "+91 70969 41959",
+    "extensions": [
+      {
+        "service_options": [
+          "Curbside pickup",
+          "No-contact delivery",
+          "Delivery",
+          "Drive-through",
+          "Onsite services",
+          "Takeout",
+          "Dine-in"
+        ]
+      },
+      {
+        "popular_for": [
+          "Dinner",
+          "Solo dining"
+        ]
+      },
+      {
+        "offerings": [
+          "Quick bite",
+          "Small plates",
+          "Vegetarian options only"
+        ]
+      },
+      {
+        "dining_options": [
+          "Dinner"
+        ]
+      },
+      {
+        "atmosphere": [
+          "Casual",
+          "Quiet",
+          "Trendy"
+        ]
+      },
+      {
+        "crowd": [
+          "College students",
+          "Groups",
+          "Tourists"
+        ]
+      },
+      {
+        "payments": [
+          "Credit cards",
+          "Debit cards",
+          "NFC mobile payments"
+        ]
+      },
+      {
+        "children": [
+          "Good for kids"
+        ]
+      },
+      {
+        "parking": [
+          "Free parking lot",
+          "Free street parking",
+          "Usually plenty of parking"
+        ]
+      }
+    ],
+    "service_options": {
+      "dine_in": true,
+      "drive_through": true,
+      "no_contact_delivery": true
+    },
+    "order_online": "https://www.google.com/viewer/chooseprovider?mid=/g/11wpllskgh&g2lbs=AIBNGdV0MLv_Pvl1Cgy9h4NsSAtEPLK61ZHQpuuII4RCv3wtYjhJ5vxoiCoG2d0SGD7MJZmdA5mlbFWtEoXjt4O7w1z2F8ktFg%3D%3D&hl=en-US&gl=us&fo_m=MfohQo559jFvMUOzJVpjPL1YMfZ3bInYwBDuMfaXTPp5KXh-&utm_source=tactile&gei=ZqjHac7YIeWkkPIP2p68iQw&ei=ZqjHac7YIeWkkPIP2p68iQw&fo_s=OA,SOE&opi=79508299&orderType=1&ebb=1&cs=0&foub=mcpp",
+    "user_review": "\"Food is very delicious 😋 i like the environment, service and cleanliness.\"",
+    "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/AHVAwerlM6Rq333hW9P9tghagghiM0SekYg_Bg1nHvgVzcDaL_zyC7oa8UNTPDqHE9P4IKhOgZPq3zp7sX3lbZ2E1MUtV2Q5HYO5eXmxt2mwwvAL90OTqkybVHSuL0TUY0hwqKSHbIMn=w80-h106-k-no",
+    "serpapi_thumbnail": "https://serpapi.com/images/url/uhuaZnicBcHbboIwGADgJ6oU6oklu2BqUiMMJocJNwRI83cBWmqrVd5vD-Hb-H2vf27MpD8cZ-BkAVLCwG6aXTspDBNm0cnRgUmjTiPtBLQILLsO0fqsCCH81098A7wB4H8RTllfQv0FrqB3KOZu34T1_NxtZLPNv7Nkr-jBT5bHE4-hShSZp42-kKGtvIMb5abwfla0jFfsMj6MN1p7D0Ifx5nqn21B01uIs7zE3KpTSttjJD7tFiPu4jXqkZBv6cVEsA"
+  },
+  {
+    "position": 7,
+    "title": "Faruk fry Centre",
+    "place_id": "ChIJo1vYgE6EXjkRo0BhPzg9Y-I",
+    "data_id": "0x395e844e80d85ba3:0xe2633d383f6140a3",
+    "data_cid": "16312949587056869539",
+    "reviews_link": "https://serpapi.com/search.json?data_id=0x395e844e80d85ba3%3A0xe2633d383f6140a3&engine=google_maps_reviews&hl=en",
+    "photos_link": "https://serpapi.com/search.json?data_id=0x395e844e80d85ba3%3A0xe2633d383f6140a3&engine=google_maps_photos&hl=en",
+    "gps_coordinates": {
+      "latitude": 23.0205855,
+      "longitude": 72.58402219999999
+    },
+    "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJo1vYgE6EXjkRo0BhPzg9Y-I",
+    "provider_id": "/g/11cjhymz8n",
+    "rating": 4.3,
+    "reviews": 723,
+    "price": "₹200–400",
+    "extracted_price": 200,
+    "type": "Fast food restaurant",
+    "types": [
+      "Fast food restaurant",
+      "Chicken restaurant"
+    ],
+    "type_id": "fast_food_restaurant",
+    "type_ids": [
+      "fast_food_restaurant",
+      "chicken_restaurant"
+    ],
+    "address": "Nr.Narjivan school khamasa char rasta khamasha road, Ahmedabad, 380001, India",
+    "open_state": "Closed · Opens 6 PM",
+    "hours": "Closed · Opens 6 PM",
+    "operating_hours": {
+      "saturday": "6 PM–1 AM",
+      "sunday": "6 PM–1 AM",
+      "monday": "6 PM–1 AM",
+      "tuesday": "6 PM–1 AM",
+      "wednesday": "6 PM–1 AM",
+      "thursday": "6 PM–1 AM",
+      "friday": "6 PM–1 AM"
+    },
+    "phone": "+91 99243 97345",
+    "extensions": [
+      {
+        "service_options": [
+          "No-contact delivery",
+          "Delivery",
+          "Drive-through",
+          "Takeout",
+          "Dine-in"
+        ]
+      },
+      {
+        "popular_for": [
+          "Dinner",
+          "Solo dining"
+        ]
+      },
+      {
+        "offerings": [
+          "All you can eat",
+          "Late-night food",
+          "Quick bite",
+          "Small plates"
+        ]
+      },
+      {
+        "dining_options": [
+          "Dinner",
+          "Table service"
+        ]
+      },
+      {
+        "atmosphere": [
+          "Casual",
+          "Trendy"
+        ]
+      },
+      {
+        "crowd": [
+          "College students",
+          "Groups"
+        ]
+      },
+      {
+        "payments": [
+          "NFC mobile payments"
+        ]
+      },
+      {
+        "children": [
+          "Good for kids"
+        ]
+      },
+      {
+        "parking": [
+          "Free parking lot",
+          "Free street parking"
+        ]
+      }
+    ],
+    "unsupported_extensions": [
+      {
+        "accessibility": [
+          "Wheelchair accessible entrance",
+          "Wheelchair accessible seating"
+        ]
+      },
+      {
+        "planning": [
+          "Accepts reservations"
+        ]
+      }
+    ],
+    "service_options": {
+      "dine_in": true,
+      "drive_through": true,
+      "no_contact_delivery": true
+    },
+    "order_online": "https://www.google.com/viewer/chooseprovider?mid=/g/11cjhymz8n&g2lbs=AIBNGdXG_GSJL_RXNyuOVUXj8RSkC2-4f6qabIJ641hfwcyVRw0XLXYDpoA_k3y_1TGVMZsj7ZHhu3Jnr3VSTinh30msdVjiXQ%3D%3D&hl=en-US&gl=us&fo_m=MfohQo559jFvMUOzJVpjPL1YMfZ3bInYwBDuMfaXTPp5KXh-&utm_source=tactile&gei=ZqjHac7YIeWkkPIP2p68iQw&ei=ZqjHac7YIeWkkPIP2p68iQw&fo_s=OA,SOE&opi=79508299&orderType=1&ebb=1&cs=0&foub=mcpp",
+    "user_review": "\"We loved it so much and we found it really affordable in price.\"",
+    "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/AHVAwepPs9q4UhlFQ4eKheqW5fHdEgUoMTVHpw0mJmZPfoGqQY-wbOoxtPvyO1y__F2kBDNkZ95TW-JPFtA639_djgOIlJjEdEO2Z7SOEq5Ion0P8VD1ge-Vc7qSUnj9_e1u8ggMoo8LBg=w122-h92-k-no",
+    "serpapi_thumbnail": "https://serpapi.com/images/url/L363cXicBcHdboIwGADQJ6pIFaVLdoERhjhtjYIZNySD-jX89KNrlfmEewbfZue8_pRzo33zvF4tZoAIvbxb-VOjdlK7WY2DB6MltSXWi9IimuQoLDPLXPXJaSn3SpprcEubGHI8XIp0nOZDNpTihh_m9EWmb46_Tjye3H9WVUK7zfbYlSy4XEkmEhetFqxqWuC7PmvjJua0XJ95bIId6rkIi60PkhT12pxz3bJK-vcQ4IAYfm7gffIpJYpR0hGN_36bRM8"
+  },
+  {
+    "position": 8,
+    "title": "Nashtag",
+    "place_id": "ChIJL3xtWZmFXjkRU3wiseQhEVg",
+    "data_id": "0x395e8599596d7c2f:0x581121e4b1227c53",
+    "data_cid": "6345890616049826899",
+    "reviews_link": "https://serpapi.com/search.json?data_id=0x395e8599596d7c2f%3A0x581121e4b1227c53&engine=google_maps_reviews&hl=en",
+    "photos_link": "https://serpapi.com/search.json?data_id=0x395e8599596d7c2f%3A0x581121e4b1227c53&engine=google_maps_photos&hl=en",
+    "gps_coordinates": {
+      "latitude": 23.0365987,
+      "longitude": 72.5273746
+    },
+    "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJL3xtWZmFXjkRU3wiseQhEVg",
+    "provider_id": "/g/11kqff9dv7",
+    "rating": 4.4,
+    "reviews": 32,
+    "price": "₹1–200",
+    "extracted_price": 1,
+    "type": "Fast food restaurant",
+    "types": [
+      "Fast food restaurant"
+    ],
+    "type_id": "fast_food_restaurant",
+    "type_ids": [
+      "fast_food_restaurant"
+    ],
+    "address": "Hirak Centar, G1, Vastrapur, Ahmedabad, Gujarat 380015, India",
+    "open_state": "Open · Closes 10 PM",
+    "hours": "Open · Closes 10 PM",
+    "operating_hours": {
+      "saturday": "10 AM–10 PM",
+      "sunday": "10 AM–10 PM",
+      "monday": "10 AM–10 PM",
+      "tuesday": "10 AM–10 PM",
+      "wednesday": "6 AM–2 AM",
+      "thursday": "10 AM–9:30 PM",
+      "friday": "10 AM–10 PM"
+    },
+    "phone": "+91 97373 70417",
+    "extensions": [
+      {
+        "service_options": [
+          "Delivery",
+          "Dine-in"
+        ]
+      },
+      {
+        "offerings": [
+          "Quick bite"
+        ]
+      },
+      {
+        "atmosphere": [
+          "Casual"
+        ]
+      },
+      {
+        "crowd": [
+          "Groups"
+        ]
+      },
+      {
+        "payments": [
+          "NFC mobile payments"
+        ]
+      },
+      {
+        "children": [
+          "Good for kids"
+        ]
+      },
+      {
+        "parking": [
+          "Free street parking"
+        ]
+      }
+    ],
+    "service_options": {
+      "dine_in": true,
+      "delivery": true
+    },
+    "reserve_a_table": "https://www.google.com/maps/reserve/v/dine/c/nBepwB4qdZs?source=pa&opi=79508299&hl=en-US&gei=ZqjHac7YIeWkkPIP2p68iQw&sourceurl=https://www.google.com/search?tbm%3Dmap%26q%3Dfast%2Bfood%2Brestaurant%2BAhmedabad%26pb%3D!4m8!1m3!1d0!2d0!3d0!3m2!1i1920!2i1080!4f13.1!7i20!8i80!10b1!12m49!1m5!18b1!30b1!31m1!1b1!34e1!2m4!5m1!6e2!20e3!39b1!6m22!49b1!63m0!66b1!74i150000!85b1!91b1!114b1!149b1!178b1!206b1!209b1!212b1!223b1!232b1!234b1!244b1!246b1!250b1!253b1!258b1!260b1!266b1!10b1!12b1!13b1!14b1!16b1!17m1!3e1!20m3!5e2!6b1!14b1!46m1!1b0!96b1!99b1!19m4!2m3!1i360!2i120!4i8!20m57!2m2!1i203!2i100!3m2!2i4!5b1!6m6!1m2!1i86!2i86!1m2!1i408!2i240!7m33!1m3!1e1!2b0!3e3!1m3!1e2!2b1!3e2!1m3!1e2!2b0!3e3!1m3!1e8!2b0!3e3!1m3!1e10!2b0!3e3!1m3!1e10!2b1!3e2!1m3!1e10!2b0!3e4!1m3!1e9!2b1!3e2!2b1!9b0!15m8!1m7!1m2!1m1!1e2!2m2!1i195!2i195!3i20!22m6!1sD8mSK95r0Kt6ZF8YIAXwCNz-OVUs-i4:2!2s1i:0,t:11886,p:D8mSK95r0Kt6ZF8YIAXwCNz-OVUs-i4:2!7e81!12e5!17sD8mSK95r0Kt6ZF8YIAXwCNz-OVUs-i4:27!18e15!24m107!1m28!13m9!2b1!3b1!4b1!6i1!8b1!9b1!14b1!20b1!25b1!18m17!3b1!4b1!5b1!6b1!13b1!14b1!17b1!21b1!22b1!27m1!1b0!28b0!32b1!33m1!1b1!34b1!36e2!10m1!8e3!11m1!3e1!14m1!3b0!17b1!20m2!1e3!1e6!24b1!25b1!26b1!27b1!29b1!30m1!2b1!36b1!37b1!39m3!2m2!2i1!3i1!43b1!52b1!54m1!1b1!55b1!56m1!1b1!61m2!1m1!1e1!65m5!3m4!1m3!1m2!1i224!2i298!72m22!1m8!2b1!5b1!7b1!12m4!1b1!2b1!4m1!1e1!4b1!8m10!1m6!4m1!1e1!4m1!1e3!4m1!1e4!3sother_user_google_review_posts__and__hotel_and_vr_partner_review_posts!6m1!1e1!9b1!89b1!98m3!1b1!2b1!3b1!103b1!113b1!114m3!1b1!2m1!1b1!117b1!122m1!1b1!126b1!127b1!26m4!2m3!1i80!2i92!4i8!30m28!1m6!1m2!1i0!2i0!2m2!1i530!2i1080!1m6!1m2!1i1870!2i0!2m2!1i1920!2i1080!1m6!1m2!1i0!2i0!2m2!1i1920!2i20!1m6!1m2!1i0!2i1060!2m2!1i1920!2i1080!34m19!2b1!3b1!4b1!6b1!8m6!1b1!3b1!4b1!5b1!6b1!7b1!9b1!12b1!14b1!20b1!23b1!25b1!26b1!31b1!37m1!1e81!42b1!49m10!3b1!6m2!1b1!2b1!7m2!1e3!2b1!8b1!9b1!10e2!50m3!2e2!3m1!3b1!61b1!67m5!7b1!10b1!14b1!15m1!1b0!69i767!77b1%26hl%3Den",
+    "user_review": "\"Must try their flavoured pani puri it’s amazing\"",
+    "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/AHVAwer5vp6DbEx7BIoHrtpYM1EIOuYephbPjniAofeRpCXLYgq104ZFKgNKOFRmHjb9EA8ZODiiDouKFP5dwBibNmdRk7N5tl-TsV8bD1BOYJzDgsyXkbK7N3GQhTZF2bBRzUQ85fZY=w122-h92-k-no",
+    "serpapi_thumbnail": "https://serpapi.com/images/url/ZhAJBnicBcHtFoEwAADQJ1opUpzjR1mJKDpxrJ-r2dLHpi3h_TyEt3Hv78uUEnKp6w2bapRz2pBBkr7gnSKd0gre6lRIUEggdTe8uCPpraeYQ-y_bG_Lw14JdDD8bTIgIhg-3rvK5TeSivV1j-jDmMzyIKJxlARpG97xwnedPIFVBfkQBUerHL0Kx22Z1nZsqQZk8uJgaHgJ2n0gle9rjSM7nm5OLMsDE3vp53xyrFuOVqNhmoAtTFCDjv8B61dEMw"
+  },
+  {
+    "position": 9,
+    "title": "Ahmedabad 15",
+    "place_id": "ChIJLaI9JeKEXjkRuIRcZYkcQIs",
+    "data_id": "0x395e84e2253da22d:0x8b401c89655c84b8",
+    "data_cid": "10034051346218124472",
+    "reviews_link": "https://serpapi.com/search.json?data_id=0x395e84e2253da22d%3A0x8b401c89655c84b8&engine=google_maps_reviews&hl=en",
+    "photos_link": "https://serpapi.com/search.json?data_id=0x395e84e2253da22d%3A0x8b401c89655c84b8&engine=google_maps_photos&hl=en",
+    "gps_coordinates": {
+      "latitude": 23.023551299999998,
+      "longitude": 72.5491188
+    },
+    "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJLaI9JeKEXjkRuIRcZYkcQIs",
+    "provider_id": "/g/11byxgv1sv",
+    "rating": 4,
+    "reviews": 330,
+    "unclaimed_listing": true,
+    "type": "Fast food restaurant",
+    "types": [
+      "Fast food restaurant",
+      "Indian restaurant"
+    ],
+    "type_id": "fast_food_restaurant",
+    "type_ids": [
+      "fast_food_restaurant",
+      "indian_restaurant"
+    ],
+    "address": "Paradise Park, Tarek Mehta Marg, opposite Ketav Petrol Pump, H Colony, Ambawadi, Ahmedabad, Gujarat 380015, India",
+    "open_state": "Closed · Opens 6:30 PM",
+    "hours": "Closed · Opens 6:30 PM",
+    "operating_hours": {
+      "saturday": "8:30 AM–2:30 PM, 6:30–10:30 PM",
+      "sunday": "8:30 AM–2:30 PM, 6:30–10:30 PM",
+      "monday": "8:30 AM–2:30 PM, 6:30–10:30 PM",
+      "tuesday": "8:30 AM–2:30 PM, 6:30–10:30 PM",
+      "wednesday": "8:30 AM–2:30 PM, 6:30–10:30 PM",
+      "thursday": "8:30 AM–2:30 PM, 6:30–10:30 PM",
+      "friday": "8:30 AM–2:30 PM, 6:30–10:30 PM"
+    },
+    "phone": "+91 85111 47696",
+    "extensions": [
+      {
+        "service_options": [
+          "Outdoor seating",
+          "Delivery",
+          "Takeout",
+          "Dine-in"
+        ]
+      },
+      {
+        "popular_for": [
+          "Lunch",
+          "Dinner",
+          "Solo dining"
+        ]
+      },
+      {
+        "offerings": [
+          "Coffee",
+          "Quick bite",
+          "Vegetarian options only"
+        ]
+      },
+      {
+        "dining_options": [
+          "Breakfast",
+          "Lunch",
+          "Dinner",
+          "Catering",
+          "Dessert",
+          "Seating",
+          "Table service"
+        ]
+      },
+      {
+        "atmosphere": [
+          "Casual"
+        ]
+      },
+      {
+        "crowd": [
+          "Groups"
+        ]
+      },
+      {
+        "payments": [
+          "Credit cards",
+          "Debit cards"
+        ]
+      },
+      {
+        "children": [
+          "Good for kids"
+        ]
+      }
+    ],
+    "service_options": {
+      "dine_in": true,
+      "takeout": true,
+      "delivery": true
+    },
+    "order_online": "https://www.google.com/viewer/chooseprovider?mid=/g/11byxgv1sv&g2lbs=AIBNGdV0JcsJbL5kkkpoMf2YwwMsBXdCVCTA3AZByDXj_J2NIwrLyMcsPq3RhWomTzOT_WO94hmUdGizEEmxme_0psaWEHfOog%3D%3D&hl=en-US&gl=us&fo_m=MfohQo559jFvMUOzJVpjPL1YMfZ3bInYwBDuMfaXTPp5KXh-&utm_source=tactile&gei=ZqjHac7YIeWkkPIP2p68iQw&ei=ZqjHac7YIeWkkPIP2p68iQw&fo_s=OA,SOE&opi=79508299&ebb=1&cs=0&foub=mcpp",
+    "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/AHVAweogvpP7LrRDki-Y04L7P1UpbdFgGVQGy4tUNhBUiGWvPECTAKE6L9pQMHCExAb6WuqyLhwvf2jy6vzdy1_2uB1bt6lTkzvOeATUqMlrzoJ0g5QWCrnpGsVJVjZOey9Hq6P2FGfj=w122-h92-k-no",
+    "serpapi_thumbnail": "https://serpapi.com/images/url/IXXkenicBcFdboIwAADgE1WkuhpM9lARSxQVDD-ZL0vA2gpICy1l5X47xG6z7_v75VpLtXWclq8WTAjW0lHRoRKdpp1eVOLtMKlApYBycJjjiQpmZLyJhtu-eYGv5TraxG4my8eBkTwhdq2zC99lL1KYOPBTfApQ5MnkHPrBDy5RMfY24pN5wtoiMz-s-w3HnVtq1KbNbK4Up1l_bodZHJfsIyn8oZNE5ce8vl-p9cIexfBAnvXn5EIIuAdBAzrxD-j7RSQ"
+  },
+  {
+    "position": 10,
+    "title": "Ahmedabad Street Food world",
+    "place_id": "ChIJ-ydIuLiFXjkRbeFjyasO_8U",
+    "data_id": "0x395e85b8b84827fb:0xc5ff0eabc963e16d",
+    "data_cid": "14267138275513983341",
+    "reviews_link": "https://serpapi.com/search.json?data_id=0x395e85b8b84827fb%3A0xc5ff0eabc963e16d&engine=google_maps_reviews&hl=en",
+    "photos_link": "https://serpapi.com/search.json?data_id=0x395e85b8b84827fb%3A0xc5ff0eabc963e16d&engine=google_maps_photos&hl=en",
+    "gps_coordinates": {
+      "latitude": 23.023136599999997,
+      "longitude": 72.5897157
+    },
+    "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJ-ydIuLiFXjkRbeFjyasO_8U",
+    "provider_id": "/g/11stx7zq7c",
+    "rating": 4,
+    "reviews": 14,
+    "price": "₹200–400",
+    "extracted_price": 200,
+    "unclaimed_listing": true,
+    "type": "Fast food restaurant",
+    "types": [
+      "Fast food restaurant"
+    ],
+    "type_id": "fast_food_restaurant",
+    "type_ids": [
+      "fast_food_restaurant"
+    ],
+    "address": "Manek Chowk, Old City, Khadia, Ahmedabad, Gujarat 380001, India",
+    "open_state": "Closed · Opens 8 PM",
+    "hours": "Closed · Opens 8 PM",
+    "operating_hours": {
+      "saturday": "8 PM–2 AM",
+      "sunday": "8 PM–2 AM",
+      "monday": "8 PM–2 AM",
+      "tuesday": "8 PM–2 AM",
+      "wednesday": "8 PM–2 AM",
+      "thursday": "8 PM–2 AM",
+      "friday": "8 PM–2 AM"
+    },
+    "extensions": [
+      {
+        "service_options": [
+          "Takeout",
+          "Dine-in"
+        ]
+      },
+      {
+        "popular_for": [
+          "Solo dining"
+        ]
+      },
+      {
+        "offerings": [
+          "Quick bite"
+        ]
+      },
+      {
+        "atmosphere": [
+          "Casual"
+        ]
+      },
+      {
+        "crowd": [
+          "Groups"
+        ]
+      },
+      {
+        "payments": [
+          "NFC mobile payments"
+        ]
+      },
+      {
+        "children": [
+          "Good for kids"
+        ]
+      }
+    ],
+    "service_options": {
+      "dine_in": true,
+      "takeout": true
+    },
+    "user_review": "\"The taste was not unforgettable Farsan and Sandwich were very yummy.\"",
+    "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/AHVAwermzwhn1HSmDTBtB0YtBoHj5HxA5tYd_6GZOLc7WZOJd15iDH-OP6vg_rYeTgqWnzsSN2NT2p8ULEiVllpdG9CMCz2beNbl1_wDKDCReiuOtQ2d0kSAKWGtSAjhDvpnl_z-vNev=w163-h92-k-no",
+    "serpapi_thumbnail": "https://serpapi.com/images/url/Qm0HF3icBcFRboIwGADgE1WkBjZN9lDoQjMV3EAJvpAITYuWttJfWLifh_A2ft_rKQGs23iekquFMEYo_nB8aIwGrmHRmN4T1qHGIecRdiITH_p5ktpneU-LCKJlBZFh14D9kwCqtg6Tc7ZrPspz9tP6QUcZyg7hKOqh4oW4l3p2eYrTAtvP4-67Oyll22Qd7-MZX3h6UX490S2N_3j3yOAXt8tbTrZlAjm5SjpareoZjSkfvyY_XCG5xuiGtHkD7eVFHg"
+  },
+  {
+    "position": 11,
+    "title": "Mirza Fry & Chinese",
+    "place_id": "ChIJ1ZE36lqEXjkRl6iOYSnEfTc",
+    "data_id": "0x395e845aea3791d5:0x377dc429618ea897",
+    "data_cid": "3998567726184310935",
+    "reviews_link": "https://serpapi.com/search.json?data_id=0x395e845aea3791d5%3A0x377dc429618ea897&engine=google_maps_reviews&hl=en",
+    "photos_link": "https://serpapi.com/search.json?data_id=0x395e845aea3791d5%3A0x377dc429618ea897&engine=google_maps_photos&hl=en",
+    "gps_coordinates": {
+      "latitude": 23.0290113,
+      "longitude": 72.5801496
+    },
+    "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJ1ZE36lqEXjkRl6iOYSnEfTc",
+    "provider_id": "/g/11bw46xr12",
+    "rating": 4.1,
+    "reviews": 1129,
+    "price": "₹200–400",
+    "extracted_price": 200,
+    "type": "Fast food restaurant",
+    "types": [
+      "Fast food restaurant",
+      "Chinese restaurant",
+      "Indian restaurant"
+    ],
+    "type_id": "fast_food_restaurant",
+    "type_ids": [
+      "fast_food_restaurant",
+      "chinese_restaurant",
+      "indian_restaurant"
+    ],
+    "address": "New Gujarat Samachar Press, opp. Golden Tower, off J. P. Chowk, Old City, Khanpur, Ahmedabad, Gujarat 380001, India",
+    "open_state": "Closed · Opens 6 PM",
+    "hours": "Closed · Opens 6 PM",
+    "operating_hours": {
+      "saturday": "11 AM–3 PM, 6 PM–12 AM",
+      "sunday": "11 AM–3 PM, 6 PM–12 AM",
+      "monday": "11 AM–3 PM, 6 PM–12 AM",
+      "tuesday": "11 AM–3 PM, 6 PM–12 AM",
+      "wednesday": "11 AM–3 PM, 6 PM–12 AM",
+      "thursday": "11 AM–3 PM, 6 PM–12 AM",
+      "friday": "11 AM–3 PM, 6 PM–12 AM"
+    },
+    "phone": "+91 98794 30783",
+    "extensions": [
+      {
+        "service_options": [
+          "No-contact delivery",
+          "Delivery",
+          "Takeout",
+          "Dine-in"
+        ]
+      },
+      {
+        "popular_for": [
+          "Lunch",
+          "Dinner",
+          "Solo dining"
+        ]
+      },
+      {
+        "offerings": [
+          "All you can eat",
+          "Late-night food",
+          "Quick bite",
+          "Small plates"
+        ]
+      },
+      {
+        "dining_options": [
+          "Lunch",
+          "Dinner",
+          "Catering",
+          "Table service"
+        ]
+      },
+      {
+        "atmosphere": [
+          "Casual",
+          "Trendy"
+        ]
+      },
+      {
+        "crowd": [
+          "Groups"
+        ]
+      },
+      {
+        "planning": [
+          "Accepts reservations"
+        ]
+      },
+      {
+        "payments": [
+          "Credit cards",
+          "Debit cards"
+        ]
+      },
+      {
+        "children": [
+          "Good for kids"
+        ]
+      },
+      {
+        "parking": [
+          "Free parking lot",
+          "Free street parking",
+          "Usually somewhat difficult to find a space"
+        ]
+      }
+    ],
+    "unsupported_extensions": [
+      {
+        "accessibility": [
+          "Wheelchair accessible entrance",
+          "Wheelchair accessible parking lot",
+          "Wheelchair accessible seating"
+        ]
+      }
+    ],
+    "service_options": {
+      "dine_in": true,
+      "takeout": true,
+      "no_contact_delivery": true
+    },
+    "order_online": "https://www.google.com/viewer/chooseprovider?mid=/g/11bw46xr12&g2lbs=AIBNGdUYrr51GmggG4jDQSjrYMyvU9X7shrioa9WW8OlEBr4rs_YgbBkimLsTGy3BVy2v2BGy4hTy8x0Eq7yZTmpwDQvV7PdvQ%3D%3D&hl=en-US&gl=us&fo_m=MfohQo559jFvMUOzJVpjPL1YMfZ3bInYwBDuMfaXTPp5KXh-&utm_source=tactile&gei=ZqjHac7YIeWkkPIP2p68iQw&ei=ZqjHac7YIeWkkPIP2p68iQw&fo_s=OA,SOE&opi=79508299&orderType=1&ebb=1&cs=0&foub=mcpp",
+    "user_review": "\"Mouth watering food\nFast service\nDecent atmosphere.\"",
+    "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/AHVAweqAAUM5f7ryslOr7XU6yDGWP9yfPS71SOTA2AYZl-SqtNVdH7k_HGkkseCsLiOJ3vEWLgvnHHxDTI8gAZyU-WZdtJOykW-G7Y1zZIkpBCUP1d6d83SgMsy_UzMJEOfvzd9DxRA0BQ=w163-h92-k-no",
+    "serpapi_thumbnail": "https://serpapi.com/images/url/JZZfkXicBcFBcoIwFADQE0WKjEQ64yKKQ2SkwWJE2bggIXRCCfJTNFywZ-ht-t7fb2vtAO-e17XBQhmjOvkDcqxNb2VvF7X59tQAqAYEHqEX8pQPQni2avDooGMjvvLQxUmZR67JC-wX7EyW5FZ1qHjYj4ugWN9pojXIHRy_WBpM-_Kopp7SV3w-rBWpHEdlJWzKnC5Rgm_-XB30sN3x3BehWAeFysDd-Zyle9ZMs4ji1yd52542Tz8MUBstkUa9-Qc7oUSv"
+  },
+  {
+    "position": 14,
+    "title": "New Gujarat Dalwada",
+    "place_id": "ChIJvUExZPiEXjkRivYUcdIIufs",
+    "data_id": "0x395e84f8643141bd:0xfbb908d27114f68a",
+    "data_cid": "18138538674144736906",
+    "reviews_link": "https://serpapi.com/search.json?data_id=0x395e84f8643141bd%3A0xfbb908d27114f68a&engine=google_maps_reviews&hl=en",
+    "photos_link": "https://serpapi.com/search.json?data_id=0x395e84f8643141bd%3A0xfbb908d27114f68a&engine=google_maps_photos&hl=en",
+    "gps_coordinates": {
+      "latitude": 23.025060999999997,
+      "longitude": 72.5667959
+    },
+    "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJvUExZPiEXjkRivYUcdIIufs",
+    "provider_id": "/g/11c1qwjng2",
+    "rating": 4.3,
+    "reviews": 971,
+    "price": "₹1–200",
+    "extracted_price": 1,
+    "type": "Fast food restaurant",
+    "types": [
+      "Fast food restaurant",
+      "Gujarati restaurant",
+      "Indian restaurant",
+      "Vegetarian restaurant"
+    ],
+    "type_id": "fast_food_restaurant",
+    "type_ids": [
+      "fast_food_restaurant",
+      "gujarati_restaurant",
+      "indian_restaurant",
+      "vegetarian_restaurant"
+    ],
+    "address": "2HF8+RPW, Purshottam Mavalankar Road, Ellisbridge, Ahmedabad, Gujarat, India NEAR CH NAGRI MUNICIPAL EYE HOSPITAL, Ellisbridge, Ahmedabad, Gujarat 380006, India",
+    "open_state": "Open · Closes 9:30 PM",
+    "hours": "Open · Closes 9:30 PM",
+    "operating_hours": {
+      "saturday": "8 AM–9:30 PM",
+      "sunday": "8 AM–9:30 PM",
+      "monday": "8 AM–9:30 PM",
+      "tuesday": "8 AM–9:30 PM",
+      "wednesday": "8 AM–9:30 PM",
+      "thursday": "8 AM–9:30 PM",
+      "friday": "8 AM–9:30 PM"
+    },
+    "extensions": [
+      {
+        "service_options": [
+          "Outdoor seating",
+          "Delivery",
+          "Onsite services",
+          "Takeout",
+          "Dine-in"
+        ]
+      },
+      {
+        "popular_for": [
+          "Solo dining"
+        ]
+      },
+      {
+        "offerings": [
+          "Healthy options",
+          "Quick bite",
+          "Small plates",
+          "Vegetarian options only"
+        ]
+      },
+      {
+        "dining_options": [
+          "Seating"
+        ]
+      },
+      {
+        "amenities": [
+          "Restroom"
+        ]
+      },
+      {
+        "atmosphere": [
+          "Casual",
+          "Trendy"
+        ]
+      },
+      {
+        "crowd": [
+          "College students",
+          "Groups"
+        ]
+      },
+      {
+        "children": [
+          "Good for kids"
+        ]
+      },
+      {
+        "parking": [
+          "Free street parking",
+          "Usually difficult to find a space"
+        ]
+      }
+    ],
+    "unsupported_extensions": [
+      {
+        "accessibility": [
+          "Wheelchair accessible entrance",
+          "Wheelchair accessible seating"
+        ]
+      },
+      {
+        "planning": [
+          "Accepts reservations"
+        ]
+      }
+    ],
+    "service_options": {
+      "dine_in": true,
+      "takeout": true,
+      "delivery": true
+    },
+    "user_review": "\"Best in taste and fast in service\"",
+    "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/AHVAwepkIWwmr68DERus-b3ekL5c7UOd1jfhdryo9yx10BY0k8R5D_Js0hRrLuxBsd3s2wrt2HLg9RGqvC-M23ZO8fE9IO4U8ZLPGUHT6-3gABa6wN5ANKmRArTOwlOb-Bs2FpyoZM8btA=w122-h92-k-no",
+    "serpapi_thumbnail": "https://serpapi.com/images/url/6zW-5nicBcHdToMwGADQJ-qAVlhZ4kVxc0zZapqhkRsj0LUZP8V-ZR1P6DP4Np7z96udm2ATBL0mK2WM6uUM0jZmdHJ0q8YMgZoANYAgYPk783LqDh9-sAnd7sQMqCayK-JmXfI2ul50axeTLvcozD7Djop4-_UCoRa2mO8ZtASwtw7nhUrF_uf2hI6YVJxedumBP5S0Kt72ZX5OEFEs-078KWan10Ewe-a-5zXKAD9Pi6mOtHbs0UcYI51i1KHR_AMVoEOo"
+  },
+  {
+    "position": 16,
+    "title": "Real Kachhi Dabeli",
+    "place_id": "ChIJ47QttbaFXjkRPUSZoKIRlJI",
+    "data_id": "0x395e85b6b52db4e3:0x929411a2a099443d",
+    "data_cid": "10562086416267428925",
+    "reviews_link": "https://serpapi.com/search.json?data_id=0x395e85b6b52db4e3%3A0x929411a2a099443d&engine=google_maps_reviews&hl=en",
+    "photos_link": "https://serpapi.com/search.json?data_id=0x395e85b6b52db4e3%3A0x929411a2a099443d&engine=google_maps_photos&hl=en",
+    "gps_coordinates": {
+      "latitude": 23.0219931,
+      "longitude": 72.5695822
+    },
+    "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJ47QttbaFXjkRPUSZoKIRlJI",
+    "provider_id": "/g/11wxw_cpdb",
+    "rating": 4.7,
+    "reviews": 13,
+    "unclaimed_listing": true,
+    "type": "Fast food restaurant",
+    "types": [
+      "Fast food restaurant"
+    ],
+    "type_id": "fast_food_restaurant",
+    "type_ids": [
+      "fast_food_restaurant"
+    ],
+    "address": "V.S. Hospital, Madalpur Gam, Ellisbridge, Ahmedabad, Gujarat 380006, India",
+    "open_state": "Open · Closes 10 PM",
+    "hours": "Open · Closes 10 PM",
+    "operating_hours": {
+      "saturday": "10 AM–10 PM",
+      "sunday": "10 AM–10 PM",
+      "monday": "10 AM–10 PM",
+      "tuesday": "10 AM–10 PM",
+      "wednesday": "10 AM–10 PM",
+      "thursday": "10 AM–10 PM",
+      "friday": "10 AM–10 PM"
+    },
+    "extensions": [
+      {
+        "service_options": [
+          "Curbside pickup",
+          "No-contact delivery",
+          "Delivery",
+          "Drive-through",
+          "Takeout",
+          "Dine-in"
+        ]
+      },
+      {
+        "offerings": [
+          "Quick bite",
+          "Vegetarian options only"
+        ]
+      },
+      {
+        "atmosphere": [
+          "Casual"
+        ]
+      },
+      {
+        "children": [
+          "Good for kids"
+        ]
+      },
+      {
+        "parking": [
+          "Free street parking"
+        ]
+      }
+    ],
+    "service_options": {
+      "dine_in": true,
+      "drive_through": true,
+      "no_contact_delivery": true
+    },
+    "user_review": "\"Good service and best owner this food shop\"",
+    "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/AHVAwerY5xjpfUHkclwvXYjFSTKRoxSvfOVAWHR0EjjmEx5BPAWXS1tYng-hYvN7NkIE78tD1yr3RvF51ve27IUsiWlu6iyKZbe3sy0-Tp_7C-PA7hGvZwTkw-lWfe8Xhbgnk_X8bCjo=w122-h92-k-no",
+    "serpapi_thumbnail": "https://serpapi.com/images/url/n33guHicBcFRboIwGADgE_0iEFZcsofqUIyJM4ACvphASmtbW0JrCwfcIXabfd_fL7N2NJ9BIFm8olpTSd6GTL1Wlii76vUroKOB3oAJcH7DnkxtMvNxuOail941Ld-X1anQc-mGnxuu82Kdcf7K5mR7wXVThrZVFFjrzugsjhlK7Xe4THHh9knoSISOV_Os5fvjuZzuHYnNsoZqfKAdXDBiB3f3lfAg64GkDeuoEo8m7XZcf_kwioBtIhCg9D83AUVj"
+  },
+  {
+    "position": 18,
+    "title": "Shashi Chavanu",
+    "place_id": "ChIJlT1B7U-EXjkRPWiVXE9N20Y",
+    "data_id": "0x395e844fed413d95:0x46db4d4f5c95683d",
+    "data_cid": "5105759605805639741",
+    "reviews_link": "https://serpapi.com/search.json?data_id=0x395e844fed413d95%3A0x46db4d4f5c95683d&engine=google_maps_reviews&hl=en",
+    "photos_link": "https://serpapi.com/search.json?data_id=0x395e844fed413d95%3A0x46db4d4f5c95683d&engine=google_maps_photos&hl=en",
+    "gps_coordinates": {
+      "latitude": 23.0281561,
+      "longitude": 72.5809189
+    },
+    "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJlT1B7U-EXjkRPWiVXE9N20Y",
+    "provider_id": "/g/1ptxw176_",
+    "rating": 4.5,
+    "reviews": 48,
+    "price": "₹1–200",
+    "extracted_price": 1,
+    "unclaimed_listing": true,
+    "type": "Fast food restaurant",
+    "types": [
+      "Fast food restaurant"
+    ],
+    "type_id": "fast_food_restaurant",
+    "type_ids": [
+      "fast_food_restaurant"
+    ],
+    "address": "2HHJ+797, Sheth Kasturbhai Mayabhai Marg, Old City, Khanpur, Ahmedabad, Gujarat 380001, India",
+    "open_state": "Open · Closes 9:30 PM",
+    "hours": "Open · Closes 9:30 PM",
+    "operating_hours": {
+      "saturday": "9 AM–9:30 PM",
+      "sunday": "9 AM–9:30 PM",
+      "monday": "9 AM–9:30 PM",
+      "tuesday": "9 AM–9:30 PM",
+      "wednesday": "9 AM–9:30 PM",
+      "thursday": "9 AM–9:30 PM",
+      "friday": "9 AM–9:30 PM"
+    },
+    "extensions": [
+      {
+        "service_options": [
+          "Takeout",
+          "Dine-in"
+        ]
+      },
+      {
+        "offerings": [
+          "Quick bite"
+        ]
+      },
+      {
+        "atmosphere": [
+          "Casual"
+        ]
+      },
+      {
+        "crowd": [
+          "Groups"
+        ]
+      },
+      {
+        "parking": [
+          "Usually plenty of parking"
+        ]
+      }
+    ],
+    "unsupported_extensions": [
+      {
+        "amenities": [
+          "Restroom"
+        ]
+      }
+    ],
+    "service_options": {
+      "dine_in": true,
+      "takeout": true
+    },
+    "user_review": "\"Very famous and reliable form, testy and healthy food.\"",
+    "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/AHVAweoehTmmfK5t93Lp6y-z25ILllwJhReQlUyrA7DGzr8iLdLP8OUa0oR2WNp3FJ2Z6J1tmv7ch3JhNR6uJvMSzx47WLKBU8TqKm1AZY4I3FmMRUjykdN9qnRx9g5LxISksqQsZWya=w80-h106-k-no",
+    "serpapi_thumbnail": "https://serpapi.com/images/url/QC_wyHicBcFZcoIwAADQE0WWyOaMH3QcWkJEjVBG_hxISSUhQKIs9_MQvU3f-3szrXu1MwzO4KaRsuH0qehYyU7TTm8qKYymV6BSQBnh13c4UUlZJsRP4ugA4t5dwGo7MeZ8QozQC8-XMfQOn-vo_-Ian_1TfjclsYu0hxGySxdZWry8ikHEUuI-0et4XeetV-DkI_ezIRFWWN62MYzEkeSPpa3TYOjIHDQOnuNrq4aLKovlvp98EzDLdEELOvkPvNlEaQ"
+  },
+  {
+    "position": 20,
+    "title": "Purohit sandwich",
+    "place_id": "ChIJLWurnvOEXjkRicx8BTx3iHk",
+    "data_id": "0x395e84f39eab6b2d:0x7988773c057ccc89",
+    "data_cid": "8757380575095737481",
+    "reviews_link": "https://serpapi.com/search.json?data_id=0x395e84f39eab6b2d%3A0x7988773c057ccc89&engine=google_maps_reviews&hl=en",
+    "photos_link": "https://serpapi.com/search.json?data_id=0x395e84f39eab6b2d%3A0x7988773c057ccc89&engine=google_maps_photos&hl=en",
+    "gps_coordinates": {
+      "latitude": 23.0344227,
+      "longitude": 72.5610579
+    },
+    "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJLWurnvOEXjkRicx8BTx3iHk",
+    "provider_id": "/g/1tnk_t6x",
+    "rating": 3.1,
+    "reviews": 39,
+    "price": "₹200–400",
+    "extracted_price": 200,
+    "type": "Fast food restaurant",
+    "types": [
+      "Fast food restaurant",
+      "Breakfast restaurant",
+      "Sandwich shop"
+    ],
+    "type_id": "fast_food_restaurant",
+    "type_ids": [
+      "fast_food_restaurant",
+      "breakfast_restaurant",
+      "sandwich_shop"
+    ],
+    "address": "10 Municipal Market C.G, Chimanlal Girdharlal Road, Navrangpura, Ahmedabad, Gujarat 380009, India",
+    "open_state": "Open · Closes 11 PM",
+    "hours": "Open · Closes 11 PM",
+    "operating_hours": {
+      "saturday": "8 AM–11 PM",
+      "sunday": "8 AM–11 PM",
+      "monday": "8 AM–11 PM",
+      "tuesday": "8 AM–11 PM",
+      "wednesday": "8 AM–11 PM",
+      "thursday": "8 AM–11 PM",
+      "friday": "8 AM–11 PM"
+    },
+    "phone": "+91 94265 25553",
+    "extensions": [
+      {
+        "service_options": [
+          "No-contact delivery",
+          "Delivery",
+          "Takeout",
+          "Dine-in"
+        ]
+      },
+      {
+        "popular_for": [
+          "Breakfast",
+          "Solo dining"
+        ]
+      },
+      {
+        "offerings": [
+          "Quick bite",
+          "Vegetarian options only"
+        ]
+      },
+      {
+        "dining_options": [
+          "Breakfast"
+        ]
+      },
+      {
+        "atmosphere": [
+          "Casual"
+        ]
+      },
+      {
+        "children": [
+          "Good for kids"
+        ]
+      },
+      {
+        "parking": [
+          "Free street parking",
+          "Usually plenty of parking"
+        ]
+      }
+    ],
+    "unsupported_extensions": [
+      {
+        "amenities": [
+          "Restroom"
+        ]
+      }
+    ],
+    "service_options": {
+      "dine_in": true,
+      "takeout": true,
+      "no_contact_delivery": true
+    },
+    "user_review": "\"good taste and nice and fast delivery , staff is also good\"",
+    "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/AHVAweoedyUX9fvb8ktkQr2XvPiMvTGQI7hPvaEEk7FtGNo68TzcyAoYgJrKV546R_q4geCWOFRbbg0syNqsrUkJ3S6ZoPV_QJvvtWluiM6AJZrp8pgT0QPN44VLuqghDVixOkfisBZ2=w104-h92-k-no",
+    "serpapi_thumbnail": "https://serpapi.com/images/url/Wv30hnicBcFbcoIwFADQFUUQU8TO9IP6xoqAGC0_jmBMmCAXkhDF_bmI7qbn_L251o36tKyKjwYMgFW0U1QWUGta60EBd4s1ChUKKctfEf9BgV77w2lyM7kntIilczJRuTXpMl6PeWQu87kYL_QyBNdLX0Xvwy8L5IZ8YDc5t5jR6XG3SPKc2aoPWyUPIhjt3Qwico4DY_Sx6sqt6weZbLyGpXYchRiTn65lfEbK507cSvWdOV-PoY0RnzhIoBr-AWFsRgI"
+  }
+]
