@@ -6,9 +6,9 @@ leads/
 *.json
 !package.json
 !package-lock.json
+!vercel.json
 
 # Generated files
-dashboard.html
 
 # WhatsApp session
 .wwebjs_auth/
