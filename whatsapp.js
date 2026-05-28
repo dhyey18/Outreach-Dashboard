@@ -246,9 +246,8 @@ function detectIndustry(lead) {
 //  MESSAGE TEMPLATES
 //
 //  Stage 1 strategy:
-//    — No website: direct pitch — you're invisible online, here's what you're losing, here's the fix
-//    — Low rating (<4.2): loss framing — "you're losing X because of this"
-//    — Has website + good rating: upgrade pitch — site isn't converting, here's what to improve
+//    — No website: build a website to increase online presence
+//    — Has website: update your website to increase online presence & conversions
 //    — All messages are short, specific, end with a low-friction yes/no
 //
 //  Stage 2 strategy:
@@ -259,419 +258,365 @@ function detectIndustry(lead) {
 
 // Stage 1 — (name, hasWebsite, rating, reviews)
 const STAGE1 = {
-    dental: (name, hasWebsite, rating) => {
-        if (!hasWebsite) return (
-            `Hi —\n\n` +
-            `Searched "dental clinic Ahmedabad" — *${name}* doesn't have a website, so you're invisible to patients searching online right now.\n\n` +
-            `Other clinics nearby are getting 10–15 appointment requests/month just from Google — without any ads.\n\n` +
-            `Want me to show you exactly how? Takes 2 minutes.\n\n` +
-            `— Dhyey`
-        );
-        if (rating && rating < 4.2) return (
-            `Hi — quick observation.\n\n` +
-            `*${name}* is at ${rating}⭐ on Google. Clinics below 4.2 get ranked lower in Ahmedabad searches — you're likely losing 5–8 booking inquiries a month just because of this.\n\n` +
-            `Is fixing that something you're thinking about?\n\n` +
-            `— Dhyey`
-        );
-        return (
-            `Hi —\n\n` +
-            `Checked *${name}*'s website${rating ? ` (${rating}⭐ on Google)` : ''}. It's live — but it's not converting. No online booking, no patient gallery, and almost certainly not ranking on "dental clinic near me" searches.\n\n` +
-            `Clinics we've upgraded are getting 15–20 appointment requests/month from Google without ads.\n\n` +
-            `Want me to show you what needs to change?\n\n` +
-            `— Dhyey`
-        );
-    },
+    dental: (name, hasWebsite) => hasWebsite
+        ? `Hi —
 
-    clinic: (name, hasWebsite, rating) => {
-        if (!hasWebsite) return (
-            `Hi —\n\n` +
-            `Searched for clinics in Ahmedabad — *${name}* doesn't have a website, so patients looking online can't find or contact you.\n\n` +
-            `A simple clinic website with a WhatsApp button typically brings 8–12 new patient inquiries/month — no ads needed.\n\n` +
-            `Interested in seeing how?\n\n` +
-            `— Dhyey`
-        );
-        if (rating && rating < 4.2) return (
-            `Hi — quick observation.\n\n` +
-            `*${name}* is sitting at ${rating}⭐ on Google. Below 4.2, Google starts showing your clinic less in local searches — your competitors with higher ratings are getting your patients.\n\n` +
-            `Is this on your radar?\n\n` +
-            `— Dhyey`
-        );
-        return (
-            `Hi —\n\n` +
-            `Had a look at *${name}*'s website${rating ? ` (${rating}⭐)` : ''}. It's up — but there's no appointment button, no WhatsApp link, and it's not optimised for local search.\n\n` +
-            `A focused upgrade typically adds 8–12 new patient inquiries/month from the same Google traffic you already have.\n\n` +
-            `Worth showing you what to fix?\n\n` +
-            `— Dhyey`
-        );
-    },
+Checked *${name}*'s website. It's live — but not optimised to convert visitors into bookings.
 
-    restaurant: (name, hasWebsite, rating) => {
-        if (!hasWebsite) return (
-            `Hi —\n\n` +
-            `Searched for restaurants in Ahmedabad — *${name}* doesn't show a website or menu online.\n\n` +
-            `Restaurants with a basic menu page + WhatsApp order button are getting 20–30 extra orders/month from people who search before going out.\n\n` +
-            `Worth setting up for you?\n\n` +
-            `— Dhyey`
-        );
-        if (rating && rating < 4.2) return (
-            `Hi — honest observation.\n\n` +
-            `*${name}* is at ${rating}⭐ on Google. Restaurants below 4.2 appear lower in "restaurants near me" searches — which directly means fewer walk-ins and orders.\n\n` +
-            `Is improving that something you're working on?\n\n` +
-            `— Dhyey`
-        );
-        return (
-            `Hi —\n\n` +
-            `Checked *${name}*'s website${rating ? ` (${rating}⭐)` : ''}. It's there — but no online menu, no order button, and no WhatsApp integration.\n\n` +
-            `Restaurants with a menu page + WhatsApp order button are getting 20–30 extra orders/month from people who browse before going out.\n\n` +
-            `Worth a quick upgrade?\n\n` +
-            `— Dhyey`
-        );
-    },
+A focused update brings 15–20 more appointment requests/month from Google.
 
-    realestate: (name, hasWebsite, rating) => {
-        if (!hasWebsite) return (
-            `Hi —\n\n` +
-            `Searched for property agents in Ahmedabad — *${name}* doesn't have a website.\n\n` +
-            `Buyers today Google an agent before they call. Without a site, you're losing inquiries to agents with a basic online presence — even if your properties are better.\n\n` +
-            `Want me to show you what a simple property site can do?\n\n` +
-            `— Dhyey`
-        );
-        if (rating && rating < 4.2) return (
-            `Hi — quick note.\n\n` +
-            `*${name}* is at ${rating}⭐ on Google. For real estate, buyers check ratings before calling — a low rating is directly stopping inquiries from reaching you.\n\n` +
-            `Is this something you're aware of?\n\n` +
-            `— Dhyey`
-        );
-        return (
-            `Hi —\n\n` +
-            `Checked *${name}*'s website${rating ? ` (${rating}⭐)` : ''}. It's live — but there's no property listing page, no enquiry form, and buyers who land on it have no clear next step.\n\n` +
-            `Agents who upgrade for search + lead capture typically see a clear jump in inbound calls without spending on ads.\n\n` +
-            `Want me to show you what's missing?\n\n` +
-            `— Dhyey`
-        );
-    },
+Want to know what to improve?
 
-    fitness: (name, hasWebsite, rating) => {
-        if (!hasWebsite) return (
-            `Hi —\n\n` +
-            `Searched for gyms in Ahmedabad — *${name}* doesn't have a website.\n\n` +
-            `People searching "gym near me" click the ones with a site showing pricing, photos, and a trial form. Without that, you're invisible to the highest-intent leads.\n\n` +
-            `Want to fix that quickly?\n\n` +
-            `— Dhyey`
-        );
-        if (rating && rating < 4.2) return (
-            `Hi — honest observation.\n\n` +
-            `*${name}* is at ${rating}⭐ on Google. People searching for a gym always check ratings first — below 4.2 and most of them pick a competitor before even calling you.\n\n` +
-            `Is fixing this on your list?\n\n` +
-            `— Dhyey`
-        );
-        return (
-            `Hi —\n\n` +
-            `Checked *${name}*'s website${rating ? ` (${rating}⭐)` : ''}. It's online — but no pricing page, no free trial form, and it's not ranking on "gym near me" searches.\n\n` +
-            `Gyms we've upgraded for search + sign-ups are getting 15–25 trial enquiries/month from Google without any paid ads.\n\n` +
-            `Want me to show you what to improve?\n\n` +
-            `— Dhyey`
-        );
-    },
+— Dhyey`
+        : `Hi —
 
-    education: (name, hasWebsite, rating) => {
-        if (!hasWebsite) return (
-            `Hi —\n\n` +
-            `Searched for coaching institutes in Ahmedabad — *${name}* doesn't have a website.\n\n` +
-            `Parents and students check online before calling any institute now. A simple site with your courses, fees, and results page converts them directly — institutes I've worked with see 30–40 extra inquiries/month.\n\n` +
-            `Want to see how?\n\n` +
-            `— Dhyey`
-        );
-        if (rating && rating < 4.2) return (
-            `Hi — quick note.\n\n` +
-            `*${name}* is at ${rating}⭐ on Google. Parents searching for coaching classes almost always pick institutes above 4.2 — you're losing students to lower-quality competitors just because of this number.\n\n` +
-            `Is improving that on your radar?\n\n` +
-            `— Dhyey`
-        );
-        return (
-            `Hi —\n\n` +
-            `Checked *${name}*'s website${rating ? ` (${rating}⭐)` : ''}. It's up — but no course listing, no fees page, and no clear call-to-action for parents or students searching online.\n\n` +
-            `Institutes we've rebuilt for search + conversions see 40–50% more enquiries from the same Google traffic.\n\n` +
-            `Want to see what needs to change?\n\n` +
-            `— Dhyey`
-        );
-    },
+Searched for *${name}* in Ahmedabad — you don't have a website.
 
-    interior: (name, hasWebsite, rating) => {
-        if (!hasWebsite) return (
-            `Hi —\n\n` +
-            `Searched for interior designers in Ahmedabad — *${name}* doesn't have a website or portfolio online.\n\n` +
-            `Clients with serious budgets always check a designer's work online before reaching out. Without a portfolio site, you're only getting referral clients — and missing everyone searching on Google.\n\n` +
-            `Want me to show you what a portfolio site can bring in?\n\n` +
-            `— Dhyey`
-        );
-        if (rating && rating < 4.2) return (
-            `Hi — honest note.\n\n` +
-            `*${name}* is at ${rating}⭐ on Google. Clients looking for interior work always check ratings and photos before reaching out — a lower rating quietly filters you out before they even call.\n\n` +
-            `Is this something you'd want to fix?\n\n` +
-            `— Dhyey`
-        );
-        return (
-            `Hi —\n\n` +
-            `Checked *${name}*'s website${rating ? ` (${rating}⭐)` : ''}. It's live — but there's no portfolio gallery with project categories, no budget range guide, and no clear way for clients to enquire directly.\n\n` +
-            `Clients with serious budgets check the portfolio before reaching out — a focused upgrade turns more visitors into actual project enquiries.\n\n` +
-            `Want me to show you what to add?\n\n` +
-            `— Dhyey`
-        );
-    },
+Patients searching online can't find or book with you. A professional dental website brings 10–15 appointment requests/month from Google — no ads needed.
 
-    clothing: (name, hasWebsite, rating) => {
-        if (!hasWebsite) return (
-            `Hi —\n\n` +
-            `Searched for clothing stores in Ahmedabad — *${name}* doesn't have a website or online catalogue.\n\n` +
-            `A WhatsApp catalogue + simple product page lets customers browse and order without stepping in — stores doing this are getting 25–40 extra orders/month from people who'd never have walked in.\n\n` +
-            `Want to set this up?\n\n` +
-            `— Dhyey`
-        );
-        if (rating && rating < 4.2) return (
-            `Hi — quick observation.\n\n` +
-            `*${name}* is at ${rating}⭐ on Google. Shoppers searching online skip stores below 4.2 — you're losing customers to competitors before they even see your collection.\n\n` +
-            `Is improving this on your radar?\n\n` +
-            `— Dhyey`
-        );
-        return (
-            `Hi —\n\n` +
-            `Checked *${name}*'s website${rating ? ` (${rating}⭐)` : ''}. It's there — but no online catalogue, no WhatsApp order button, and customers can't browse or buy without coming in.\n\n` +
-            `Clothing stores we've upgraded with a catalogue + WhatsApp integration are getting 25–40 extra orders/month from people who never would have walked in.\n\n` +
-            `Worth upgrading?\n\n` +
-            `— Dhyey`
-        );
-    },
+Worth setting up?
 
-    jewellery: (name, hasWebsite, rating) => {
-        if (!hasWebsite) return (
-            `Hi —\n\n` +
-            `Searched for jewellery shops in Ahmedabad — *${name}* doesn't have a website or catalogue online.\n\n` +
-            `Jewellery buyers browse online before visiting — they want to see designs, gold rates, and trust signals before stepping in. Without that, you're losing serious buyers to shops that show up online.\n\n` +
-            `Worth setting up a catalogue page?\n\n` +
-            `— Dhyey`
-        );
-        if (rating && rating < 4.2) return (
-            `Hi — honest observation.\n\n` +
-            `*${name}* is at ${rating}⭐ on Google. For jewellery, trust is everything — buyers almost never visit a shop with less than 4.2 stars when there are options nearby.\n\n` +
-            `Is fixing this something you're thinking about?\n\n` +
-            `— Dhyey`
-        );
-        return (
-            `Hi —\n\n` +
-            `Checked *${name}*'s website${rating ? ` (${rating}⭐)` : ''}. It's up — but no digital catalogue, no gold rate section, and buyers can't browse designs before visiting.\n\n` +
-            `Jewellers with an upgraded site + WhatsApp link see noticeably more serious enquiries from buyers who researched online first.\n\n` +
-            `Want me to show you what's missing?\n\n` +
-            `— Dhyey`
-        );
-    },
+— Dhyey`,
 
-    manufacturing: (name, hasWebsite, rating) => {
-        if (!hasWebsite) return (
-            `Hi —\n\n` +
-            `Searched for manufacturers in Ahmedabad — *${name}* doesn't have a website.\n\n` +
-            `B2B buyers and procurement teams search Google before shortlisting vendors. Without a site showing your products, certifications, and capacity, you're not even in their consideration set.\n\n` +
-            `Want to fix that?\n\n` +
-            `— Dhyey`
-        );
-        if (rating && rating < 4.2) return (
-            `Hi — quick note.\n\n` +
-            `*${name}* is at ${rating}⭐ on Google. B2B buyers increasingly check Google before reaching out — a low rating makes them hesitate, even if your quality is excellent.\n\n` +
-            `Is this on your radar?\n\n` +
-            `— Dhyey`
-        );
-        return (
-            `Hi —\n\n` +
-            `Checked *${name}*'s website${rating ? ` (${rating}⭐)` : ''}. It's live — but no product catalogue, no certifications page, and procurement teams searching for vendors can't evaluate you without calling.\n\n` +
-            `Manufacturers who upgrade for B2B search + inbound typically get shortlisted more often without spending on ads.\n\n` +
-            `Worth looking at?\n\n` +
-            `— Dhyey`
-        );
-    },
+    clinic: (name, hasWebsite) => hasWebsite
+        ? `Hi —
 
-    immigration: (name, hasWebsite, rating) => {
-        if (!hasWebsite) return (
-            `Hi —\n\n` +
-            `Searched for immigration consultants in Ahmedabad — *${name}* doesn't have a website.\n\n` +
-            `People searching for visa help want to verify a consultant is legitimate before calling — a professional site with services, success cases, and a WhatsApp contact converts them instantly. Consultants I've worked with get 15–20 extra inquiry leads/month.\n\n` +
-            `Want to know more?\n\n` +
-            `— Dhyey`
-        );
-        if (rating && rating < 4.2) return (
-            `Hi — honest note.\n\n` +
-            `*${name}* is at ${rating}⭐ on Google. People looking for visa consultants are putting money and time on the line — they almost always pick someone with 4.2+ stars. You're losing leads before they even call.\n\n` +
-            `Is improving this something you'd want to look at?\n\n` +
-            `— Dhyey`
-        );
-        return (
-            `Hi —\n\n` +
-            `Checked *${name}*'s website${rating ? ` (${rating}⭐)` : ''}. It's there — but no services breakdown, no success stories, and no clear way for someone to verify your credibility before calling.\n\n` +
-            `Consultants who upgrade for trust + local search see a clear jump in how many people actually reach out without spending on ads.\n\n` +
-            `Want me to show you what to add?\n\n` +
-            `— Dhyey`
-        );
-    },
+Checked *${name}*'s website. It's up — but not optimised for patient conversions.
 
-    photography: (name, hasWebsite, rating) => {
-        if (!hasWebsite) return (
-            `Hi —\n\n` +
-            `Searched for photographers in Ahmedabad — *${name}* doesn't have a website or portfolio online.\n\n` +
-            `Clients book photographers they can see — without a portfolio site showing your work, pricing, and a WhatsApp booking link, you're only getting referrals and missing everyone searching on Google.\n\n` +
-            `Want me to show you what a portfolio site can bring in?\n\n` +
-            `— Dhyey`
-        );
-        if (rating && rating < 4.2) return (
-            `Hi — honest observation.\n\n` +
-            `*${name}* is at ${rating}⭐ on Google. Clients searching for photographers always check ratings and sample work before booking — below 4.2 and most shortlist someone else first.\n\n` +
-            `Is improving this something you're thinking about?\n\n` +
-            `— Dhyey`
-        );
-        return (
-            `Hi —\n\n` +
-            `Checked *${name}*'s website${rating ? ` (${rating}⭐)` : ''}. It's up — but no gallery organised by event type, no clear pricing, and no booking/enquiry form.\n\n` +
-            `Photographers we've upgraded are getting 10–15 direct booking enquiries/month from Google without any ads.\n\n` +
-            `Want me to show you what to improve?\n\n` +
-            `— Dhyey`
-        );
-    },
+A focused update brings 8–12 new patient inquiries/month from Google.
 
-    ca: (name, hasWebsite, rating) => {
-        if (!hasWebsite) return (
-            `Hi —\n\n` +
-            `Searched for CAs and tax consultants in Ahmedabad — *${name}* doesn't have a website.\n\n` +
-            `Clients looking for a CA Google before calling — a professional site listing your services (GST, ITR, audit, company registration) with a WhatsApp contact converts them instantly. Firms I've worked with get 10–15 extra client enquiries/month.\n\n` +
-            `Want to know more?\n\n` +
-            `— Dhyey`
-        );
-        if (rating && rating < 4.2) return (
-            `Hi — quick note.\n\n` +
-            `*${name}* is at ${rating}⭐ on Google. New clients searching for a CA almost always check reviews before reaching out — a lower rating is quietly costing you enquiries.\n\n` +
-            `Is improving this on your radar?\n\n` +
-            `— Dhyey`
-        );
-        return (
-            `Hi —\n\n` +
-            `Checked *${name}*'s website${rating ? ` (${rating}⭐)` : ''}. It's live — but no clear services list, no GST/ITR/audit breakdown, and no easy way for a prospect to reach you directly.\n\n` +
-            `A focused upgrade turns your site into a steady source of inbound client enquiries without any ad spend.\n\n` +
-            `Want me to show you what's missing?\n\n` +
-            `— Dhyey`
-        );
-    },
+Want to know what to improve?
 
-    events: (name, hasWebsite, rating) => {
-        if (!hasWebsite) return (
-            `Hi —\n\n` +
-            `Searched for event planners and decorators in Ahmedabad — *${name}* doesn't have a website or portfolio online.\n\n` +
-            `Couples and families planning events check work samples and pricing online before shortlisting anyone. Without a site, you're not even in the running for clients who search on Google.\n\n` +
-            `Worth setting up?\n\n` +
-            `— Dhyey`
-        );
-        if (rating && rating < 4.2) return (
-            `Hi — honest note.\n\n` +
-            `*${name}* is at ${rating}⭐ on Google. Event clients always read reviews before committing — below 4.2 and most of them move on without calling you.\n\n` +
-            `Is fixing this something you'd want to look at?\n\n` +
-            `— Dhyey`
-        );
-        return (
-            `Hi —\n\n` +
-            `Checked *${name}*'s website${rating ? ` (${rating}⭐)` : ''}. It's there — but no event gallery organised by type, no budget range guide, and no direct booking or enquiry path.\n\n` +
-            `Planners we've upgraded are getting 12–18 event enquiries/month from Google without spending on ads.\n\n` +
-            `Want me to point out what to fix?\n\n` +
-            `— Dhyey`
-        );
-    },
+— Dhyey`
+        : `Hi —
 
-    automobile: (name, hasWebsite, rating) => {
-        if (!hasWebsite) return (
-            `Hi —\n\n` +
-            `Searched for car service centres in Ahmedabad — *${name}* doesn't have a website.\n\n` +
-            `Car owners Google a service centre before going — without a site showing your services, pricing, and location with a WhatsApp button, they call a competitor instead.\n\n` +
-            `Want me to show you how to fix that quickly?\n\n` +
-            `— Dhyey`
-        );
-        if (rating && rating < 4.2) return (
-            `Hi — quick observation.\n\n` +
-            `*${name}* is at ${rating}⭐ on Google. People searching for a garage or service centre almost always check ratings first — below 4.2 and they pick someone else before calling.\n\n` +
-            `Is this something you're aware of?\n\n` +
-            `— Dhyey`
-        );
-        return (
-            `Hi —\n\n` +
-            `Checked *${name}*'s website${rating ? ` (${rating}⭐)` : ''}. It's live — but no services/pricing list, no slot booking, and not optimised for "car service near me" searches.\n\n` +
-            `A focused upgrade brings in steady service bookings from Google without any paid ads.\n\n` +
-            `Worth showing you?\n\n` +
-            `— Dhyey`
-        );
-    },
+Searched for clinics in Ahmedabad — *${name}* doesn't have a website.
 
-    hotel: (name, hasWebsite, rating) => {
-        if (!hasWebsite) return (
-            `Hi —\n\n` +
-            `Searched for hotels and stays in Ahmedabad — *${name}* doesn't have a website.\n\n` +
-            `Guests compare and book online — without a site showing rooms, pricing, and a direct booking option, you're losing bookings to properties listed on OTAs who take 15–20% commission on every stay.\n\n` +
-            `Want me to show you how a direct booking site saves that commission?\n\n` +
-            `— Dhyey`
-        );
-        if (rating && rating < 4.2) return (
-            `Hi — quick note.\n\n` +
-            `*${name}* is at ${rating}⭐ on Google. Guests check ratings before booking — below 4.2 and they pick a competitor or trust an OTA listing over you.\n\n` +
-            `Is improving this something you're thinking about?\n\n` +
-            `— Dhyey`
-        );
-        return (
-            `Hi —\n\n` +
-            `Checked *${name}*'s website${rating ? ` (${rating}⭐)` : ''}. It's up — but no direct booking form, no room gallery with pricing, and you're likely paying 15–20% commission to OTAs on bookings that could come directly.\n\n` +
-            `An upgraded site with direct booking typically cuts OTA dependency significantly.\n\n` +
-            `Want me to show you what to add?\n\n` +
-            `— Dhyey`
-        );
-    },
+Patients researching online can't find you. A simple clinic website brings 8–12 new patient inquiries/month — no ads needed.
 
-    pharmacy: (name, hasWebsite, rating) => {
-        if (!hasWebsite) return (
-            `Hi —\n\n` +
-            `Searched for medical stores in Ahmedabad — *${name}* doesn't have a website or online presence.\n\n` +
-            `Customers increasingly order medicines and health products online before visiting. A simple site with a WhatsApp order button lets you take orders without a delivery app taking commission.\n\n` +
-            `Interested in setting this up?\n\n` +
-            `— Dhyey`
-        );
-        if (rating && rating < 4.2) return (
-            `Hi — honest observation.\n\n` +
-            `*${name}* is at ${rating}⭐ on Google. Customers searching for a pharmacy nearby check ratings — below 4.2 and they walk into a competitor's store instead.\n\n` +
-            `Is fixing this on your radar?\n\n` +
-            `— Dhyey`
-        );
-        return (
-            `Hi —\n\n` +
-            `Checked *${name}*'s website${rating ? ` (${rating}⭐)` : ''}. It's there — but no product categories, no WhatsApp order button, and customers can't place an order without calling.\n\n` +
-            `Pharmacies we've upgraded with a catalogue + WhatsApp ordering see a clear jump in repeat orders without paying commission to any app.\n\n` +
-            `Want me to show you what to add?\n\n` +
-            `— Dhyey`
-        );
-    },
+Interested?
 
-    generic: (name, hasWebsite, rating) => {
-        if (!hasWebsite) return (
-            `Hi —\n\n` +
-            `Searched for *${name}* in Ahmedabad — you don't have a website, so customers who search online can't find you.\n\n` +
-            `A basic website with your services, location, and a WhatsApp button typically brings in 10–20 new inquiries/month from people who would never have found you otherwise.\n\n` +
-            `Want to see what that looks like?\n\n` +
-            `— Dhyey`
-        );
-        if (rating && rating < 4.2) return (
-            `Hi — quick observation.\n\n` +
-            `*${name}* is at ${rating}⭐ on Google. Businesses below 4.2 get ranked lower in local searches — you're likely losing customers to competitors before they even reach you.\n\n` +
-            `Is this something you'd want to fix?\n\n` +
-            `— Dhyey`
-        );
-        return (
-            `Hi —\n\n` +
-            `Checked *${name}*'s website${rating ? ` (${rating}⭐ on Google)` : ''}. It's live — but it's not set up to convert visitors into enquiries. No clear call-to-action, not optimised for local search, and likely missing a WhatsApp contact button.\n\n` +
-            `A focused upgrade typically adds 10–20 new enquiries/month from the traffic you're already getting.\n\n` +
-            `Want me to show you what to fix?\n\n` +
-            `— Dhyey`
-        );
-    },
+— Dhyey`,
+
+    restaurant: (name, hasWebsite) => hasWebsite
+        ? `Hi —
+
+Checked *${name}*'s website. It's there — but not optimised for online orders.
+
+An improved site brings 20–30 extra orders/month from people researching online.
+
+Want to know what to improve?
+
+— Dhyey`
+        : `Hi —
+
+Searched for restaurants in Ahmedabad — *${name}* doesn't have a website or online menu.
+
+People research online before choosing where to eat. A website + menu page brings 20–30 extra orders/month.
+
+Worth building one?
+
+— Dhyey`,
+
+    realestate: (name, hasWebsite) => hasWebsite
+        ? `Hi —
+
+Checked *${name}*'s website. It's there — but not optimised to attract buyer inquiries.
+
+A focused update brings more direct buyer calls from Google.
+
+Want to know what to improve?
+
+— Dhyey`
+        : `Hi —
+
+Searched for property agents in Ahmedabad — *${name}* doesn't have a website.
+
+Buyers search online before calling agents. A professional site brings consistent buyer inquiries without OTA commissions.
+
+Worth building?
+
+— Dhyey`,
+
+    fitness: (name, hasWebsite) => hasWebsite
+        ? `Hi —
+
+Checked *${name}*'s website. It's live — but not optimised to convert visitors into memberships.
+
+A focused update brings 15–25 more trial inquiries/month.
+
+Want to know what to improve?
+
+— Dhyey`
+        : `Hi —
+
+Searched for gyms in Ahmedabad — *${name}* doesn't have a website.
+
+People researching gyms online want to see pricing, classes, and trials. A gym website brings 15–25 trial inquiries/month.
+
+Worth setting up?
+
+— Dhyey`,
+
+    education: (name, hasWebsite) => hasWebsite
+        ? `Hi —
+
+Checked *${name}*'s website. It's up — but not optimised for student conversions.
+
+A focused update brings 30–40 more student inquiries/month.
+
+Want to know what to improve?
+
+— Dhyey`
+        : `Hi —
+
+Searched for coaching institutes in Ahmedabad — *${name}* doesn't have a website.
+
+Parents and students research online before enrolling. A professional site brings 30–40 student inquiries/month.
+
+Worth building?
+
+— Dhyey`,
+
+    interior: (name, hasWebsite) => hasWebsite
+        ? `Hi —
+
+Checked *${name}*'s website. It's there — but not optimised to showcase work.
+
+A focused update brings more project inquiries.
+
+Want to know what to improve?
+
+— Dhyey`
+        : `Hi —
+
+Searched for interior designers in Ahmedabad — *${name}* doesn't have a website or portfolio.
+
+Clients want to see your work before reaching out. A portfolio site brings consistent project inquiries.
+
+Worth creating one?
+
+— Dhyey`,
+
+    clothing: (name, hasWebsite) => hasWebsite
+        ? `Hi —
+
+Checked *${name}*'s website. It's there — but not optimised for online sales.
+
+An updated site brings 25–40 more orders/month.
+
+Want to know what to improve?
+
+— Dhyey`
+        : `Hi —
+
+Searched for clothing stores in Ahmedabad — *${name}* doesn't have a website or catalogue.
+
+Customers want to browse online. A catalogue + WhatsApp brings 25–40 extra orders/month.
+
+Worth setting up?
+
+— Dhyey`,
+
+    jewellery: (name, hasWebsite) => hasWebsite
+        ? `Hi —
+
+Checked *${name}*'s website. It's up — but not optimised to attract buyers.
+
+A focused update brings more WhatsApp and in-store inquiries.
+
+Want to know what to improve?
+
+— Dhyey`
+        : `Hi —
+
+Searched for jewellery shops in Ahmedabad — *${name}* doesn't have a website or catalogue.
+
+Buyers want to see designs and prices online. A catalogue brings consistent inquiries.
+
+Worth creating one?
+
+— Dhyey`,
+
+    manufacturing: (name, hasWebsite) => hasWebsite
+        ? `Hi —
+
+Checked *${name}*'s website. It's there — but not optimised for B2B inquiries.
+
+An improved site brings more inbound leads.
+
+Want to know what to improve?
+
+— Dhyey`
+        : `Hi —
+
+Searched for manufacturers in Ahmedabad — *${name}* doesn't have a website.
+
+B2B buyers search online before shortlisting vendors. A professional site brings consistent inquiries.
+
+Worth building?
+
+— Dhyey`,
+
+    immigration: (name, hasWebsite) => hasWebsite
+        ? `Hi —
+
+Checked *${name}*'s website. It's up — but not optimised for client conversions.
+
+A focused update brings 15–20 more inquiries/month.
+
+Want to know what to improve?
+
+— Dhyey`
+        : `Hi —
+
+Searched for immigration consultants in Ahmedabad — *${name}* doesn't have a website.
+
+Clients want to verify credibility before calling. A professional site brings 15–20 client inquiries/month.
+
+Worth building?
+
+— Dhyey`,
+
+    photography: (name, hasWebsite) => hasWebsite
+        ? `Hi —
+
+Checked *${name}*'s website. It's there — but not optimised to showcase work.
+
+A focused update brings 10–15 more inquiries/month.
+
+Want to know what to improve?
+
+— Dhyey`
+        : `Hi —
+
+Searched for photographers in Ahmedabad — *${name}* doesn't have a website or portfolio.
+
+Clients want to see your work before booking. A portfolio site brings 10–15 direct bookings/month.
+
+Worth creating?
+
+— Dhyey`,
+
+    ca: (name, hasWebsite) => hasWebsite
+        ? `Hi —
+
+Checked *${name}*'s website. It's up — but not optimised for client conversions.
+
+A focused update brings 10–15 more inquiries/month.
+
+Want to know what to improve?
+
+— Dhyey`
+        : `Hi —
+
+Searched for CAs and tax consultants in Ahmedabad — *${name}* doesn't have a website.
+
+Clients research before hiring. A professional site brings 10–15 client inquiries/month.
+
+Worth building?
+
+— Dhyey`,
+
+    events: (name, hasWebsite) => hasWebsite
+        ? `Hi —
+
+Checked *${name}*'s website. It's there — but not optimised to showcase work.
+
+A focused update brings more event inquiries.
+
+Want to know what to improve?
+
+— Dhyey`
+        : `Hi —
+
+Searched for event planners in Ahmedabad — *${name}* doesn't have a website or portfolio.
+
+Clients want to see your work before booking. A portfolio site brings consistent event inquiries.
+
+Worth creating?
+
+— Dhyey`,
+
+    automobile: (name, hasWebsite) => hasWebsite
+        ? `Hi —
+
+Checked *${name}*'s website. It's up — but not optimised for service bookings.
+
+A focused update brings more service inquiries.
+
+Want to know what to improve?
+
+— Dhyey`
+        : `Hi —
+
+Searched for car service centres in Ahmedabad — *${name}* doesn't have a website.
+
+Customers search online before visiting. A professional site brings consistent service bookings.
+
+Worth building?
+
+— Dhyey`,
+
+    hotel: (name, hasWebsite) => hasWebsite
+        ? `Hi —
+
+Checked *${name}*'s website. It's there — but not optimised for direct bookings.
+
+A focused update reduces OTA dependency.
+
+Want to know what to improve?
+
+— Dhyey`
+        : `Hi —
+
+Searched for hotels in Ahmedabad — *${name}* doesn't have a website.
+
+Guests book online before arriving. A professional site brings direct bookings without OTA commissions.
+
+Worth building?
+
+— Dhyey`,
+
+    pharmacy: (name, hasWebsite) => hasWebsite
+        ? `Hi —
+
+Checked *${name}*'s website. It's up — but not optimised for orders.
+
+A focused update brings more WhatsApp orders.
+
+Want to know what to improve?
+
+— Dhyey`
+        : `Hi —
+
+Searched for pharmacies in Ahmedabad — *${name}* doesn't have a website.
+
+Customers order online now. A site + WhatsApp brings orders without app commissions.
+
+Worth building?
+
+— Dhyey`,
+
+    generic: (name, hasWebsite) => hasWebsite
+        ? `Hi —
+
+Checked *${name}*'s website. It's live — but not optimised to convert visitors.
+
+A focused update brings 10–20 more inquiries/month.
+
+Want to know what to improve?
+
+— Dhyey`
+        : `Hi —
+
+Searched for *${name}* in Ahmedabad — you don't have a website.
+
+Customers search online now. A professional site brings 10–20 new inquiries/month.
+
+Worth building?
+
+— Dhyey`,
 };
 
 // Stage 2 — don't say "following up". Ask a fresh question they WANT to answer.

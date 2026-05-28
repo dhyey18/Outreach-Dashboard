@@ -16,3 +16,4 @@ leads/
 
 # Node
 node_modules/
+.vercel

@@ -1,0 +1,67 @@
+Done. Here's the summary of changes:
+
+googlesearch.js — complete rewrite:
+
+11 industries with targeted Google Maps queries (3–11 queries each, ~50 total)
+Processes industries sequentially, saves each to leads/<industry>_leads.json
+Creates leads/ folder automatically if missing
+Deduplication per-industry by place_id
+whatsapp.js — args updated:
+
+Added --industry=<name> shorthand → auto-resolves to leads/<name>_leads.json
+Default now points to leads/clinic_leads.json
+--leads= still works for custom file paths
+Workflow:
+
+
+# 1. Scrape all industries (run once)
+node googlesearch.js
+
+# 2. Send outreach per industry
+node whatsapp.js --industry=dental
+node whatsapp.js --industry=realestate
+node whatsapp.js --industry=fitness
+
+# 3. Follow-up after 2–3 days
+node whatsapp.js --industry=dental --followup
+
+
+
+# Check progress across all 11 industries (no WhatsApp login needed)
+node whatsapp.js --status
+
+# Auto-pick next industry with pending leads → sends batch of 20
+node whatsapp.js
+
+# Specific industry
+node whatsapp.js --industry=dental
+
+# Follow-up (Stage 2)
+node whatsapp.js --followup
+node whatsapp.js --industry=dental --followup
+
+# Reset batch progress
+node whatsapp.js --industry=dental --reset   # one industry
+node whatsapp.js --reset                     # all industries
+The --status table shows each industry's total / eligible / attempted / remaining at a glance without connecting to WhatsApp.
+
+
+Done. The dashboard is open in your browser. Here's what it has:
+
+Left sidebar — industry navigation with lead counts, click any to filter instantly
+
+Stats row — Total leads · Has website · LinkedIn found · Issues detected · Stage 1 sent · Stage 2 sent
+
+Top bar — search by name/type/address, filter by status / website / LinkedIn / issues, clear button, CSV export
+
+Table — sortable columns (click any header), shows rating, phone, website link, LinkedIn badge, issue count, contact status badge
+
+Click any row to expand and see:
+
+LinkedIn founder profiles with name, title, direct profile link
+Website issues list from the analyzer
+Business address
+Rebuild any time after running more outreach or scraping:
+
+
+node build-dashboard.js
