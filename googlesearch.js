@@ -7,8 +7,6 @@ const apikey = process.env.SERPAPI_KEY;
 if (!apikey) { console.error('❌  SERPAPI_KEY not set. Add it to your .env file.'); process.exit(1); }
 const search = new SerpApi.GoogleSearch(apikey);
 
-const LEADS_DIR = "./leads";
-
 // ─────────────────────────────────────────────
 //  REQUEST BUDGET CONTROLS
 //  MAX_PAGES        — stop paginating a query after this many pages (1 page = 20 results)
@@ -20,14 +18,18 @@ const MIN_FRESH = 3;     // stop early if a page yields < 3 new unique leads
 
 // ─────────────────────────────────────────────
 //  CLI ARGS
-//  node googlesearch.js                   → all industries, skip existing files
-//  node googlesearch.js --industry=dental → only dental
-//  node googlesearch.js --force           → re-fetch even if file exists
+//  node googlesearch.js                        → all industries, Ahmedabad, skip existing
+//  node googlesearch.js --city=vadodara        → all industries for Vadodara
+//  node googlesearch.js --industry=dental      → only dental
+//  node googlesearch.js --force                → re-fetch even if file exists
 // ─────────────────────────────────────────────
 const args = process.argv.slice(2);
 const FORCE = args.includes('--force');
 const industryArg = args.find(a => a.startsWith('--industry='));
+const cityArg     = args.find(a => a.startsWith('--city='));
 const ONLY_INDUSTRY = industryArg ? industryArg.split('=')[1] : null;
+const CITY = cityArg ? cityArg.split('=')[1].charAt(0).toUpperCase() + cityArg.split('=')[1].slice(1) : 'Ahmedabad';
+const LEADS_DIR = cityArg ? `./leads/${cityArg.split('=')[1].toLowerCase()}` : './leads';
 
 // ─────────────────────────────────────────────
 //  QUERIES PER INDUSTRY
@@ -36,107 +38,167 @@ const ONLY_INDUSTRY = industryArg ? industryArg.split('=')[1] : null;
 // ─────────────────────────────────────────────
 const INDUSTRIES = {
     dental: [
-        "dental clinic Ahmedabad",
-        "dentist Ahmedabad",
+        "dental clinic " + CITY,
+        "dentist " + CITY,
     ],
     clinic: [
-        "general physician Ahmedabad",
-        "dermatologist Ahmedabad",
-        "gynaecologist Ahmedabad",
-        "paediatrician Ahmedabad",
-        "orthopedic doctor Ahmedabad",
-        "eye clinic Ahmedabad",
-        "multispeciality clinic Ahmedabad",
-        "physiotherapy clinic Ahmedabad",
-        "ayurvedic clinic Ahmedabad",
+        "general physician " + CITY,
+        "dermatologist " + CITY,
+        "gynaecologist " + CITY,
+        "paediatrician " + CITY,
+        "orthopedic doctor " + CITY,
+        "eye clinic " + CITY,
+        "multispeciality clinic " + CITY,
+        "physiotherapy clinic " + CITY,
+        "ayurvedic clinic " + CITY,
     ],
     restaurant: [
-        "restaurant Ahmedabad",
-        "cafe Ahmedabad",
-        "dhaba Ahmedabad",
-        "bakery Ahmedabad",
-        "caterer Ahmedabad",
+        "restaurant " + CITY,
+        "cafe " + CITY,
+        "dhaba " + CITY,
+        "bakery " + CITY,
+        "caterer " + CITY,
     ],
     realestate: [
-        "real estate agent Ahmedabad",
-        "property dealer Ahmedabad",
-        "builder Ahmedabad",
-        "apartment developer Ahmedabad",
+        "real estate agent " + CITY,
+        "property dealer " + CITY,
+        "builder " + CITY,
+        "apartment developer " + CITY,
     ],
     fitness: [
-        "gym Ahmedabad",
-        "yoga studio Ahmedabad",
-        "fitness center Ahmedabad",
+        "gym " + CITY,
+        "yoga studio " + CITY,
+        "fitness center " + CITY,
     ],
     education: [
-        "coaching class Ahmedabad",
-        "education institute Ahmedabad",
-        "tutor Ahmedabad",
+        "coaching class " + CITY,
+        "education institute " + CITY,
+        "tutor " + CITY,
     ],
     interior: [
-        "interior designer Ahmedabad",
-        "architect Ahmedabad",
-        "home renovation Ahmedabad",
+        "interior designer " + CITY,
+        "architect " + CITY,
+        "home renovation " + CITY,
     ],
     clothing: [
-        "clothing store Ahmedabad",
-        "boutique Ahmedabad",
-        "saree shop Ahmedabad",
-        "garment shop Ahmedabad",
+        "clothing store " + CITY,
+        "boutique " + CITY,
+        "saree shop " + CITY,
+        "garment shop " + CITY,
     ],
     jewellery: [
-        "jewellery shop Ahmedabad",
-        "gold jewellery Ahmedabad",
-        "diamond jewellery Ahmedabad",
+        "jewellery shop " + CITY,
+        "gold jewellery " + CITY,
+        "diamond jewellery " + CITY,
     ],
     manufacturing: [
-        "manufacturer Ahmedabad",
-        "engineering company Ahmedabad",
-        "fabrication Ahmedabad",
+        "manufacturer " + CITY,
+        "engineering company " + CITY,
+        "fabrication " + CITY,
     ],
     immigration: [
-        "immigration consultant Ahmedabad",
-        "visa consultant Ahmedabad",
-        "tour operator Ahmedabad",
+        "immigration consultant " + CITY,
+        "visa consultant " + CITY,
+        "tour operator " + CITY,
     ],
     photography: [
-        "wedding photographer Ahmedabad",
-        "portrait studio Ahmedabad",
-        "videographer Ahmedabad",
-        "event photographer Ahmedabad",
+        "wedding photographer " + CITY,
+        "portrait studio " + CITY,
+        "videographer " + CITY,
+        "event photographer " + CITY,
     ],
     ca: [
-        "chartered accountant Ahmedabad",
-        "tax consultant Ahmedabad",
-        "GST consultant Ahmedabad",
-        "auditor Ahmedabad",
-        "accounting firm Ahmedabad",
+        "chartered accountant " + CITY,
+        "tax consultant " + CITY,
+        "GST consultant " + CITY,
+        "auditor " + CITY,
+        "accounting firm " + CITY,
     ],
     events: [
-        "wedding planner Ahmedabad",
-        "event organiser Ahmedabad",
-        "event decorator Ahmedabad",
-        "wedding decorator Ahmedabad",
-        "party organiser Ahmedabad",
+        "wedding planner " + CITY,
+        "event organiser " + CITY,
+        "event decorator " + CITY,
+        "wedding decorator " + CITY,
+        "party organiser " + CITY,
     ],
     automobile: [
-        "car service center Ahmedabad",
-        "car dealer Ahmedabad",
-        "auto repair Ahmedabad",
-        "car detailing Ahmedabad",
-        "bike service center Ahmedabad",
+        "car service center " + CITY,
+        "car dealer " + CITY,
+        "auto repair " + CITY,
+        "car detailing " + CITY,
+        "bike service center " + CITY,
     ],
     hotel: [
-        "hotel Ahmedabad",
-        "guest house Ahmedabad",
-        "service apartment Ahmedabad",
-        "lodge Ahmedabad",
+        "hotel " + CITY,
+        "guest house " + CITY,
+        "service apartment " + CITY,
+        "lodge " + CITY,
     ],
     pharmacy: [
-        "medical store Ahmedabad",
-        "chemist Ahmedabad",
-        "pharmacy Ahmedabad",
-        "drug store Ahmedabad",
+        "medical store " + CITY,
+        "chemist " + CITY,
+        "pharmacy " + CITY,
+        "drug store " + CITY,
+    ],
+    beauty: [
+        "beauty parlour " + CITY,
+        "salon " + CITY,
+        "spa " + CITY,
+        "nail art studio " + CITY,
+        "makeup artist " + CITY,
+    ],
+    legal: [
+        "advocate " + CITY,
+        "lawyer " + CITY,
+        "law firm " + CITY,
+        "legal consultant " + CITY,
+    ],
+    diagnostic: [
+        "pathology lab " + CITY,
+        "diagnostic centre " + CITY,
+        "blood test lab " + CITY,
+        "radiology centre " + CITY,
+    ],
+    logistics: [
+        "packers and movers " + CITY,
+        "courier service " + CITY,
+        "transport company " + CITY,
+        "cargo service " + CITY,
+    ],
+    printing: [
+        "printing press " + CITY,
+        "flex printing " + CITY,
+        "digital printing " + CITY,
+        "visiting card printing " + CITY,
+    ],
+    financial: [
+        "insurance agent " + CITY,
+        "mutual fund advisor " + CITY,
+        "financial advisor " + CITY,
+        "loan agent " + CITY,
+    ],
+    hospital: [
+        "nursing home " + CITY,
+        "hospital " + CITY,
+        "surgical centre " + CITY,
+        "maternity hospital " + CITY,
+    ],
+    wedding_venue: [
+        "marriage hall " + CITY,
+        "banquet hall " + CITY,
+        "wedding venue " + CITY,
+        "party hall " + CITY,
+    ],
+    travel: [
+        "tour and travel " + CITY,
+        "travel agency " + CITY,
+        "holiday package " + CITY,
+    ],
+    electronics: [
+        "mobile repair shop " + CITY,
+        "laptop repair " + CITY,
+        "electronics store " + CITY,
+        "computer repair " + CITY,
     ],
 };
 

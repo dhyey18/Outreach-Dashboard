@@ -163,7 +163,7 @@ const STAGE1 = {
 
     clinic: (name, hasWebsite) => hasWebsite
         ? `Hi —\n\nChecked *${name}*'s website. It's up — but not optimised for patient conversions.\n\nA focused update brings 8–12 new patient inquiries/month from Google.\n\nWant to know what to improve?\n\n— Dhyey`
-        : `Hi —\n\nSearched for clinics in Ahmedabad — *${name}* doesn't have a website.\n\nPatients researching online can't find you. A simple clinic website brings 8–12 new patient inquiries/month — no ads needed.\n\nInterested?\n\n— Dhyey`,
+        : `Hi —\n\nSearched for clinics in Ahmedabad — *${name}* doesn't have a website.\n\nPatients researching online can't find you. A simple clinic website brings 8–12 new patient inquiries/month — no ads needed.\n\nWant to know more?\n\n— Dhyey`,
 
     restaurant: (name, hasWebsite) => hasWebsite
         ? `Hi —\n\nChecked *${name}*'s website. It's there — but not optimised for online orders.\n\nAn improved site brings 20–30 extra orders/month from people researching online.\n\nWant to know what to improve?\n\n— Dhyey`

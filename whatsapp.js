@@ -17,13 +17,15 @@ const fs = require('fs');
 const path = require('path');
 
 const args = process.argv.slice(2);
-const IS_FOLLOWUP  = args.includes('--followup');
-const IS_RESET     = args.includes('--reset');
-const IS_STATUS    = args.includes('--status');
+const IS_FOLLOWUP = args.includes('--followup');
+const IS_RESET = args.includes('--reset');
+const IS_STATUS = args.includes('--status');
 const leadsFileArg = args.find(a => a.startsWith('--leads='));
-const industryArg  = args.find(a => a.startsWith('--industry='));
+const industryArg = args.find(a => a.startsWith('--industry='));
+const cityArg = args.find(a => a.startsWith('--city='));
+const CITY = cityArg ? cityArg.split('=')[1].toLowerCase() : null;
 
-const LEADS_DIR = './leads';
+const LEADS_DIR = CITY ? `./leads/${CITY}` : './leads';
 
 // Discover all industry files in leads/ folder, sorted alphabetically
 function discoverLeadsFiles() {
@@ -44,7 +46,7 @@ function resolveLeadsFile() {
 //  CONFIG
 // ─────────────────────────────────────────────
 const CONFIG = {
-    BATCH_SIZE: 20,
+    BATCH_SIZE: 40,
     DELAY_BETWEEN_MESSAGES_MS: 25000,  // 25s between sends (safer)
     LEADS_FILE: resolveLeadsFile(),    // null in auto-pick mode
     LOG_FILE: 'send_log.json',
@@ -184,19 +186,24 @@ function loadLeads(progressAll) {
     });
     console.log(`🔍  ${unique.length} unique leads after dedup (${data.length - unique.length} removed).`);
 
-    const withWebsite = unique.filter(l => l.website).length;
-    console.log(`🌐  ${unique.length - withWebsite} leads without a website, ${withWebsite} with a website (upgrade pitch).`);
+    const isSocialOnly = url => url && /facebook\.com|fb\.com|fb\.me|instagram\.com/i.test(url);
+    const hasRealWebsite = l => l.website && !isSocialOnly(l.website);
+
+    const withRealWebsite = unique.filter(l => hasRealWebsite(l)).length;
+    const socialOnly = unique.filter(l => isSocialOnly(l.website)).length;
+    const noWebsite = unique.filter(l => !hasRealWebsite(l)); // includes no-website AND social-only
+    console.log(`🌐  ${noWebsite.length} leads to contact (${withRealWebsite} with real website skipped, ${socialOnly} social-only → new website pitch).`);
 
     const contacted = getContactedPhones();
 
     let eligible;
     if (!IS_FOLLOWUP) {
-        // Stage 1: only send to leads never contacted before
-        eligible = unique.filter(l => !contacted.has(normaliseRaw(l.phone)));
+        // Stage 1: only send to no-website leads never contacted before
+        eligible = noWebsite.filter(l => !contacted.has(normaliseRaw(l.phone)));
         console.log(`📨  ${eligible.length} fresh leads (not contacted before).`);
     } else {
         // Stage 2: only send to leads that got Stage 1 but NOT Stage 2 yet
-        eligible = unique.filter(l => contacted.get(normaliseRaw(l.phone)) === 1);
+        eligible = noWebsite.filter(l => contacted.get(normaliseRaw(l.phone)) === 1);
         console.log(`📨  ${eligible.length} leads ready for follow-up (got Stage 1, no Stage 2 yet).`);
     }
 
@@ -223,19 +230,29 @@ function detectIndustry(lead) {
     ].join(' ').toLowerCase();
 
     if (/dental|dentist/.test(allTypes)) return 'dental';
-    if (/clinic|doctor|physician|medical|hospital|health|physiotherapy|ayurved/.test(allTypes)) return 'clinic';
-    if (/restaurant|cafe|food|dhaba|hotel|bakery|caterer/.test(allTypes)) return 'restaurant';
+    if (/nursing.?home|surgical|maternity.?hosp/.test(allTypes)) return 'hospital';
+    if (/patholog|diagnostic|radiol|blood.?test/.test(allTypes)) return 'diagnostic';
+    if (/clinic|doctor|physician|medical|health|physiotherapy|ayurved/.test(allTypes)) return 'clinic';
+    if (/restaurant|cafe|food|dhaba|bakery/.test(allTypes)) return 'restaurant';
     if (/real.?estate|property|builder|developer|apartment/.test(allTypes)) return 'realestate';
+    if (/marriage.?hall|banquet|wedding.?venue|party.?hall/.test(allTypes)) return 'wedding_venue';
     if (/gym|fitness|yoga|pilates|sports/.test(allTypes)) return 'fitness';
     if (/school|college|coaching|tutor|education|institute/.test(allTypes)) return 'education';
     if (/interior|architect|renovation|decor/.test(allTypes)) return 'interior';
     if (/cloth|apparel|fashion|boutique|saree|garment/.test(allTypes)) return 'clothing';
     if (/jewel|gold|silver|diamond/.test(allTypes)) return 'jewellery';
     if (/manufact|factory|industri|engineer|fabricat/.test(allTypes)) return 'manufacturing';
-    if (/immigr|visa|travel|tour/.test(allTypes)) return 'immigration';
+    if (/packer|mover|courier|transport|cargo|logistics/.test(allTypes)) return 'logistics';
+    if (/print|flex.?print|digital.?print|visiting.?card/.test(allTypes)) return 'printing';
+    if (/insurance|mutual.?fund|financial.?advis|loan.?agent/.test(allTypes)) return 'financial';
+    if (/immigr|visa/.test(allTypes)) return 'immigration';
+    if (/tour|travel.?agenc|holiday/.test(allTypes)) return 'travel';
     if (/photo|studio|videograph|cinemat/.test(allTypes)) return 'photography';
     if (/chartered.?account|ca firm|tax.?consult|audit|gst.?consult/.test(allTypes)) return 'ca';
-    if (/event|wedding.?plan|decorator|caterer|banquet/.test(allTypes)) return 'events';
+    if (/advocate|lawyer|law.?firm|legal/.test(allTypes)) return 'legal';
+    if (/event|wedding.?plan|decorator|caterer/.test(allTypes)) return 'events';
+    if (/beauty|parlour|salon|spa|nail|makeup/.test(allTypes)) return 'beauty';
+    if (/mobile.?repair|laptop.?repair|computer.?repair|electronic/.test(allTypes)) return 'electronics';
     if (/auto|car|vehicle|garage|mechanic|bike|motorcycle|tyre/.test(allTypes)) return 'automobile';
     if (/hotel|lodge|guest.?house|hostel|resort|stay/.test(allTypes)) return 'hotel';
     if (/pharmac|chemist|drug.?store|medicine/.test(allTypes)) return 'pharmacy';
@@ -244,473 +261,1088 @@ function detectIndustry(lead) {
 
 // ─────────────────────────────────────────────
 //  MESSAGE TEMPLATES
-//
-//  Stage 1 strategy:
-//    — No website: build a website to increase online presence
-//    — Has website: update your website to increase online presence & conversions
-//    — All messages are short, specific, end with a low-friction yes/no
-//
-//  Stage 2 strategy:
-//    — Don't say "following up on my message" — everyone ignores that
-//    — Ask a completely fresh, genuinely curious question about their business
-//    — Question they want to answer even if they forgot Stage 1 existed
 // ─────────────────────────────────────────────
 
-// Stage 1 — (name, hasWebsite, rating, reviews)
+const CONTACT = '+91 94291 84788';
+
+// Stage 1 — human, first-person, casual. No corporate structure.
 const STAGE1 = {
-    dental: (name, hasWebsite) => hasWebsite
-        ? `Hi —
+    dental: (name, hasWebsite, socialOnly, city = "Ahmedabad") => {
+        if (hasWebsite) return (
+            `Hi —
 
-Checked *${name}*'s website. It's live — but not optimised to convert visitors into bookings.
+Looked at *${name}*'s website — it's up but honestly doesn't seem like it's pulling patients from Google.
 
-A focused update brings 15–20 more appointment requests/month from Google.
+Small changes usually make a big difference for local clinics. Happy to take a proper look if you want.
 
-Want to know what to improve?
+Dhyey
+${CONTACT}`
+        );
+        if (socialOnly) return (
+            `Hi —
 
-— Dhyey`
-        : `Hi —
+Searched for *${name}* on Google — only an Instagram page came up.
 
-Searched for *${name}* in Ahmedabad — you don't have a website.
+Most patients use Google when they're looking for a dentist, not social media. A proper website gets you into those results. I build them for ₹8,000, usually up in a week.
 
-Patients searching online can't find or book with you. A professional dental website brings 10–15 appointment requests/month from Google — no ads needed.
+Dhyey
+${CONTACT}`
+        );
+        return (
+            `Hi —
 
-Worth setting up?
+Was looking up dental clinics in ${city} and noticed *${name}* doesn't show up on Google at all.
 
-— Dhyey`,
+Patients searching online right now are just going to whoever comes up first. I build websites for dental clinics — ₹8,000 one-time, ready in about a week.
 
-    clinic: (name, hasWebsite) => hasWebsite
-        ? `Hi —
+Worth a chat?
 
-Checked *${name}*'s website. It's up — but not optimised for patient conversions.
+Dhyey
+${CONTACT}`
+        );
+    },
 
-A focused update brings 8–12 new patient inquiries/month from Google.
+    clinic: (name, hasWebsite, socialOnly, city = "Ahmedabad") => {
+        if (hasWebsite) return (
+            `Hi —
 
-Want to know what to improve?
+Checked *${name}*'s website — it's there, but doesn't seem to be showing up in local Google searches the way it should.
 
-— Dhyey`
-        : `Hi —
+A few tweaks usually sort this out. Happy to take a look if you're interested.
 
-Searched for clinics in Ahmedabad — *${name}* doesn't have a website.
+Dhyey
+${CONTACT}`
+        );
+        if (socialOnly) return (
+            `Hi —
 
-Patients researching online can't find you. A simple clinic website brings 8–12 new patient inquiries/month — no ads needed.
+Searched for *${name}* — only a social media page showed up on Google.
+
+Patients searching for a clinic on Google need an actual website to find and contact you directly. I build them for ₹8,000, live in about a week.
+
+Dhyey
+${CONTACT}`
+        );
+        return (
+            `Hi —
+
+Looked up *${name}* in ${city} — no website came up.
+
+People searching for a doctor online in ${city} are just calling whoever shows up on Google first. I build clinic websites — ₹8,000, done in about a week.
 
 Interested?
 
-— Dhyey`,
+Dhyey
+${CONTACT}`
+        );
+    },
 
-    restaurant: (name, hasWebsite) => hasWebsite
-        ? `Hi —
+    restaurant: (name, hasWebsite, socialOnly, city = "Ahmedabad") => {
+        if (hasWebsite) return (
+            `Hi —
 
-Checked *${name}*'s website. It's there — but not optimised for online orders.
+Had a look at *${name}*'s website — it's live but I don't think it's doing much for online orders or walk-ins from search.
 
-An improved site brings 20–30 extra orders/month from people researching online.
+A few changes can really help with this. Let me know if you want me to take a closer look.
 
-Want to know what to improve?
+Dhyey
+${CONTACT}`
+        );
+        if (socialOnly) return (
+            `Hi —
 
-— Dhyey`
-        : `Hi —
+Searched for *${name}* — only Facebook came up, no website.
 
-Searched for restaurants in Ahmedabad — *${name}* doesn't have a website or online menu.
+People searching for a restaurant in ${city} online usually want to see a menu or place an order. Hard to do that on a Facebook page. I build restaurant websites for ₹8,000, ready in a week.
 
-People research online before choosing where to eat. A website + menu page brings 20–30 extra orders/month.
+Dhyey
+${CONTACT}`
+        );
+        return (
+            `Hi —
 
-Worth building one?
+Looked up *${name}* in ${city} — no website, just a Google Maps listing.
 
-— Dhyey`,
+People searching for somewhere to eat right now can't really find you online. I build restaurant websites — ₹8,000, up in about a week.
 
-    realestate: (name, hasWebsite) => hasWebsite
-        ? `Hi —
+Worth it?
 
-Checked *${name}*'s website. It's there — but not optimised to attract buyer inquiries.
+Dhyey
+${CONTACT}`
+        );
+    },
 
-A focused update brings more direct buyer calls from Google.
+    realestate: (name, hasWebsite, socialOnly, city = "Ahmedabad") => {
+        if (hasWebsite) return (
+            `Hi —
 
-Want to know what to improve?
+Checked *${name}*'s website — it's there, but I don't think it's generating buyer inquiries on its own.
 
-— Dhyey`
-        : `Hi —
+Fixing a few things usually starts bringing in leads without having to share commission with anyone. Happy to look into it.
 
-Searched for property agents in Ahmedabad — *${name}* doesn't have a website.
+Dhyey
+${CONTACT}`
+        );
+        if (socialOnly) return (
+            `Hi —
 
-Buyers search online before calling agents. A professional site brings consistent buyer inquiries without OTA commissions.
+Searched for *${name}* on Google — just a social media page came up.
 
-Worth building?
+Buyers searching for a property agent in ${city} on Google won't find you there. A proper website puts you in front of them directly — no OTA cut. I build them for ₹8,000, live in a week.
 
-— Dhyey`,
+Dhyey
+${CONTACT}`
+        );
+        return (
+            `Hi —
 
-    fitness: (name, hasWebsite) => hasWebsite
-        ? `Hi —
+Was looking up property agents in ${city} and *${name}* doesn't come up on Google.
 
-Checked *${name}*'s website. It's live — but not optimised to convert visitors into memberships.
+Buyers searching online are going to whoever shows up first. A website gets you there — and every inquiry comes straight to you, no commission to anyone. I build them for ₹8,000, ready in about a week.
 
-A focused update brings 15–25 more trial inquiries/month.
+Dhyey
+${CONTACT}`
+        );
+    },
 
-Want to know what to improve?
+    fitness: (name, hasWebsite, socialOnly, city = "Ahmedabad") => {
+        if (hasWebsite) return (
+            `Hi —
 
-— Dhyey`
-        : `Hi —
+Looked at *${name}*'s website — it's live but I don't think it's pulling in new members from Google search.
 
-Searched for gyms in Ahmedabad — *${name}* doesn't have a website.
+Usually a few changes make a real difference for gyms and studios. Happy to take a look if you want.
 
-People researching gyms online want to see pricing, classes, and trials. A gym website brings 15–25 trial inquiries/month.
+Dhyey
+${CONTACT}`
+        );
+        if (socialOnly) return (
+            `Hi —
 
-Worth setting up?
+Searched for *${name}* on Google — only Instagram came up.
 
-— Dhyey`,
+People searching for a gym in ${city} use Google, not just Instagram. A proper website gets you in those results. I build them for ₹8,000, up in about a week.
 
-    education: (name, hasWebsite) => hasWebsite
-        ? `Hi —
+Dhyey
+${CONTACT}`
+        );
+        return (
+            `Hi —
 
-Checked *${name}*'s website. It's up — but not optimised for student conversions.
+Looked up gyms and fitness studios in ${city} — *${name}* doesn't show up on Google.
 
-A focused update brings 30–40 more student inquiries/month.
+People searching for a place to work out are signing up wherever comes up first. I build websites for gyms and studios — ₹8,000, done in about a week.
 
-Want to know what to improve?
+Dhyey
+${CONTACT}`
+        );
+    },
 
-— Dhyey`
-        : `Hi —
+    education: (name, hasWebsite, socialOnly, city = "Ahmedabad") => {
+        if (hasWebsite) return (
+            `Hi —
 
-Searched for coaching institutes in Ahmedabad — *${name}* doesn't have a website.
+Had a look at *${name}*'s website — it's up, but I don't think parents searching on Google are finding it easily.
 
-Parents and students research online before enrolling. A professional site brings 30–40 student inquiries/month.
+A few things usually fix this for coaching institutes. Happy to check properly if you're interested.
 
-Worth building?
+Dhyey
+${CONTACT}`
+        );
+        if (socialOnly) return (
+            `Hi —
 
-— Dhyey`,
+Searched for *${name}* on Google — only a social media page came up.
 
-    interior: (name, hasWebsite) => hasWebsite
-        ? `Hi —
+Parents looking for coaching classes in ${city} search on Google, not Instagram. A website gets you on that list. I build them for ₹8,000, live in about a week.
 
-Checked *${name}*'s website. It's there — but not optimised to showcase work.
+Dhyey
+${CONTACT}`
+        );
+        return (
+            `Hi —
 
-A focused update brings more project inquiries.
+Was searching for coaching institutes in ${city} — *${name}* doesn't show up on Google.
 
-Want to know what to improve?
+Parents looking for classes are enrolling wherever comes up first. I build websites for coaching institutes — ₹8,000, ready in about a week.
 
-— Dhyey`
-        : `Hi —
+Interested?
 
-Searched for interior designers in Ahmedabad — *${name}* doesn't have a website or portfolio.
+Dhyey
+${CONTACT}`
+        );
+    },
 
-Clients want to see your work before reaching out. A portfolio site brings consistent project inquiries.
+    interior: (name, hasWebsite, socialOnly, city = "Ahmedabad") => {
+        if (hasWebsite) return (
+            `Hi —
 
-Worth creating one?
+Checked *${name}*'s website — the portfolio looks good, but it's not showing up well when people search for interior designers in ${city} on Google.
 
-— Dhyey`,
+Happy to look at what's holding it back if you want.
 
-    clothing: (name, hasWebsite) => hasWebsite
-        ? `Hi —
+Dhyey
+${CONTACT}`
+        );
+        if (socialOnly) return (
+            `Hi —
 
-Checked *${name}*'s website. It's there — but not optimised for online sales.
+Searched for *${name}* on Google — just Instagram came up, no website.
 
-An updated site brings 25–40 more orders/month.
+Clients searching for an interior designer in ${city} on Google won't find your work there. A proper website puts your portfolio in front of them. I build them for ₹8,000, live in a week.
 
-Want to know what to improve?
+Dhyey
+${CONTACT}`
+        );
+        return (
+            `Hi —
 
-— Dhyey`
-        : `Hi —
+Was looking up interior designers in ${city} — *${name}* doesn't come up on Google.
 
-Searched for clothing stores in Ahmedabad — *${name}* doesn't have a website or catalogue.
+Clients searching online are reaching out to whoever shows up. A website puts your work in front of them directly. I build them for ₹8,000, ready in about a week.
 
-Customers want to browse online. A catalogue + WhatsApp brings 25–40 extra orders/month.
+Dhyey
+${CONTACT}`
+        );
+    },
 
-Worth setting up?
+    clothing: (name, hasWebsite, socialOnly, city = "Ahmedabad") => {
+        if (hasWebsite) return (
+            `Hi —
 
-— Dhyey`,
+Looked at *${name}*'s website — it's there, but I don't think it's driving many sales from Google search.
 
-    jewellery: (name, hasWebsite) => hasWebsite
-        ? `Hi —
+A few changes usually help a lot with this for clothing stores. Let me know if you want me to check.
 
-Checked *${name}*'s website. It's up — but not optimised to attract buyers.
+Dhyey
+${CONTACT}`
+        );
+        if (socialOnly) return (
+            `Hi —
 
-A focused update brings more WhatsApp and in-store inquiries.
+Searched for *${name}* on Google — only a social media page came up.
 
-Want to know what to improve?
+People searching for clothing stores in ${city} online can't browse or order from a Facebook page easily. A proper website fixes that. I build them for ₹8,000, up in about a week.
 
-— Dhyey`
-        : `Hi —
+Dhyey
+${CONTACT}`
+        );
+        return (
+            `Hi —
 
-Searched for jewellery shops in Ahmedabad — *${name}* doesn't have a website or catalogue.
+Looked up clothing stores in ${city} — *${name}* doesn't come up on Google.
 
-Buyers want to see designs and prices online. A catalogue brings consistent inquiries.
+People searching to buy clothes online in ${city} right now are going to whoever shows up. I build clothing store websites — ₹8,000, done in about a week.
 
-Worth creating one?
+Dhyey
+${CONTACT}`
+        );
+    },
 
-— Dhyey`,
+    jewellery: (name, hasWebsite, socialOnly, city = "Ahmedabad") => {
+        if (hasWebsite) return (
+            `Hi —
 
-    manufacturing: (name, hasWebsite) => hasWebsite
-        ? `Hi —
+Had a look at *${name}*'s website — it's up, but I don't think buyers searching on Google are finding it.
 
-Checked *${name}*'s website. It's there — but not optimised for B2B inquiries.
+Happy to check what's going on and see if it's an easy fix.
 
-An improved site brings more inbound leads.
+Dhyey
+${CONTACT}`
+        );
+        if (socialOnly) return (
+            `Hi —
 
-Want to know what to improve?
+Searched for *${name}* — only Facebook came up on Google.
 
-— Dhyey`
-        : `Hi —
+People searching for jewellery in ${city} online want to see the collection before visiting. A website makes that easy. I build them for ₹8,000, ready in a week.
 
-Searched for manufacturers in Ahmedabad — *${name}* doesn't have a website.
+Dhyey
+${CONTACT}`
+        );
+        return (
+            `Hi —
 
-B2B buyers search online before shortlisting vendors. A professional site brings consistent inquiries.
+Was looking up jewellery shops in ${city} — *${name}* doesn't come up on Google at all.
 
-Worth building?
+Buyers searching online are walking into whoever they find first. A website puts your shop on that list. I build them for ₹8,000, ready in about a week.
 
-— Dhyey`,
+Dhyey
+${CONTACT}`
+        );
+    },
 
-    immigration: (name, hasWebsite) => hasWebsite
-        ? `Hi —
+    manufacturing: (name, hasWebsite, socialOnly, city = "Ahmedabad") => {
+        if (hasWebsite) return (
+            `Hi —
 
-Checked *${name}*'s website. It's up — but not optimised for client conversions.
+Looked at *${name}*'s website — it's live but not really showing up when buyers search on Google.
 
-A focused update brings 15–20 more inquiries/month.
+For B2B this can mean missing a lot of inbound orders. Happy to look at it if you want.
 
-Want to know what to improve?
+Dhyey
+${CONTACT}`
+        );
+        if (socialOnly) return (
+            `Hi —
 
-— Dhyey`
-        : `Hi —
+Searched for *${name}* on Google — only a social media page came up.
 
-Searched for immigration consultants in Ahmedabad — *${name}* doesn't have a website.
+B2B buyers searching for manufacturers in ${city} won't find you there. A proper website gets you in front of them. I build them for ₹8,000, live in about a week.
 
-Clients want to verify credibility before calling. A professional site brings 15–20 client inquiries/month.
+Dhyey
+${CONTACT}`
+        );
+        return (
+            `Hi —
 
-Worth building?
+Looked up *${name}* in ${city} — no website came up on Google.
 
-— Dhyey`,
+Buyers searching for manufacturers online are going to whoever shows up. A website gets you in front of them — I build them for ₹8,000, done in about a week.
 
-    photography: (name, hasWebsite) => hasWebsite
-        ? `Hi —
+Dhyey
+${CONTACT}`
+        );
+    },
 
-Checked *${name}*'s website. It's there — but not optimised to showcase work.
+    immigration: (name, hasWebsite, socialOnly, city = "Ahmedabad") => {
+        if (hasWebsite) return (
+            `Hi —
 
-A focused update brings 10–15 more inquiries/month.
+Checked *${name}*'s website — it's there, but I don't think it's pulling in client inquiries from Google search.
 
-Want to know what to improve?
+A few things usually fix this for immigration consultancies. Happy to take a look.
 
-— Dhyey`
-        : `Hi —
+Dhyey
+${CONTACT}`
+        );
+        if (socialOnly) return (
+            `Hi —
 
-Searched for photographers in Ahmedabad — *${name}* doesn't have a website or portfolio.
+Searched for *${name}* on Google — only a social media page came up.
 
-Clients want to see your work before booking. A portfolio site brings 10–15 direct bookings/month.
+People searching for an immigration consultant in ${city} use Google, not social media. A website gets you in front of them. I build them for ₹8,000, live in a week.
 
-Worth creating?
+Dhyey
+${CONTACT}`
+        );
+        return (
+            `Hi —
 
-— Dhyey`,
+Was looking up immigration consultants in ${city} — *${name}* doesn't show up on Google.
 
-    ca: (name, hasWebsite) => hasWebsite
-        ? `Hi —
+People searching for visa help are contacting whoever comes up first. I build websites for consultancies — ₹8,000, ready in about a week.
 
-Checked *${name}*'s website. It's up — but not optimised for client conversions.
+Interested?
 
-A focused update brings 10–15 more inquiries/month.
+Dhyey
+${CONTACT}`
+        );
+    },
 
-Want to know what to improve?
+    photography: (name, hasWebsite, socialOnly, city = "Ahmedabad") => {
+        if (hasWebsite) return (
+            `Hi —
 
-— Dhyey`
-        : `Hi —
+Had a look at *${name}*'s website — the work looks great, but Google isn't really surfacing it for people searching locally.
 
-Searched for CAs and tax consultants in Ahmedabad — *${name}* doesn't have a website.
+Happy to look at what's going on if you want.
 
-Clients research before hiring. A professional site brings 10–15 client inquiries/month.
+Dhyey
+${CONTACT}`
+        );
+        if (socialOnly) return (
+            `Hi —
 
-Worth building?
+Searched for *${name}* on Google — only Instagram came up.
 
-— Dhyey`,
+Clients searching for a photographer in ${city} on Google can't find your portfolio there. A proper website puts it in front of them. I build them for ₹8,000, up in about a week.
 
-    events: (name, hasWebsite) => hasWebsite
-        ? `Hi —
+Dhyey
+${CONTACT}`
+        );
+        return (
+            `Hi —
 
-Checked *${name}*'s website. It's there — but not optimised to showcase work.
+Was looking up photographers in ${city} — *${name}* doesn't come up on Google.
 
-A focused update brings more event inquiries.
+Clients searching for photography right now are booking whoever they find first. I build websites for photographers — ₹8,000, done in about a week.
 
-Want to know what to improve?
+Dhyey
+${CONTACT}`
+        );
+    },
 
-— Dhyey`
-        : `Hi —
+    ca: (name, hasWebsite, socialOnly, city = "Ahmedabad") => {
+        if (hasWebsite) return (
+            `Hi —
 
-Searched for event planners in Ahmedabad — *${name}* doesn't have a website or portfolio.
+Looked at *${name}*'s website — it's up, but doesn't seem to be showing in local Google results for CA and tax services.
 
-Clients want to see your work before booking. A portfolio site brings consistent event inquiries.
+Usually a straightforward fix. Happy to check if you're interested.
 
-Worth creating?
+Dhyey
+${CONTACT}`
+        );
+        if (socialOnly) return (
+            `Hi —
 
-— Dhyey`,
+Searched for *${name}* on Google — only a social media page came up.
 
-    automobile: (name, hasWebsite) => hasWebsite
-        ? `Hi —
+Businesses searching for a CA in ${city} on Google won't find you there. A proper website gets you in front of them. I build them for ₹8,000, ready in a week.
 
-Checked *${name}*'s website. It's up — but not optimised for service bookings.
+Dhyey
+${CONTACT}`
+        );
+        return (
+            `Hi —
 
-A focused update brings more service inquiries.
+Was looking up CA firms in ${city} — *${name}* doesn't come up on Google.
 
-Want to know what to improve?
+Businesses looking for tax and accounting help are going to whoever they find first. A website gets you on that list. I build them for ₹8,000, done in about a week.
 
-— Dhyey`
-        : `Hi —
+Dhyey
+${CONTACT}`
+        );
+    },
 
-Searched for car service centres in Ahmedabad — *${name}* doesn't have a website.
+    events: (name, hasWebsite, socialOnly, city = "Ahmedabad") => {
+        if (hasWebsite) return (
+            `Hi —
 
-Customers search online before visiting. A professional site brings consistent service bookings.
+Checked *${name}*'s website — it's live, but I don't think clients searching for event planners in ${city} are finding it.
 
-Worth building?
+A few things usually help with this. Happy to take a look.
 
-— Dhyey`,
+Dhyey
+${CONTACT}`
+        );
+        if (socialOnly) return (
+            `Hi —
 
-    hotel: (name, hasWebsite) => hasWebsite
-        ? `Hi —
+Searched for *${name}* on Google — only Facebook came up.
 
-Checked *${name}*'s website. It's there — but not optimised for direct bookings.
+Clients planning an event in ${city} search on Google first. A proper website shows them your work and gets you the inquiry. I build them for ₹8,000, up in about a week.
 
-A focused update reduces OTA dependency.
+Dhyey
+${CONTACT}`
+        );
+        return (
+            `Hi —
 
-Want to know what to improve?
+Was looking up event planners in ${city} — *${name}* doesn't show up on Google.
 
-— Dhyey`
-        : `Hi —
+Clients planning events are reaching out to whoever they find first. A website puts you in front of them. I build them for ₹8,000, ready in about a week.
 
-Searched for hotels in Ahmedabad — *${name}* doesn't have a website.
+Dhyey
+${CONTACT}`
+        );
+    },
 
-Guests book online before arriving. A professional site brings direct bookings without OTA commissions.
+    automobile: (name, hasWebsite, socialOnly, city = "Ahmedabad") => {
+        if (hasWebsite) return (
+            `Hi —
 
-Worth building?
+Looked at *${name}*'s website — it's there, but I don't think it's bringing in bookings from Google search.
 
-— Dhyey`,
+A few changes usually make a real difference for service centres. Happy to check if you want.
 
-    pharmacy: (name, hasWebsite) => hasWebsite
-        ? `Hi —
+Dhyey
+${CONTACT}`
+        );
+        if (socialOnly) return (
+            `Hi —
 
-Checked *${name}*'s website. It's up — but not optimised for orders.
+Searched for *${name}* on Google — only a social media page came up.
 
-A focused update brings more WhatsApp orders.
+People searching for a car service centre in ${city} on Google won't find you there. A website puts you on that list. I build them for ₹8,000, live in about a week.
 
-Want to know what to improve?
+Dhyey
+${CONTACT}`
+        );
+        return (
+            `Hi —
 
-— Dhyey`
-        : `Hi —
+Was looking up car service centres in ${city} — *${name}* doesn't come up on Google.
 
-Searched for pharmacies in Ahmedabad — *${name}* doesn't have a website.
+People searching for a mechanic or service centre online are going to whoever shows up. I build websites for auto businesses — ₹8,000, done in about a week.
 
-Customers order online now. A site + WhatsApp brings orders without app commissions.
+Dhyey
+${CONTACT}`
+        );
+    },
 
-Worth building?
+    hotel: (name, hasWebsite, socialOnly, city = "Ahmedabad") => {
+        if (hasWebsite) return (
+            `Hi —
 
-— Dhyey`,
+Had a look at *${name}*'s website — it's live, but guests are probably still finding you through OTAs and you're paying commission every time.
 
-    generic: (name, hasWebsite) => hasWebsite
-        ? `Hi —
+A proper direct booking setup on your own site fixes that. Happy to look into it.
 
-Checked *${name}*'s website. It's live — but not optimised to convert visitors.
+Dhyey
+${CONTACT}`
+        );
+        if (socialOnly) return (
+            `Hi —
 
-A focused update brings 10–20 more inquiries/month.
+Searched for *${name}* on Google — only a Facebook page came up.
 
-Want to know what to improve?
+Guests looking for a hotel in ${city} can't book directly with you — they go to MakeMyTrip or OYO instead and you lose a cut on every booking. A proper website sorts that out. I build them for ₹8,000, up in a week.
 
-— Dhyey`
-        : `Hi —
+Dhyey
+${CONTACT}`
+        );
+        return (
+            `Hi —
 
-Searched for *${name}* in Ahmedabad — you don't have a website.
+Looked up hotels in ${city} — *${name}* doesn't come up on Google directly.
 
-Customers search online now. A professional site brings 10–20 new inquiries/month.
+Guests searching online end up booking through OTAs and you pay commission on every stay. A website lets them book directly with you. I build them for ₹8,000, ready in about a week.
 
-Worth building?
+Dhyey
+${CONTACT}`
+        );
+    },
 
-— Dhyey`,
+    pharmacy: (name, hasWebsite, socialOnly, city = "Ahmedabad") => {
+        if (hasWebsite) return (
+            `Hi —
+
+Checked *${name}*'s website — it's there, but I don't think it's pulling orders from Google.
+
+A few changes usually help a lot with this. Happy to take a proper look.
+
+Dhyey
+${CONTACT}`
+        );
+        if (socialOnly) return (
+            `Hi —
+
+Searched for *${name}* on Google — only a social media page came up.
+
+People ordering medicines online in ${city} use apps like PharmEasy and you pay commission every time. A proper website lets them order directly from you. I build them for ₹8,000, up in a week.
+
+Dhyey
+${CONTACT}`
+        );
+        return (
+            `Hi —
+
+Looked up *${name}* in ${city} — no website came up.
+
+People ordering medicines online go to PharmEasy or 1mg by default — and you pay commission on every order. A website lets them order straight from you. I build them for ₹8,000, ready in about a week.
+
+Dhyey
+${CONTACT}`
+        );
+    },
+
+    generic: (name, hasWebsite, socialOnly, city = "Ahmedabad") => {
+        if (hasWebsite) return (
+            `Hi —
+
+Looked at *${name}*'s website — it's up, but I don't think it's bringing in inquiries from Google.
+
+Usually a few straightforward changes help a lot. Happy to take a look if you want.
+
+Dhyey
+${CONTACT}`
+        );
+        if (socialOnly) return (
+            `Hi —
+
+Searched for *${name}* on Google — only social media came up.
+
+Customers searching on Google can't find you there. A proper website puts you in front of them. I build them for ₹8,000, live in about a week.
+
+Dhyey
+${CONTACT}`
+        );
+        return (
+            `Hi —
+
+Looked up *${name}* in ${city} — no website came up on Google.
+
+Customers searching online right now are going to whoever shows up. I build local business websites — ₹8,000, done in about a week.
+
+Dhyey
+${CONTACT}`
+        );
+    },
+
+    beauty: (name, hasWebsite, socialOnly, city = "Ahmedabad") => {
+        if (hasWebsite) return (
+`Hi —
+
+Checked *${name}*'s website — it's up, but I don't think it's pulling in bookings from Google search.
+
+People searching for salons and parlours in ${city} usually just call whoever comes up first. Happy to take a look if you want.
+
+Dhyey
+${CONTACT}`
+        );
+        if (socialOnly) return (
+`Hi —
+
+Searched for *${name}* on Google — only Instagram came up.
+
+Most clients search Google when they want to book a salon or spa — Instagram is for discovery, not bookings. A website gets you on that list. I build them for ₹8,000, up in about a week.
+
+Dhyey
+${CONTACT}`
+        );
+        return (
+`Hi —
+
+Was looking up salons in ${city} — *${name}* doesn't come up on Google.
+
+People searching for a parlour or spa nearby are just calling whoever shows up. I build websites for salons — ₹8,000, done in about a week.
+
+Dhyey
+${CONTACT}`
+        );
+    },
+
+    legal: (name, hasWebsite, socialOnly, city = "Ahmedabad") => {
+        if (hasWebsite) return (
+`Hi —
+
+Looked at *${name}*'s website — it's live, but I don't think clients searching on Google are finding it easily.
+
+People looking for a lawyer usually go with whoever comes up first. Happy to take a look if you're interested.
+
+Dhyey
+${CONTACT}`
+        );
+        if (socialOnly) return (
+`Hi —
+
+Searched for *${name}* on Google — only a social media page came up.
+
+People searching for an advocate in ${city} use Google, not social media. A proper website gets you in front of them. I build them for ₹8,000, live in a week.
+
+Dhyey
+${CONTACT}`
+        );
+        return (
+`Hi —
+
+Was looking up advocates in ${city} — *${name}* doesn't come up on Google.
+
+Clients searching for legal help online contact whoever shows up first. A website gets you on that list. I build them for ₹8,000, ready in about a week.
+
+Dhyey
+${CONTACT}`
+        );
+    },
+
+    diagnostic: (name, hasWebsite, socialOnly, city = "Ahmedabad") => {
+        if (hasWebsite) return (
+`Hi —
+
+Checked *${name}*'s website — it's there, but I don't think it's showing up when people search for labs in ${city} on Google.
+
+Patients booking blood tests or scans usually go with whoever they find first. Happy to look at what's holding it back.
+
+Dhyey
+${CONTACT}`
+        );
+        if (socialOnly) return (
+`Hi —
+
+Searched for *${name}* on Google — only a social media page came up.
+
+Patients searching for a diagnostic lab in ${city} use Google, not Instagram. A proper website gets you in front of them. I build them for ₹8,000, live in about a week.
+
+Dhyey
+${CONTACT}`
+        );
+        return (
+`Hi —
+
+Looked up diagnostic labs in ${city} — *${name}* doesn't come up on Google.
+
+Patients booking blood tests or scans online go to whoever they find first. A website puts you on that list. I build them for ₹8,000, done in about a week.
+
+Dhyey
+${CONTACT}`
+        );
+    },
+
+    logistics: (name, hasWebsite, socialOnly, city = "Ahmedabad") => {
+        if (hasWebsite) return (
+`Hi —
+
+Had a look at *${name}*'s website — it's up, but I don't think it's generating inquiries from Google.
+
+People searching for packers and movers usually call whoever comes up first. Happy to take a look.
+
+Dhyey
+${CONTACT}`
+        );
+        if (socialOnly) return (
+`Hi —
+
+Searched for *${name}* on Google — only a social media page came up.
+
+People searching for movers or transport in ${city} use Google, not Facebook. A proper website gets you in front of them. I build them for ₹8,000, live in a week.
+
+Dhyey
+${CONTACT}`
+        );
+        return (
+`Hi —
+
+Looked up packers and movers in ${city} — *${name}* doesn't come up on Google.
+
+People searching for transport or moving services just call whoever shows up first. I build websites for logistics businesses — ₹8,000, done in about a week.
+
+Dhyey
+${CONTACT}`
+        );
+    },
+
+    printing: (name, hasWebsite, socialOnly, city = "Ahmedabad") => {
+        if (hasWebsite) return (
+`Hi —
+
+Checked *${name}*'s website — it's live, but I don't think it's pulling in orders from Google search.
+
+Businesses searching for printing shops usually just go with whoever shows up first. Happy to take a look.
+
+Dhyey
+${CONTACT}`
+        );
+        if (socialOnly) return (
+`Hi —
+
+Searched for *${name}* on Google — only a social media page came up.
+
+Clients searching for a printing press in ${city} use Google, not Instagram. A proper website gets you in front of them. I build them for ₹8,000, up in about a week.
+
+Dhyey
+${CONTACT}`
+        );
+        return (
+`Hi —
+
+Looked up printing shops in ${city} — *${name}* doesn't come up on Google.
+
+Businesses searching for flex or digital printing just go with whoever shows up first. A website puts you on that list. I build them for ₹8,000, ready in about a week.
+
+Dhyey
+${CONTACT}`
+        );
+    },
+
+    financial: (name, hasWebsite, socialOnly, city = "Ahmedabad") => {
+        if (hasWebsite) return (
+`Hi —
+
+Looked at *${name}*'s website — it's there, but I don't think it's generating client inquiries from Google.
+
+People searching for insurance or investment advice usually go with whoever they find first. Happy to check what's going on.
+
+Dhyey
+${CONTACT}`
+        );
+        if (socialOnly) return (
+`Hi —
+
+Searched for *${name}* on Google — only a social media page came up.
+
+People searching for a financial advisor in ${city} use Google. A website gets you in front of them directly. I build them for ₹8,000, live in about a week.
+
+Dhyey
+${CONTACT}`
+        );
+        return (
+`Hi —
+
+Was looking up financial advisors in ${city} — *${name}* doesn't show up on Google.
+
+Clients searching for investment or insurance help go to whoever comes up first. A website gets you on that list. I build them for ₹8,000, done in about a week.
+
+Dhyey
+${CONTACT}`
+        );
+    },
+
+    hospital: (name, hasWebsite, socialOnly, city = "Ahmedabad") => {
+        if (hasWebsite) return (
+`Hi —
+
+Checked *${name}*'s website — it's up, but I don't think patients searching on Google are easily finding it.
+
+A few changes usually make a real difference for nursing homes and hospitals. Happy to take a proper look if you want.
+
+Dhyey
+${CONTACT}`
+        );
+        if (socialOnly) return (
+`Hi —
+
+Searched for *${name}* on Google — only a social media page came up.
+
+Patients searching for a hospital or nursing home in ${city} use Google. A proper website gets you in those results. I build them for ₹8,000, live in about a week.
+
+Dhyey
+${CONTACT}`
+        );
+        return (
+`Hi —
+
+Looked up hospitals and nursing homes in ${city} — *${name}* doesn't come up on Google.
+
+Patients searching online for medical care go to whoever shows up first. A website gets you on that list. I build them for ₹8,000, ready in about a week.
+
+Dhyey
+${CONTACT}`
+        );
+    },
+
+    wedding_venue: (name, hasWebsite, socialOnly, city = "Ahmedabad") => {
+        if (hasWebsite) return (
+`Hi —
+
+Had a look at *${name}*'s website — it's live, but I don't think couples searching for venues in ${city} are finding it.
+
+A few things usually fix this for banquet halls and marriage venues. Happy to take a look.
+
+Dhyey
+${CONTACT}`
+        );
+        if (socialOnly) return (
+`Hi —
+
+Searched for *${name}* on Google — only Facebook came up.
+
+Couples searching for a wedding or party venue in ${city} use Google. A proper website puts your hall in front of them directly. I build them for ₹8,000, up in about a week.
+
+Dhyey
+${CONTACT}`
+        );
+        return (
+`Hi —
+
+Was looking up banquet halls in ${city} — *${name}* doesn't come up on Google.
+
+Couples planning weddings search online and book whoever they find first. A website puts your venue on that list. I build them for ₹8,000, ready in about a week.
+
+Dhyey
+${CONTACT}`
+        );
+    },
+
+    travel: (name, hasWebsite, socialOnly, city = "Ahmedabad") => {
+        if (hasWebsite) return (
+`Hi —
+
+Checked *${name}*'s website — it's there, but I don't think it's pulling in inquiries from Google.
+
+People searching for travel packages usually book with whoever they find first. Happy to look into it.
+
+Dhyey
+${CONTACT}`
+        );
+        if (socialOnly) return (
+`Hi —
+
+Searched for *${name}* on Google — only a social media page came up.
+
+People searching for a travel agent in ${city} use Google. A proper website gets you in front of them. I build them for ₹8,000, live in about a week.
+
+Dhyey
+${CONTACT}`
+        );
+        return (
+`Hi —
+
+Looked up travel agencies in ${city} — *${name}* doesn't come up on Google.
+
+People searching for holiday packages or tours just book with whoever shows up. A website gets you there. I build them for ₹8,000, done in about a week.
+
+Dhyey
+${CONTACT}`
+        );
+    },
+
+    electronics: (name, hasWebsite, socialOnly, city = "Ahmedabad") => {
+        if (hasWebsite) return (
+`Hi —
+
+Looked at *${name}*'s website — it's up, but I don't think it's bringing in customers from Google search.
+
+People searching for mobile or laptop repair in ${city} call whoever they find first. Happy to take a look if you want.
+
+Dhyey
+${CONTACT}`
+        );
+        if (socialOnly) return (
+`Hi —
+
+Searched for *${name}* on Google — only a social media page came up.
+
+People searching for phone or laptop repair in ${city} use Google, not Instagram. A proper website gets you in front of them. I build them for ₹8,000, up in about a week.
+
+Dhyey
+${CONTACT}`
+        );
+        return (
+`Hi —
+
+Was looking up mobile and laptop repair shops in ${city} — *${name}* doesn't come up on Google.
+
+People searching for a repair shop just go to whoever shows up first. A website puts you on that list. I build them for ₹8,000, done in about a week.
+
+Dhyey
+${CONTACT}`
+        );
+    },
 };
-
 // Stage 2 — don't say "following up". Ask a fresh question they WANT to answer.
 // Their natural instinct is to explain how their business works — that opens the door.
 const STAGE2 = {
     dental: (name) =>
         `Hi *${name}* —\n\n` +
         `Quick question, genuinely curious — are most of your new patients coming through referrals, or are some finding you through Google?\n\n` +
-        `— Dhyey`,
+        `— Dhyey (${CONTACT})`,
 
     clinic: (name) =>
         `Hi *${name}* —\n\n` +
         `Out of curiosity — right now, how are most new patients finding your clinic? Referrals, walk-ins, or online?\n\n` +
-        `— Dhyey`,
+        `— Dhyey (${CONTACT})`,
 
     restaurant: (name) =>
         `Hi *${name}* —\n\n` +
         `Quick question — are you currently getting online orders or mostly walk-in customers?\n\n` +
-        `— Dhyey`,
+        `— Dhyey (${CONTACT})`,
 
     realestate: (name) =>
         `Hi *${name}* —\n\n` +
         `Genuine question — are most of your buyer inquiries coming through referrals, or also from Google and social media?\n\n` +
-        `— Dhyey`,
+        `— Dhyey (${CONTACT})`,
 
     fitness: (name) =>
         `Hi *${name}* —\n\n` +
         `Quick question — are new members mostly finding you through word of mouth, or also through Google and Instagram?\n\n` +
-        `— Dhyey`,
+        `— Dhyey (${CONTACT})`,
 
     education: (name) =>
         `Hi *${name}* —\n\n` +
         `Genuine question — are most student inquiries coming through referrals, or are some parents finding you on Google?\n\n` +
-        `— Dhyey`,
+        `— Dhyey (${CONTACT})`,
 
     interior: (name) =>
         `Hi *${name}* —\n\n` +
         `Quick question — are most of your project leads coming through referrals, or are clients also finding you online?\n\n` +
-        `— Dhyey`,
+        `— Dhyey (${CONTACT})`,
 
     clothing: (name) =>
         `Hi *${name}* —\n\n` +
         `Quick question — are most of your customers walk-ins, or are some ordering through WhatsApp or Instagram?\n\n` +
-        `— Dhyey`,
+        `— Dhyey (${CONTACT})`,
 
     jewellery: (name) =>
         `Hi *${name}* —\n\n` +
         `Genuine question — are most customers coming to your shop directly, or are some also reaching out through WhatsApp or Instagram?\n\n` +
-        `— Dhyey`,
+        `— Dhyey (${CONTACT})`,
 
     manufacturing: (name) =>
         `Hi *${name}* —\n\n` +
         `Quick question — are most of your B2B inquiries coming through existing contacts and referrals, or also from online?\n\n` +
-        `— Dhyey`,
+        `— Dhyey (${CONTACT})`,
 
     immigration: (name) =>
         `Hi *${name}* —\n\n` +
         `Genuine question — are most of your clients coming through referrals, or are some finding you through Google?\n\n` +
-        `— Dhyey`,
+        `— Dhyey (${CONTACT})`,
 
     photography: (name) =>
         `Hi *${name}* —\n\n` +
         `Quick question — are most of your bookings coming through referrals, or are some clients also finding you through Google or Instagram?\n\n` +
-        `— Dhyey`,
+        `— Dhyey (${CONTACT})`,
 
     ca: (name) =>
         `Hi *${name}* —\n\n` +
         `Genuine question — are most of your new clients coming through referrals, or are some finding you through Google?\n\n` +
-        `— Dhyey`,
+        `— Dhyey (${CONTACT})`,
 
     events: (name) =>
         `Hi *${name}* —\n\n` +
         `Quick question — are most event enquiries coming through referrals, or are some clients also finding you online?\n\n` +
-        `— Dhyey`,
+        `— Dhyey (${CONTACT})`,
 
     automobile: (name) =>
         `Hi *${name}* —\n\n` +
         `Quick question — are most customers coming through word of mouth, or are some also finding you through Google?\n\n` +
-        `— Dhyey`,
+        `— Dhyey (${CONTACT})`,
 
     hotel: (name) =>
         `Hi *${name}* —\n\n` +
         `Genuine question — are most of your bookings coming through OTAs like MakeMyTrip, or do you also get direct bookings?\n\n` +
-        `— Dhyey`,
+        `— Dhyey (${CONTACT})`,
 
     pharmacy: (name) =>
         `Hi *${name}* —\n\n` +
         `Quick question — are most of your customers walk-ins, or are some also ordering through WhatsApp?\n\n` +
-        `— Dhyey`,
+        `— Dhyey (${CONTACT})`,
+
+    beauty: (name) =>
+        `Hi *${name}* —\n\n` +
+        `Quick question — are most of your bookings coming through walk-ins and referrals, or are some clients also finding you on Google?\n\n` +
+        `— Dhyey (${CONTACT})`,
+
+    legal: (name) =>
+        `Hi *${name}* —\n\n` +
+        `Genuine question — are most of your new clients coming through referrals, or are some finding you through Google?\n\n` +
+        `— Dhyey (${CONTACT})`,
+
+    diagnostic: (name) =>
+        `Hi *${name}* —\n\n` +
+        `Quick question — are most patients booking through a doctor's referral, or are some finding and calling you directly?\n\n` +
+        `— Dhyey (${CONTACT})`,
+
+    logistics: (name) =>
+        `Hi *${name}* —\n\n` +
+        `Quick question — are most of your bookings coming through referrals, or are some customers also finding you through Google?\n\n` +
+        `— Dhyey (${CONTACT})`,
+
+    printing: (name) =>
+        `Hi *${name}* —\n\n` +
+        `Quick question — are most of your orders coming from existing clients, or are some businesses also finding you through Google?\n\n` +
+        `— Dhyey (${CONTACT})`,
+
+    financial: (name) =>
+        `Hi *${name}* —\n\n` +
+        `Genuine question — are most of your clients coming through referrals, or are some finding you through Google or LinkedIn?\n\n` +
+        `— Dhyey (${CONTACT})`,
+
+    hospital: (name) =>
+        `Hi *${name}* —\n\n` +
+        `Quick question — are most patients coming through referrals and walk-ins, or are some also finding you online?\n\n` +
+        `— Dhyey (${CONTACT})`,
+
+    wedding_venue: (name) =>
+        `Hi *${name}* —\n\n` +
+        `Genuine question — are most bookings coming through referrals, or are some couples also finding you through Google?\n\n` +
+        `— Dhyey (${CONTACT})`,
+
+    travel: (name) =>
+        `Hi *${name}* —\n\n` +
+        `Quick question — are most of your clients coming through referrals, or are some also finding your agency through Google?\n\n` +
+        `— Dhyey (${CONTACT})`,
+
+    electronics: (name) =>
+        `Hi *${name}* —\n\n` +
+        `Quick question — are most customers finding you through word of mouth, or are some also finding you on Google?\n\n` +
+        `— Dhyey (${CONTACT})`,
 
     generic: (name) =>
         `Hi *${name}* —\n\n` +
         `Quick question — are most of your customers coming through referrals and word of mouth, or also through Google?\n\n` +
-        `— Dhyey`,
+        `— Dhyey (${CONTACT})`,
 };
 
 function buildAnalysisMessage(name, issues) {
@@ -725,12 +1357,15 @@ function buildAnalysisMessage(name, issues) {
     );
 }
 
+function isSocialUrl(url) {
+    return url && /facebook\.com|fb\.com|fb\.me|instagram\.com/i.test(url);
+}
+
 function buildMessage(lead) {
     const name = lead.title || lead.name || 'there';
     const industry = detectIndustry(lead);
-    const hasWebsite = !!(lead.website);
-    const rating = lead.rating ? parseFloat(lead.rating) : null;
-    const reviews = lead.reviews || 0;
+    const socialOnly = isSocialUrl(lead.website);
+    const hasWebsite = !!(lead.website) && !socialOnly;
     const templates = IS_FOLLOWUP ? STAGE2 : STAGE1;
     const fn = templates[industry] || templates.generic;
 
@@ -739,7 +1374,8 @@ function buildMessage(lead) {
         return buildAnalysisMessage(name, lead._analysis.issues);
     }
 
-    return fn(name, hasWebsite, rating, reviews);
+    const cityLabel = CITY ? CITY.charAt(0).toUpperCase() + CITY.slice(1) : 'Ahmedabad';
+    return fn(name, hasWebsite, socialOnly, cityLabel);
 }
 
 // ─────────────────────────────────────────────
